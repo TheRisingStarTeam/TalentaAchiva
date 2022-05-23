@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "828023384580",
+    "project_id": "the-rising-stars",
+    "storage_bucket": "the-rising-stars.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828023384580:android:e19290def4a3c4728e6351",
+        "android_client_info": {
+          "package_name": "com.risingstar.talentaachiva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828023384580-us2rhia6mk68qs0epp4599bepgdgg3n4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.risingstar.talentaachiva",
+            "certificate_hash": "57b1594071f6fe842a9bb85e0d86ffe5c43bec64"
+          }
+        },
+        {
+          "client_id": "828023384580-cdsis9jro27i4ve34iib5qsu2fc6cgvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAw3ktF9oe4iX2wKVZiIq6juOWvdA2ME8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828023384580-cdsis9jro27i4ve34iib5qsu2fc6cgvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
