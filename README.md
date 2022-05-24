@@ -1,2 +1,2 @@
-# TalentaAchiva
-Bangkit Capstone Project
+# Well this is awkward...
+Okay so, I just realized that Github changed the main branch from master to main. But Android Studio and me only knows about Master so... Yeah, all project's in Master. Just, pretend there's nothing in here... See ya!
