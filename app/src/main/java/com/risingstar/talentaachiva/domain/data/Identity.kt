@@ -1,8 +1,10 @@
 package com.risingstar.talentaachiva.domain.data
 
 import android.location.Address
+import androidx.room.Entity
 import java.util.*
 
+@Entity(tableName = "identity")
 data class Identity (
     val userId : String,
     val name : String? = null,

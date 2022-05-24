@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
-            android:name=".GoogleAuthActivity"
+            android:name=".feature.landing.GoogleAuthActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".feature.landing.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

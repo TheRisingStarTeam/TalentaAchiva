@@ -1,7 +1,9 @@
 package com.risingstar.talentaachiva.domain.data
 
+import androidx.room.Entity
 import java.util.*
 
+@Entity(tableName = "submission")
 data class Submissions(
     val submissionId : String,
     val title : String,

@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva
+package com.risingstar.talentaachiva.feature.landing
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityMainBinding
 
 
@@ -109,7 +110,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent,RC_SIGN_IN)
+        startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

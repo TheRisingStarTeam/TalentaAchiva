@@ -1,5 +1,8 @@
 package com.risingstar.talentaachiva.domain.data
 
+import androidx.room.Entity
+
+@Entity(tableName = "event")
 data class Event(
     val eventId : String,
     val banner : String,
