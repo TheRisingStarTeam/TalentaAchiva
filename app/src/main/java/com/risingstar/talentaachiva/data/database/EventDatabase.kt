@@ -17,20 +17,18 @@ import com.risingstar.talentaachiva.domain.data.*
     version = 1,
     exportSchema = false
 )
-abstract class AppDatabase : RoomDatabase() {
-
-
+abstract class EventDatabase : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var INSTANCE: AppDatabase? = null
+        private var INSTANCE: EventDatabase? = null
 
         @JvmStatic
-        fun getDatabase(context: Context): AppDatabase {
+        fun getDatabase(context: Context): EventDatabase {
             return INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
-                    AppDatabase::class.java, "app_database"
+                    EventDatabase::class.java, "app_database"
                 )
                     .fallbackToDestructiveMigration()
                     .build()

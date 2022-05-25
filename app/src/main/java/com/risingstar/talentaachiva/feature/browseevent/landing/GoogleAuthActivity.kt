@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.landing
+package com.risingstar.talentaachiva.feature.browseevent.landing
 
 import android.content.Intent
 import android.os.Bundle

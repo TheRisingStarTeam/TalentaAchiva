@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.risingstar.talentaachiva">
+    package="com.risingstar.talentaachiva" >
 
     <application
         android:allowBackup="true"
@@ -8,13 +8,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TalentaAchiva">
+        android:theme="@style/Theme.TalentaAchiva" >
         <activity
-            android:name=".feature.landing.GoogleAuthActivity"
+            android:name=".feature.participantpage.submissionpage.SubmissionManagerActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.landing.MainActivity"
-            android:exported="true">
+            android:name=".feature.participantpage.mainpage.ActiveEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.organizerpage.assignmentmanager.AssignmentManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.organizerpage.participantmanager.ParticipantManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.organizerpage.eventmanager.EventManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.organizerpage.createevent.EventCreatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.browseevent.evdetail.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.browseevent.dashboard.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.browseevent.landing.GoogleAuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.browseevent.landing.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
