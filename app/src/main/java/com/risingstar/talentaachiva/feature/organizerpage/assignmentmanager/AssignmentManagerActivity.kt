@@ -2,11 +2,14 @@ package com.risingstar.talentaachiva.feature.organizerpage.assignmentmanager
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.risingstar.talentaachiva.R
+import com.risingstar.talentaachiva.databinding.ActivityAssignmentManagerBinding
 
 class AssignmentManagerActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityAssignmentManagerBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_assignment_manager)
+        binding = ActivityAssignmentManagerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
