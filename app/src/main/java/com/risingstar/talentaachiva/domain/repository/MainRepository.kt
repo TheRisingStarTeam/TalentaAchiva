@@ -117,10 +117,10 @@ class MainRepository {
                 .add(assignment)
     }
 
-    fun getSubmission(): ArrayList<Submissions> {
+    fun getAllSubmissionForParticipant(): ArrayList<Submissions> {
         val submissions = ArrayList<Submissions>()
         if(currentUser!=null)
-            submissionRef.whereArrayContains("author",currentUser.uid)
+            submissionRef.whereArrayContains("authorId",currentUser.uid)
                 .get().addOnSuccessListener { result ->
                     for(document in result){
                         val submission = document.toObject(Submissions::class.java)
@@ -129,6 +129,27 @@ class MainRepository {
                     }
                 }
         return submissions
+    }
+
+    fun getAllSubmissionsForOrganizer(assignmentId: String): ArrayList<Submissions> {
+        val submissions = ArrayList<Submissions>()
+        if(currentUser!=null)
+            submissionRef.whereEqualTo("assignmentId",assignmentId)
+                .get().addOnSuccessListener { result ->
+                    for(document in result){
+                        val submission = document.toObject(Submissions::class.java)
+                        submission.submissionId = document.id
+                        submissions.add(submission)
+                    }
+                }
+        return submissions
+    }
+
+
+
+    fun postSubmission(submission: Submissions){
+        if(currentUser!=null)
+            submissionRef.add(submission)
     }
 
 
