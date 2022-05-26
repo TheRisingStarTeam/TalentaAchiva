@@ -4,9 +4,9 @@ import androidx.room.Entity
 
 @Entity(tableName = "announcement")
 data class Announcements (
-    val announcementId : String,
-    val eventId : String,
-    val winner : List<String>,
-    val submission : List<String>,
-    val extraContent : String
+    val announcementId : String? = null,
+    val eventId : String? = null,
+    val winner : List<String>? = null,
+    val submission : List<String>? = null,
+    val extraContent : String? = null
 )

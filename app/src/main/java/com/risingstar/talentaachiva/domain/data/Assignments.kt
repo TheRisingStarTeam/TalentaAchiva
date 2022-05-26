@@ -4,9 +4,9 @@ import androidx.room.Entity
 
 @Entity(tableName = "assignment")
 data class Assignments (
-    val assignmentId : String,
-    val title : String,
-    val rules : String,
-    val description : String,
-    val eventId : String
+    val assignmentId : String? = null,
+    val title : String? = null,
+    val rules : String? = null,
+    val description : String? = null,
+    val eventId : String? = null
 )

@@ -6,7 +6,7 @@ import java.util.*
 
 @Entity(tableName = "identity")
 data class Identity (
-    val userId : String,
+    var userId : String? = null,
     val name : String? = null,
     val dateOfBirth : Date? = null,
     val phoneNumber : String? = null,
