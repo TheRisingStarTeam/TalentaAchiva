@@ -164,4 +164,14 @@ class MainRepository {
             .update("participants", FieldValue.arrayRemove(participantId))
     }
 
+    fun addOrganizer(organizerId:String, eventId:String){
+        eventRef.document(eventId)
+            .update("organizers", FieldValue.arrayUnion(organizerId))
+    }
+
+    fun removeOrganizer(organizerId:String, eventId:String){
+        eventRef.document(eventId)
+            .update("participants", FieldValue.arrayRemove(organizerId))
+    }
+
 }
