@@ -6,19 +6,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.risingstar.talentaachiva.domain.data.Assignments
+import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Identity
-
-data class CustomResult(
-    var tag:String,
-    var error:Boolean
-)
+import com.risingstar.talentaachiva.domain.data.Submissions
 
 class MainRepository {
     private val db = Firebase.firestore
     private val userRef = db.collection("userIdentities")
     private val eventRef = db.collection("events")
+    private val submissionRef = db.collection("submissions")
     private val mAuth = FirebaseAuth.getInstance()
 
     private val currentUser = mAuth.currentUser
@@ -58,7 +55,7 @@ class MainRepository {
         return eventList
     }
 
-    fun getEvents(query:List<String>): List<Event>? {
+    fun getEventSearch(query:List<String>): List<Event>? {
         var events : List<Event>? = null
         eventRef.whereArrayContainsAny("tags",query)
             .get().addOnSuccessListener {
@@ -68,7 +65,7 @@ class MainRepository {
         return events
     }
 
-    fun getEvents(type:String): List<Event> {
+    fun getActiveEvents(type:String): List<Event> {
         val events = ArrayList<Event>()
         if(currentUser!=null)
             eventRef.whereEqualTo(type,currentUser.uid)
@@ -98,13 +95,40 @@ class MainRepository {
             userRef.document(currentUser.uid).set(identity)
     }
 
-    fun postAssignment(assignments: Assignments){
+    fun getAssignments(eventId:String): List<Assignment> {
+        val assignments = ArrayList<Assignment>()
         if(currentUser!=null)
-            eventRef.document()
+            eventRef.document(eventId)
+                .collection("assignments")
+                .get().addOnSuccessListener { result ->
+                    for(document in result){
+                        val assignment = document.toObject(Assignment::class.java)
+                        assignment.assignmentId = document.id
+                        assignments.add(assignment)
+                    }
+                }
+        return assignments
     }
 
-    fun getSubmission(){
+    fun postAssignment(assignment: Assignment, eventId:String){
+        if(currentUser!=null)
+            eventRef.document(eventId)
+                .collection("assignments")
+                .add(assignment)
+    }
 
+    fun getSubmission(): ArrayList<Submissions> {
+        val submissions = ArrayList<Submissions>()
+        if(currentUser!=null)
+            submissionRef.whereArrayContains("author",currentUser.uid)
+                .get().addOnSuccessListener { result ->
+                    for(document in result){
+                        val submission = document.toObject(Submissions::class.java)
+                        submission.submissionId = document.id
+                        submissions.add(submission)
+                    }
+                }
+        return submissions
     }
 
 

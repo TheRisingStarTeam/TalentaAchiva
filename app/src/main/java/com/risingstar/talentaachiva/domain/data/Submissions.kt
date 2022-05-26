@@ -5,13 +5,13 @@ import java.util.*
 
 @Entity(tableName = "submission")
 data class Submissions(
-    val submissionId : String? = null,
-    val title : String? = null,
-    val dateOfSubmission : Date? = null,
-    val type: String? = null,
-    val content : String? = null,
-    val description : String? = null,
-    val author : List<String>? = null,
-    val review : String? = null,
-    val score: Int? = null,
+    var submissionId : String? = null,
+    var title : String? = null,
+    var dateOfSubmission : Date? = null,
+    var type: String? = null,
+    var content : String? = null,
+    var description : String? = null,
+    var author : List<String>? = null,
+    var review : String? = null,
+    var score: Int? = null,
 )

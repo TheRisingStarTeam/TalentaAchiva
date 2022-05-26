@@ -9,7 +9,7 @@ import com.risingstar.talentaachiva.domain.data.*
 @Database(
     entities = [
         Announcements::class,
-        Assignments::class,
+        Assignment::class,
         Event::class,
         Identity::class,
         Submissions::class

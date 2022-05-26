@@ -7,14 +7,14 @@ import java.util.*
 @Entity(tableName = "identity")
 data class Identity (
     var userId : String? = null,
-    val name : String? = null,
-    val dateOfBirth : Date? = null,
-    val phoneNumber : String? = null,
-    val email : String? = null,
-    val address : Address? = null,
-    val interest: List<String>? = null,
-    val socialMedia: List<String>? = null,
-    val organizerId: String? = null,
-    val history : List<String>? = null,
-    val recommendations: List<String>? = null
+    var name : String? = null,
+    var dateOfBirth : Date? = null,
+    var phoneNumber : String? = null,
+    var email : String? = null,
+    var address : Address? = null,
+    var interest: List<String>? = null,
+    var socialMedia: List<String>? = null,
+    var organizerId: String? = null,
+    var history : List<String>? = null,
+    var recommendations: List<String>? = null
 )
