@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
+            android:name=".feature.browseevent.dashboard.DashboardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.TalentaAchiva.NoActionBar" />
+        <activity
             android:name=".feature.browseevent.evlist.SearchActivity"
             android:exported="false" />
         <activity
@@ -32,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name=".feature.browseevent.evdetail.DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".feature.browseevent.dashboard.DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".feature.browseevent.landing.GoogleAuthActivity"
