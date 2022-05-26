@@ -3,6 +3,7 @@ package com.risingstar.talentaachiva.domain.repository
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -17,7 +18,6 @@ class MainRepository {
     private val eventRef = db.collection("events")
     private val submissionRef = db.collection("submissions")
     private val mAuth = FirebaseAuth.getInstance()
-
     private val currentUser = mAuth.currentUser
 
     fun login(email:String, pass:String): Task<AuthResult> {
@@ -65,10 +65,10 @@ class MainRepository {
         return events
     }
 
-    fun getActiveEvents(type:String): List<Event> {
+    fun getActiveEvents(role:String): List<Event> {
         val events = ArrayList<Event>()
         if(currentUser!=null)
-            eventRef.whereEqualTo(type,currentUser.uid)
+            eventRef.whereEqualTo(role,currentUser.uid)
                 .get().addOnSuccessListener { result ->
                     for(document in result){
                         val event = document.toObject(Event::class.java)
@@ -145,12 +145,23 @@ class MainRepository {
         return submissions
     }
 
-
-
     fun postSubmission(submission: Submissions){
         if(currentUser!=null)
             submissionRef.add(submission)
     }
 
+    fun updateSubmissionScore(score:Int,submissionId:String){
+        submissionRef.document(submissionId).update("score",score)
+    }
+
+    fun addParticipant(participantId:String,eventId:String){
+        eventRef.document(eventId)
+            .update("participants", FieldValue.arrayUnion(participantId))
+    }
+
+    fun removeParticipant(participantId:String,eventId:String){
+        eventRef.document(eventId)
+            .update("participants", FieldValue.arrayRemove(participantId))
+    }
 
 }
