@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -23,10 +24,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var email : String
     private lateinit var pass : String
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var viewModel : LandingVM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        viewModel = ViewModelProvider(this, LandingFactory())[LandingVM::class.java]
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.webclientid))
@@ -34,17 +38,15 @@ class MainActivity : AppCompatActivity() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        mAuth = FirebaseAuth.getInstance()
-
         binding.lgnBtn.setOnClickListener {
             email = binding.emailEt.text.toString()
             pass = binding.passEt.text.toString()
-            login(email,pass)
+            viewModel.login(email,pass)
         }
         binding.rgsBtn.setOnClickListener {
             email = binding.emailEt.text.toString()
             pass = binding.passEt.text.toString()
-            register(email,pass)
+            viewModel.register(email,pass)
         }
         binding.btnLgt.setOnClickListener {
             mAuth.signOut()
@@ -60,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onStart() {
         super.onStart()
-        val currentUser = mAuth.currentUser
+        val currentUser = viewModel.currentUser
         updateUI(currentUser)
     }
 
@@ -117,13 +119,13 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == GoogleAuthActivity.RC_SIGN_IN) {
+        if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
-                firebaseAuthWithGoogle(account.idToken!!)
+                viewModel.firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e)
@@ -149,7 +151,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val TAG = "GoogleActivity"
+        private const val TAG = "Activity"
         const val RC_SIGN_IN = 9001
     }
 }

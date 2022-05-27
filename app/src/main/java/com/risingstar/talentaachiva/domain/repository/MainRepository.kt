@@ -1,27 +1,48 @@
 package com.risingstar.talentaachiva.domain.repository
 
+import android.util.Log
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
-import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
-import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Identity
 import com.risingstar.talentaachiva.domain.data.Submissions
 
-class MainRepository {
-    private val db = Firebase.firestore
+class MainRepository(
+    db: FirebaseFirestore,
+    val mAuth: FirebaseAuth
+) {
+
     private val userRef = db.collection("userIdentities")
     private val eventRef = db.collection("events")
     private val submissionRef = db.collection("submissions")
-    private val mAuth = FirebaseAuth.getInstance()
-    private val currentUser = mAuth.currentUser
+
+    val currentUser = mAuth.currentUser
 
     fun login(email:String, pass:String): Task<AuthResult> {
         return mAuth.signInWithEmailAndPassword(email, pass)
+    }
+
+    fun googleLogin(credential: AuthCredential): Boolean {
+        var success = false
+        mAuth.signInWithCredential(credential)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d("GoogleFirebaseAuth", "signInWithCredential:success")
+                    success = task.isSuccessful
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w("GoogleFirebaseAuth", "signInWithCredential:failure", task.exception)
+                    success = task.isSuccessful
+                }
+            }
+        return success
     }
 
     fun register(email:String, pass:String): Boolean {
