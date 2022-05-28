@@ -10,12 +10,11 @@ data class Event(
     var active : Boolean? = null,
     var name : String? = null,
     var categories : List<String>? = null,
-    var hashtags : String? = null,
+    var hashtags : List<String>? = null,
     var rules : String? = null,
     var description: String? = null,
     var participants : List<String>? = null,
     var organizers : List<String>? = null,
     var tos : String? = null,
-    //var assignments : List<Assignment>? = null,
     var date : Date? = null
 )

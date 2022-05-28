@@ -20,8 +20,6 @@ class FakeCreateEventFragment : Fragment() {
     private val c = Calendar.getInstance()
     private var time = c.time
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -34,7 +32,7 @@ class FakeCreateEventFragment : Fragment() {
         }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH))
         binding.datePick.setOnClickListener {
             dpd.show()
-            binding.editTextDate.text = time.toString()
+            binding.etDate.text = time.toString()
         }
 
         binding.button.setOnClickListener {
@@ -48,22 +46,25 @@ class FakeCreateEventFragment : Fragment() {
     }
 
     private fun upload() {
-        val event = Event(
-            eventId = null,
-            banner = null,
-            active = true,
-            name = binding.titleEt.text.toString(),
-            categories = stringToWords(binding.CategoryEt.text.toString()),
-            hashtags = null,
-            rules = null,
-            description = binding.descriptionEt.text.toString(),
-            participants = null,
-            organizers = null,
-            tos = null,
-            date = time
-        )
+        if(viewmodel.currentUser != null){
+            val event = Event(
+                eventId = null,
+                banner = null,
+                active = true,
+                name = binding.titleEt.text.toString(),
+                categories = stringToWords(binding.CategoryEt.text.toString()),
+                hashtags = null,
+                rules = null,
+                description = binding.descriptionEt.text.toString(),
+                participants = null,
+                organizers = listOf(viewmodel.currentUser!!.uid),
+                tos = null,
+                date = time
+            )
 
-        viewmodel.postEvents(event)
+            viewmodel.postEvents(event)
+        }
+
 
     }
 
