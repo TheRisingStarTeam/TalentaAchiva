@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -24,13 +23,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var email : String
     private lateinit var pass : String
     private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var viewModel : LandingVM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
-        viewModel = ViewModelProvider(this, LandingFactory())[LandingVM::class.java]
+        mAuth = FirebaseAuth.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.webclientid))
@@ -41,12 +38,12 @@ class MainActivity : AppCompatActivity() {
         binding.lgnBtn.setOnClickListener {
             email = binding.emailEt.text.toString()
             pass = binding.passEt.text.toString()
-            viewModel.login(email,pass)
+            login(email,pass)
         }
         binding.rgsBtn.setOnClickListener {
             email = binding.emailEt.text.toString()
             pass = binding.passEt.text.toString()
-            viewModel.register(email,pass)
+            register(email,pass)
         }
         binding.btnLgt.setOnClickListener {
             mAuth.signOut()
@@ -62,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onStart() {
         super.onStart()
-        val currentUser = viewModel.currentUser
+        val currentUser = mAuth.currentUser
         updateUI(currentUser)
     }
 
@@ -125,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
-                viewModel.firebaseAuthWithGoogle(account.idToken!!)
+                firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e)

@@ -4,7 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_main_debug.xml" value="0.33" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/content_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/event_row.xml" value="0.2921225382932166" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_search.xml" value="0.67" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
       </map>
     </option>
