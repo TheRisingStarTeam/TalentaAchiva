@@ -20,10 +20,7 @@ class FakeCreateEventFragment : Fragment() {
     private val c = Calendar.getInstance()
     private var time = c.time
 
-    private val dpd = DatePickerDialog(requireActivity(), { _, year, monthOfYear, dayOfMonth ->
-        c.set(year+1900,monthOfYear,dayOfMonth)
-        time = c.time
-    }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH))
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +28,10 @@ class FakeCreateEventFragment : Fragment() {
     ): View {
         binding = FragmentFakeCreateEventBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity())[DebugVM::class.java]
+        val dpd = DatePickerDialog(requireActivity(), { _, year, monthOfYear, dayOfMonth ->
+            c.set(year+1900,monthOfYear,dayOfMonth)
+            time = c.time
+        }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH))
         binding.datePick.setOnClickListener {
             dpd.show()
             binding.editTextDate.text = time.toString()
@@ -59,7 +60,6 @@ class FakeCreateEventFragment : Fragment() {
             participants = null,
             organizers = null,
             tos = null,
-            assignments = null,
             date = time
         )
 

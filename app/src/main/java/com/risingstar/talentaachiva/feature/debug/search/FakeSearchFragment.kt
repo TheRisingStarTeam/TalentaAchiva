@@ -38,11 +38,11 @@ class FakeSearchFragment : Fragment() {
             rvAdapter = EventAdapter(list as ArrayList<Event>)
             rvEvent.adapter = rvAdapter
 
-            rvAdapter.setOnItemClickCallback(object : EventAdapter.OnItemClickCallback {
-                override fun onItemClicked(data: Event) {
-                    TODO("Intent to Detail Event ")
-                }
-            })
+//            rvAdapter.setOnItemClickCallback(object : EventAdapter.OnItemClickCallback {
+//                override fun onItemClicked(data: Event) {
+//                    TODO("Intent to Detail Event ")
+//                }
+//            })
         }
 
         return binding.root

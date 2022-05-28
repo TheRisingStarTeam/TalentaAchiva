@@ -27,6 +27,7 @@ class FakeDashboardFragment : Fragment() {
     ): View {
         binding = FragmentFakeDashboardBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity())[DebugVM::class.java]
+        viewmodel.getEvents()
 
         rvEvent = binding.eventrv
         rvEvent.layoutManager = LinearLayoutManager(this.context)

@@ -32,11 +32,7 @@ class DebugVM : ViewModel() {
         return _searchEvent
     }
 
-    init{
-        getEvents()
-    }
-
-    private fun getEvents() {
+    fun getEvents() {
         eventRef.get().addOnSuccessListener {result->
             _allEvents.value = result.map { it.toObject() }
         }
@@ -44,18 +40,20 @@ class DebugVM : ViewModel() {
     }
 
     fun getEventSearch(query:String) {
-        eventRef.whereArrayContainsAny("tags",stringToWords(query))
+        eventRef.whereArrayContainsAny("categories",stringToWords(query))
             .get().addOnSuccessListener {
                     result ->
                 _searchEvent.value = result.map { it.toObject() }
-
             }
     }
 
     fun postEvents(event:Event){
         eventRef.add(event).addOnCompleteListener { result->
             if (result.isSuccessful)
-                eventRef.document(result.result.id).update("eventId",result.result.id).addOnCompleteListener {
+                eventRef.document(result.result.id).update(
+                    "eventId",result.result.id
+                )
+                    .addOnCompleteListener {
                     _postEventResult.value = it.isSuccessful
                 }
         }
@@ -66,7 +64,7 @@ class DebugVM : ViewModel() {
         .toList()
 }
 
-class DebugFactory(): ViewModelProvider.Factory
+class DebugFactory: ViewModelProvider.Factory
 {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DebugVM::class.java)) {

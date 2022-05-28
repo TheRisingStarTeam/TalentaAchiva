@@ -16,6 +16,6 @@ data class Event(
     var participants : List<String>? = null,
     var organizers : List<String>? = null,
     var tos : String? = null,
-    var assignments : List<Assignment>? = null,
+    //var assignments : List<Assignment>? = null,
     var date : Date? = null
 )
