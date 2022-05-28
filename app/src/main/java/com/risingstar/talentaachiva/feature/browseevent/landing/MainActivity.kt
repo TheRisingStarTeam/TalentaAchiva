@@ -10,7 +10,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityMainBinding
-import com.risingstar.talentaachiva.feature.debug.MainDebugActivity
+import com.risingstar.talentaachiva.feature.browseevent.dashboard.MainDebugActivity
 
 
 class MainActivity : AppCompatActivity() {

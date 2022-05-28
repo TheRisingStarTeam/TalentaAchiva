@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.debug
+package com.risingstar.talentaachiva.feature.browseevent.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

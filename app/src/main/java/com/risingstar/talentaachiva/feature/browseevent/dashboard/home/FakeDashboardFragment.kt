@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.debug.dashboard
+package com.risingstar.talentaachiva.feature.browseevent.dashboard.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentFakeDashboardBinding
 import com.risingstar.talentaachiva.domain.data.Event
-import com.risingstar.talentaachiva.feature.debug.DebugVM
-import com.risingstar.talentaachiva.feature.debug.EventAdapter
+import com.risingstar.talentaachiva.feature.browseevent.dashboard.DebugVM
+import com.risingstar.talentaachiva.feature.browseevent.dashboard.EventAdapter
 
 class FakeDashboardFragment : Fragment() {
 

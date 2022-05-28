@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.debug
+package com.risingstar.talentaachiva.feature.browseevent.dashboard
 
 import android.content.Intent
 import android.os.Bundle
