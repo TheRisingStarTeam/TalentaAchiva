@@ -22,11 +22,15 @@ class DebugVM : ViewModel() {
         return _allEvents
     }
 
+    private val _postEventResult = MutableLiveData<Boolean?>()
+    fun postEventResult() : LiveData<Boolean?> {
+        return _postEventResult
+    }
+
     private val _searchEvent = MutableLiveData<List<Event>?>()
     fun searchEvent() : LiveData<List<Event>?> {
         return _searchEvent
     }
-
 
     init{
         getEvents()
@@ -48,11 +52,16 @@ class DebugVM : ViewModel() {
             }
     }
 
-    fun postEvents(){
-
+    fun postEvents(event:Event){
+        eventRef.add(event).addOnCompleteListener { result->
+            if (result.isSuccessful)
+                eventRef.document(result.result.id).update("eventId",result.result.id).addOnCompleteListener {
+                    _postEventResult.value = it.isSuccessful
+                }
+        }
     }
 
-    fun stringToWords(s : String) = s.trim().splitToSequence(' ')
+    private fun stringToWords(s : String) = s.trim().splitToSequence(' ')
         .filter { it.isNotEmpty() }
         .toList()
 }
