@@ -3,14 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/gradient_background.xml" value="0.303" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_assignment_manager.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_search.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_login.xml" value="0.5" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_submission_manager.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/app_bar_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/content_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_notification.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/menu/dashboard.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
