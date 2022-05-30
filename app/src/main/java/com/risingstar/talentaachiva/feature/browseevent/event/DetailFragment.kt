@@ -28,8 +28,19 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
-    private fun updateUI(it: Event) {
-        
+    private fun updateUI(event: Event) {
+        with(binding){
+            tvTitle.text = event.name
+            tvDate.text = event.date.toString()
+            tvDetail.text = event.description
+            tvOrganization.text = event.organization
+            if(event.status == "ongoing")
+                tvStatus.text = "On Going"
+            if(event.status == "started")
+                tvStatus.text = "Just Started"
+            if(event.status == "finished")
+                tvStatus.text = "Finished"
+        }
     }
 
 }

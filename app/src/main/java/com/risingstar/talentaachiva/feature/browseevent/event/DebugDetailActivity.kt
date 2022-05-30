@@ -12,6 +12,10 @@ class DebugDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDebugDetailBinding.inflate(layoutInflater)
         viewmodel = ViewModelProvider(this,DetailFactory(EVENT_ID)).get(DetailVM::class.java)
+
+        val detailPagerAdapter = DetailPagerAdapter(this)
+        binding.viewPager.adapter = detailPagerAdapter
+
         setContentView(binding.root)
     }
 
