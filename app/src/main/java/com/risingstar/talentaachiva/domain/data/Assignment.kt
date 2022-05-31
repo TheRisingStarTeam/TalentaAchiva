@@ -8,4 +8,5 @@ data class Assignment (
     var title : String? = null,
     var rules : String? = null,
     var description : String? = null,
+    var type : String? = null
 )

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
-            android:name=".feature.browseevent.participant.ParticipantActivity"
+            android:name="com.risingstar.talentaachiva.feature.participant.ParticipantActivity"
             android:exported="false" />
         <activity
-            android:name="com.risingstar.talentaachiva.feature.browseevent.dashboard.MainDebugActivity"
+            android:name="com.risingstar.talentaachiva.feature.dashboard.MainDebugActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.browseevent.landing.MainActivity"
+            android:name="com.risingstar.talentaachiva.feature.landing.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
