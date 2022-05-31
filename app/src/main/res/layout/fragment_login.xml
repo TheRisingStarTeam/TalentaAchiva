@@ -25,8 +25,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLog">
@@ -36,7 +36,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="email"
-            android:textColorHint="@color/white"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,8 +45,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailLayout">
@@ -57,9 +57,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="password"
+            android:inputType="textPassword"
             android:textColorHint="@color/white"
-            app:passwordToggleEnabled="true"
-            android:inputType="textPassword" />
+            app:passwordToggleEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -68,13 +68,14 @@
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginStart="32dp"
@@ -96,5 +97,16 @@
         app:layout_constraintEnd_toEndOf="@+id/loginButton"
         app:layout_constraintStart_toStartOf="@+id/loginButton"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+    <TextView
+        android:id="@+id/clickHereReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Do not have an account? Click here"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
