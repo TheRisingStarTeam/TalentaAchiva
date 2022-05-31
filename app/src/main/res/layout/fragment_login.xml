@@ -26,10 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLog">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLog"
+        app:boxBackgroundColor="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEdit"
@@ -47,10 +47,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailLayout">
+        app:layout_constraintTop_toBottomOf="@+id/emailLayout"
+        app:boxBackgroundColor="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEdit"
@@ -108,5 +108,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
