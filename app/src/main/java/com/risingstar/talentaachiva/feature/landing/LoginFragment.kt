@@ -34,7 +34,7 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater,container,false)
 
         with(binding){
-            textView2.setOnClickListener{
+            clickHereReg.setOnClickListener{
                 it.findNavController().navigate(R.id.login_to_register)
             }
             loginButton.setOnClickListener {
