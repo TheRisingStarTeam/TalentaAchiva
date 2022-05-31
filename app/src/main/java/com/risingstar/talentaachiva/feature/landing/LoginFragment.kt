@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -33,9 +34,9 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater,container,false)
 
         with(binding){
-//            button.setOnClickListener{
-//                it.findNavController().navigate(R.id.login_to_register)
-//            }
+            textView2.setOnClickListener{
+                it.findNavController().navigate(R.id.login_to_register)
+            }
             loginButton.setOnClickListener {
                 viewmodel.login(
                     emailEdit.text.toString(),
