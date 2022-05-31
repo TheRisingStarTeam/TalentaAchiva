@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -34,16 +33,16 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater,container,false)
 
         with(binding){
-            btnNewAcc.setOnClickListener{
-                it.findNavController().navigate(R.id.login_to_register)
-            }
-            btnLogin.setOnClickListener {
+//            button.setOnClickListener{
+//                it.findNavController().navigate(R.id.login_to_register)
+//            }
+            loginButton.setOnClickListener {
                 viewmodel.login(
-                    etEmail.text.toString(),
-                    etPassword.text.toString()
+                    emailEdit.text.toString(),
+                    passwordEdit.text.toString()
                 )
             }
-            btnLoginGoogle.setOnClickListener {
+            imageView2.setOnClickListener {
                 val signInIntent = googleSignInClient.signInIntent
                 startActivityForResult(signInIntent, RC_SIGN_IN)
             }
