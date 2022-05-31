@@ -1,2 +1,6 @@
-# Well this is awkward...
-Okay so, I just realized that Github changed the main branch from master to main. But Android Studio and me only knows about Master so... Yeah, all project's in Master. Just, pretend there's nothing in here... See ya!
+# Fixed
+Turns out, I only need to change the default branch to master. Why I didn't do that before?
+
+Uhh... 
+
+Anyway, this is our capstone project, humu humu!
