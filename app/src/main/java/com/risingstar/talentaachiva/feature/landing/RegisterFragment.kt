@@ -23,13 +23,13 @@ class RegisterFragment : Fragment() {
         binding = FragmentRegisterBinding.inflate(layoutInflater,container,false)
 
         with(binding){
-            btnLoginInstead.setOnClickListener {
+            clickHereLog.setOnClickListener {
                 it.findNavController().navigate(R.id.register_to_login)
             }
-            btnRegister.setOnClickListener {
+            registerButton.setOnClickListener {
                 viewmodel.register(
-                    etEmailRegister.text.toString(),
-                    etPassRegister.text.toString()
+                    emailEdit.text.toString(),
+                    passwordEdit.text.toString()
                 )
             }
         }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tools:context=".feature.browseevent.landing.MainActivity">
+    tools:context=".feature.landing.MainActivity">
 
     <TextView
         android:id="@+id/title_tv"
