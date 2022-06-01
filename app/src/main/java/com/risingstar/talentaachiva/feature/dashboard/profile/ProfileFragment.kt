@@ -13,7 +13,7 @@ import com.risingstar.talentaachiva.domain.data.Identity
 import com.risingstar.talentaachiva.feature.dashboard.DebugVM
 import java.util.*
 
-class FakeProfileFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     private lateinit var viewmodel : DebugVM
     private val c = Calendar.getInstance()

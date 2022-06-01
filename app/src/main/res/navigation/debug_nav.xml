@@ -25,22 +25,22 @@
     </fragment>
     <fragment
         android:id="@+id/fakeDashboardFragment"
-        android:name="com.risingstar.talentaachiva.feature.dashboard.home.FakeDashboardFragment"
+        android:name="com.risingstar.talentaachiva.feature.dashboard.home.DashboardFragment"
         android:label="fragment_fake_dashboard"
         tools:layout="@layout/fragment_fake_dashboard" />
     <fragment
         android:id="@+id/fakeSearchFragment"
-        android:name="com.risingstar.talentaachiva.feature.dashboard.search.FakeSearchFragment"
+        android:name="com.risingstar.talentaachiva.feature.dashboard.search.SearchFragment"
         android:label="fragment_fake_search"
         tools:layout="@layout/fragment_fake_search" />
     <fragment
         android:id="@+id/fakeCreateEventFragment"
-        android:name="com.risingstar.talentaachiva.feature.dashboard.ecreate.FakeCreateEventFragment"
+        android:name="com.risingstar.talentaachiva.feature.dashboard.ecreate.CreateEventFragment"
         android:label="fragment_fake_create_event"
         tools:layout="@layout/fragment_fake_create_event" />
     <fragment
         android:id="@+id/fakeProfileFragment"
-        android:name="com.risingstar.talentaachiva.feature.dashboard.profile.FakeProfileFragment"
+        android:name="com.risingstar.talentaachiva.feature.dashboard.profile.ProfileFragment"
         android:label="fragment_fake_profile"
         tools:layout="@layout/fragment_fake_profile" />
 </navigation>

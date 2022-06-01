@@ -33,8 +33,8 @@ class DetailVM(data:String) : ViewModel() {
         eventListener(data)
     }
 
-    fun registerEvent(event: Event){
-        eventRef.document(event.eventId.toString())
+    fun registerEvent(){
+        eventRef.document(_currentEvent.value?.eventId.toString())
             .update(
                 "participant",
                 FieldValue.arrayUnion(currentUser?.uid)

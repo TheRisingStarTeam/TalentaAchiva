@@ -16,8 +16,9 @@ class DetailPagerAdapter(
         var fragment: Fragment? = null
         when (position) {
 
-            0 -> fragment = DetailFragment()
-            1 -> fragment = RegEventFragment()
+            0 -> fragment = EventDetailFragment()
+            1 -> fragment = EventRegisterFragment()
+            2 -> fragment = EventListPeopleFragment()
         }
 
         return fragment as Fragment
