@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_event_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_search.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_landing.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_list_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/dashboard.xml" value="0.1" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/gradient_background.xml" value="0.25" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/ic_menu_camera.xml" value="0.306" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.306" />

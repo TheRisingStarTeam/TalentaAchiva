@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.risingstar.talentaachiva.databinding.FragmentListParticipantBinding
+import com.risingstar.talentaachiva.databinding.FragmentListPeopleBinding
 
-class ListParticipantFragment : Fragment() {
-    private lateinit var binding : FragmentListParticipantBinding
+class ListPeopleFragment : Fragment() {
+    private lateinit var binding : FragmentListPeopleBinding
     private lateinit var viewmodel : ParticipantVM
 
 
@@ -19,7 +19,7 @@ class ListParticipantFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         viewmodel = ViewModelProvider(requireActivity()).get(ParticipantVM::class.java)
-        binding = FragmentListParticipantBinding.inflate(layoutInflater,container,false)
+        binding = FragmentListPeopleBinding.inflate(layoutInflater,container,false)
         return binding.root
     }
 }

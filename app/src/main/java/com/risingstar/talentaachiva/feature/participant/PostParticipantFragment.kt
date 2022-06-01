@@ -14,7 +14,7 @@ class PostParticipantFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_post_participant, container, false)
+        return inflater.inflate(R.layout.fragment_fake_post_as_participant, container, false)
     }
 
 

@@ -9,5 +9,5 @@
         android:id="@+id/detailFragment"
         android:name="com.risingstar.talentaachiva.feature.event.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_fake_event_detail" />
 </navigation>
