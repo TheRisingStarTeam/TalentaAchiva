@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.ActivityDebugDetailBinding
 
-class DebugDetailActivity : AppCompatActivity() {
+class EventDetailActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDebugDetailBinding
     private lateinit var viewmodel : DetailVM
     override fun onCreate(savedInstanceState: Bundle?) {

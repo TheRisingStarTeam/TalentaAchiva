@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.participant
+package com.risingstar.talentaachiva.feature.management.participant
 
 import android.os.Bundle
 import android.view.LayoutInflater

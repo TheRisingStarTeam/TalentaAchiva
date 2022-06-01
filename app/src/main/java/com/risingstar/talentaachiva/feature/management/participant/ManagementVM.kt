@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.participant
+package com.risingstar.talentaachiva.feature.management.participant
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +11,7 @@ import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Post
 import com.risingstar.talentaachiva.domain.data.Submissions
 
-class ParticipantVM : ViewModel() {
+class ManagementVM : ViewModel() {
 
     private val mAuth = FirebaseAuth.getInstance()
     private val db = Firebase.firestore
