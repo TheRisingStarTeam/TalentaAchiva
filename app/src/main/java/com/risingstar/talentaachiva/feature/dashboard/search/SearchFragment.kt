@@ -13,7 +13,7 @@ import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.feature.dashboard.DebugVM
 import com.risingstar.talentaachiva.feature.dashboard.EventAdapter
 
-class FakeSearchFragment : Fragment() {
+class SearchFragment : Fragment() {
 
     private lateinit var binding : FragmentFakeSearchBinding
     private lateinit var viewmodel : DebugVM

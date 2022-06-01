@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_debug_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_participant.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_debug.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_event_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_event_detail.xml" value="0.33" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_event_stream_as_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_reg_event.xml" value="0.14" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_search.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_landing.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_list_participant.xml" value="0.20416666666666666" />

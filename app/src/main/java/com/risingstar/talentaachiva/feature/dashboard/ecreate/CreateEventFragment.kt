@@ -13,7 +13,7 @@ import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.feature.dashboard.DebugVM
 import java.util.*
 
-class FakeCreateEventFragment : Fragment() {
+class CreateEventFragment : Fragment() {
 
     private lateinit var binding : FragmentFakeCreateEventBinding
     private lateinit var viewmodel : DebugVM

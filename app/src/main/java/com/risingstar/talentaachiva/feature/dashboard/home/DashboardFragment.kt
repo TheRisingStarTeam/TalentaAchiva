@@ -13,7 +13,7 @@ import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.feature.dashboard.DebugVM
 import com.risingstar.talentaachiva.feature.dashboard.EventAdapter
 
-class FakeDashboardFragment : Fragment() {
+class DashboardFragment : Fragment() {
 
     private lateinit var binding : FragmentFakeDashboardBinding
     private lateinit var viewmodel : DebugVM

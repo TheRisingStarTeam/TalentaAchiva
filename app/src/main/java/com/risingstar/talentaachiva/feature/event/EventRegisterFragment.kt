@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.risingstar.talentaachiva.databinding.FragmentRegEventBinding
-import com.risingstar.talentaachiva.domain.data.Event
+import com.risingstar.talentaachiva.databinding.FragmentFakeRegEventBinding
 
-class RegEventFragment : Fragment() {
+class EventRegisterFragment : Fragment() {
 
     private lateinit var viewmodel : DetailVM
-    private lateinit var binding : FragmentRegEventBinding
-    private var event: Event? = null
+    private lateinit var binding : FragmentFakeRegEventBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +23,6 @@ class RegEventFragment : Fragment() {
         viewmodel.currentEvent().observe(viewLifecycleOwner){
             if (it != null) {
                 binding.tvTos.text = it.tos
-                event = it
                 binding.btnRegEvent.isEnabled = true
             }
         }
@@ -38,10 +36,10 @@ class RegEventFragment : Fragment() {
         }
 
         binding.btnRegEvent.setOnClickListener {
-            viewmodel.registerEvent(event!!)
+            viewmodel.registerEvent()
         }
 
-        binding = FragmentRegEventBinding.inflate(inflater, container, false)
+        binding = FragmentFakeRegEventBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity())[DetailVM::class.java]
 
         return binding.root

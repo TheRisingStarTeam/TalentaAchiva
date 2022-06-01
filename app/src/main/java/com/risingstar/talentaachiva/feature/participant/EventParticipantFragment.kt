@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.risingstar.talentaachiva.databinding.FragmentEventParticipantBinding
+import com.risingstar.talentaachiva.databinding.FragmentFakeEventStreamAsParticipantBinding
 
 class EventParticipantFragment : Fragment() {
-    private lateinit var binding : FragmentEventParticipantBinding
+    private lateinit var binding : FragmentFakeEventStreamAsParticipantBinding
     private lateinit var viewmodel : ParticipantVM
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class EventParticipantFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         viewmodel = ViewModelProvider(requireActivity()).get(ParticipantVM::class.java)
-        binding = FragmentEventParticipantBinding.inflate(layoutInflater,container,false)
+        binding = FragmentFakeEventStreamAsParticipantBinding.inflate(layoutInflater,container,false)
 
 
 
