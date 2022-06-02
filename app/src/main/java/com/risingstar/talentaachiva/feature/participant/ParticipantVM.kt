@@ -11,7 +11,7 @@ import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.feature.event.DetailVM
 
-class AssignmentVM(val event: String, val assignment: String) : ViewModel(){
+class ParticipantVM(val event: String, val assignment: String) : ViewModel(){
     private val mAuth = FirebaseAuth.getInstance()
     private val db = Firebase.firestore
     private val userRef = db.collection("userIdentities")
@@ -44,7 +44,7 @@ class AssignmentFactory(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailVM::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return AssignmentVM(event,assignment) as T
+            return ParticipantVM(event,assignment) as T
         }
         throw IllegalArgumentException()
     }

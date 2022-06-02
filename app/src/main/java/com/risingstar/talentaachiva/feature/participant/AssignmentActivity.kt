@@ -7,13 +7,13 @@ import com.risingstar.talentaachiva.databinding.ActivityAssignmentBinding
 
 class AssignmentActivity : AppCompatActivity() {
     private lateinit var binding : ActivityAssignmentBinding
-    private lateinit var viewmodel : AssignmentVM
+    private lateinit var viewmodel : ParticipantVM
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityAssignmentBinding.inflate(layoutInflater)
         viewmodel = ViewModelProvider(this, AssignmentFactory(EVENT_ID,ASSIGNMENT_ID))
-            .get(AssignmentVM::class.java)
+            .get(ParticipantVM::class.java)
 
 
         setContentView(binding.root)

@@ -6,18 +6,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Post
 import com.risingstar.talentaachiva.domain.data.Submissions
 
-class ManagementVM : ViewModel() {
+class ManagementVM(val event: Event) : ViewModel() {
 
     private val mAuth = FirebaseAuth.getInstance()
     private val db = Firebase.firestore
     private val userRef = db.collection("userIdentities")
-    private val postRef = db.collection("posts")
+//    private val postRef = db.collection("posts")
     private val eventRef = db.collection("events")
     private val submissionRef = db.collection("submissions")
     private val currentUser = mAuth.currentUser
@@ -25,6 +26,11 @@ class ManagementVM : ViewModel() {
     private val _allAssignments = MutableLiveData<List<Assignment>?>()
     fun allAssignments() : LiveData<List<Assignment>?> {
         return _allAssignments
+    }
+
+    private val _allPosts = MutableLiveData<List<Post>?>()
+    fun allPosts() : LiveData<List<Post>?> {
+        return _allPosts
     }
 
     fun getAssignments(eventId:String){
@@ -42,11 +48,19 @@ class ManagementVM : ViewModel() {
                 }
     }
 
-    fun getParticipantList(event: Event){
+    fun getParticipantList(){
         userRef.whereArrayContainsAny("userId",event.participants!!)
             .get().addOnCompleteListener {
 
             }
+    }
+
+    fun getPosts(){
+        eventRef.document(event.eventId.toString()).get()
+            .addOnCompleteListener {
+                if (it.isSuccessful)
+                    _allPosts.value = it.result.toObject<Event>()?.posts
+                }
     }
 
     fun createPost(post: Post){
@@ -68,12 +82,12 @@ class ManagementVM : ViewModel() {
     }
 }
 
-class ManagementFactory: ViewModelProvider.Factory
+class ManagementFactory(val event:Event): ViewModelProvider.Factory
 {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ManagementVM::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return ManagementVM() as T
+            return ManagementVM(event) as T
         }
         throw IllegalArgumentException()
     }

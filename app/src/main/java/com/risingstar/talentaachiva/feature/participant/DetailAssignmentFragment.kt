@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.FragmentFakeDetailAssignmentBinding
 
 class DetailAssignmentFragment : Fragment() {
-    private lateinit var viewmodel : AssignmentVM
+    private lateinit var viewmodel : ParticipantVM
     private lateinit var binding : FragmentFakeDetailAssignmentBinding
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class DetailAssignmentFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentFakeDetailAssignmentBinding.inflate(inflater, container, false)
-        viewmodel = ViewModelProvider(requireActivity())[AssignmentVM::class.java]
+        viewmodel = ViewModelProvider(requireActivity())[ParticipantVM::class.java]
 
         return binding.root
     }

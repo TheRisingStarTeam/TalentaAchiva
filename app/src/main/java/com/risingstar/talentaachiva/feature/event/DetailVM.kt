@@ -14,9 +14,9 @@ import com.risingstar.talentaachiva.domain.data.Event
 class DetailVM(eventId:String) : ViewModel() {
     private val mAuth = FirebaseAuth.getInstance()
     private val db = Firebase.firestore
-    private val userRef = db.collection("userIdentities")
+//    private val userRef = db.collection("userIdentities")
     private val eventRef = db.collection("events")
-    private val submissionRef = db.collection("submissions")
+//    private val submissionRef = db.collection("submissions")
     val currentUser = mAuth.currentUser
 
     private val _registerEventResult = MutableLiveData<Boolean?>()
