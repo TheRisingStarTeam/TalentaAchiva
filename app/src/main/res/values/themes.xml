@@ -25,7 +25,6 @@
     <style name="Theme.TalentaAchiva.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-
     <style name="Button">
         <item name="android:backgroundTint">@color/red</item>
         <item name="android:layout_width">match_parent</item>

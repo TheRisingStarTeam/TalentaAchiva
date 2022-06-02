@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".feature.landing.LandingFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,44 +12,56 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView6"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/placholdertako"
+            android:layout_marginTop="128dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvLanding"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Good Morning, Afternoon, Evening!!!"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/talenta_achiva_transparent" />
 
         <Button
-            android:id="@+id/btnLoginLanding"
+            android:id="@+id/buttonLoginMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            style="@style/Button"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLanding" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
         <Button
-            android:id="@+id/btnRegisterLanding"
+            android:id="@+id/btnRegisterMain"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:text="Register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLoginLanding" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonLoginMain" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegisterMain" />
+
+        <ImageView
+            android:id="@+id/btnSignInGoogle"
+            android:layout_width="200dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:srcCompat="@drawable/btn_google_signin_light_normal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
