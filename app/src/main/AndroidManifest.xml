@@ -13,7 +13,7 @@
             android:name="com.risingstar.talentaachiva.feature.management.ManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".MainDebugActivity"
+            android:name="com.risingstar.talentaachiva.feature.event.EventDetailActivity"
             android:exported="false" />
         <activity
             android:name="com.risingstar.talentaachiva.feature.landing.MainActivity"

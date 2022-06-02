@@ -2,27 +2,17 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragmentDashboard"
-    app:startDestination="@id/fragmentDashboard">
+    android:id="@+id/navigation_dashboard"
+    app:startDestination="@id/navigation_dashboard">
 
     <fragment
-        android:id="@+id/fragmentDashboard"
+        android:id="@+id/navigation_dashboard"
         android:name="com.risingstar.talentaachiva.feature.dashboard.home.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
-        android:id="@+id/fakeSearchFragment"
+        android:id="@+id/navigation_search"
         android:name="com.risingstar.talentaachiva.feature.dashboard.search.SearchFragment"
         android:label="fragment_fake_search"
         tools:layout="@layout/fragment_fake_search" />
-    <fragment
-        android:id="@+id/fakeCreateEventFragment"
-        android:name="com.risingstar.talentaachiva.feature.dashboard.ecreate.CreateEventFragment"
-        android:label="fragment_fake_create_event"
-        tools:layout="@layout/fragment_fake_create_event" />
-    <fragment
-        android:id="@+id/fakeProfileFragment"
-        android:name="com.risingstar.talentaachiva.feature.dashboard.profile.ProfileFragment"
-        android:label="fragment_fake_profile"
-        tools:layout="@layout/fragment_fake_profile" />
 </navigation>
