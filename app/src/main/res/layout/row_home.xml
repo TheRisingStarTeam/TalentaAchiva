@@ -43,7 +43,7 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
             android:text="Detail"
             app:layout_constraintEnd_toEndOf="@+id/img_photo"
             app:layout_constraintStart_toStartOf="@+id/img_photo"

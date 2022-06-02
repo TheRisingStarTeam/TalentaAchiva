@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,7 +8,6 @@
     android:id="@+id/fragmentDashboard">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".feature.dashboard.DashboardActivity">
@@ -53,7 +53,7 @@
                 android:clipToPadding="false"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/row_recommendation"
+                tools:listitem="@layout/row_home"
                 android:padding="16dp"
                 />
 
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Recommendation"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp"
@@ -77,6 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="Event"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp"
@@ -93,8 +94,16 @@
             app:layout_constraintTop_toBottomOf="@+id/tvEvent">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEvent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_home"
+                android:padding="16dp"
+                />
         </LinearLayout>
 
 
