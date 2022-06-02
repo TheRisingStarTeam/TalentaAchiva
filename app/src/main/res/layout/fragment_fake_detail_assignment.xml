@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnSubmitSubmission"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".feature.participant.DetailAssignmentFragment">
@@ -13,7 +14,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tvTitleAssignment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -21,14 +22,14 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/tvDetailAssignment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Detail" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tvCriteria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content">
 
             <ListView
+                android:id="@+id/lvCriteria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -51,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Button" />
+            android:text="Submit" />
 
     </LinearLayout>
 

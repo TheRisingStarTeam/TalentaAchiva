@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
                     passwordEdit.text.toString()
                 )
             }
-            imageView2.setOnClickListener {
+            btnSignInGoogle.setOnClickListener {
                 val signInIntent = googleSignInClient.signInIntent
                 startActivityForResult(signInIntent, RC_SIGN_IN)
             }

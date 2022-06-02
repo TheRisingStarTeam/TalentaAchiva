@@ -2,32 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/debug_nav"
-    app:startDestination="@id/debugFragment">
+    android:id="@+id/fragmentDashboard"
+    app:startDestination="@id/fragmentDashboard">
 
     <fragment
-        android:id="@+id/debugFragment"
-        android:name="com.risingstar.talentaachiva.feature.dashboard.DebugFragment"
-        android:label="fragment_debug"
-        tools:layout="@layout/fragment_debug" >
-        <action
-            android:id="@+id/debug_to_dashboard"
-            app:destination="@id/fakeDashboardFragment" />
-        <action
-            android:id="@+id/debug_to_search"
-            app:destination="@id/fakeSearchFragment" />
-        <action
-            android:id="@+id/debug_to_profile"
-            app:destination="@id/fakeProfileFragment" />
-        <action
-            android:id="@+id/debug_to_eventcreate"
-            app:destination="@id/fakeCreateEventFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/fakeDashboardFragment"
+        android:id="@+id/fragmentDashboard"
         android:name="com.risingstar.talentaachiva.feature.dashboard.home.DashboardFragment"
-        android:label="fragment_fake_dashboard"
-        tools:layout="@layout/fragment_fake_dashboard" />
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/fakeSearchFragment"
         android:name="com.risingstar.talentaachiva.feature.dashboard.search.SearchFragment"

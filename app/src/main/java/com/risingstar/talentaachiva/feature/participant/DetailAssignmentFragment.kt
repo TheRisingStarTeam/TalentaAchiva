@@ -19,6 +19,13 @@ class DetailAssignmentFragment : Fragment() {
         binding = FragmentFakeDetailAssignmentBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity())[ParticipantVM::class.java]
 
+        viewmodel.getAssignment()
+
+        viewmodel.assignment().observe(viewLifecycleOwner){
+            binding.tvTitleAssignment.text = it?.title.toString()
+            binding.tvDetailAssignment.text = it?.description.toString()
+        }
+
         return binding.root
     }
 

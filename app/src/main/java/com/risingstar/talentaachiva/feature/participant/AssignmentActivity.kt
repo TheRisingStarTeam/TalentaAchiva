@@ -15,7 +15,6 @@ class AssignmentActivity : AppCompatActivity() {
         viewmodel = ViewModelProvider(this, AssignmentFactory(EVENT_ID,ASSIGNMENT_ID))
             .get(ParticipantVM::class.java)
 
-
         setContentView(binding.root)
     }
 
