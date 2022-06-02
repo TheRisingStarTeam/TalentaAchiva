@@ -10,8 +10,6 @@ import com.risingstar.talentaachiva.databinding.FragmentFakeCreateSubmissionBind
 
 class SubmissionPostFragment : Fragment() {
 
-
-
     private lateinit var viewmodel : ParticipantVM
     private lateinit var binding : FragmentFakeCreateSubmissionBinding
 

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -21,7 +22,7 @@ class ManagementVM(val event: Event) : ViewModel() {
 //    private val postRef = db.collection("posts")
     private val eventRef = db.collection("events")
     private val submissionRef = db.collection("submissions")
-    private val currentUser = mAuth.currentUser
+    val currentUser = mAuth.currentUser
 
     private val _allAssignments = MutableLiveData<List<Assignment>?>()
     fun allAssignments() : LiveData<List<Assignment>?> {
@@ -65,7 +66,8 @@ class ManagementVM(val event: Event) : ViewModel() {
 
     fun createPost(post: Post){
         if(currentUser!=null)
-            eventRef.document()
+            eventRef.document(event.eventId.toString())
+                .update("posts", FieldValue.arrayUnion(post))
     }
 
     fun postSubmission(submission: Submissions){
