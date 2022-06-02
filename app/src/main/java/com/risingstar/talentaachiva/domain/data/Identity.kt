@@ -1,9 +1,12 @@
 package com.risingstar.talentaachiva.domain.data
 
 import android.location.Address
+import android.os.Parcelable
 import androidx.room.Entity
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
+@Parcelize
 @Entity(tableName = "identity")
 data class Identity (
     var userId : String? = null,
@@ -17,4 +20,4 @@ data class Identity (
     var organizerId: String? = null,
     var history : List<String>? = null,
     var recommendations: List<String>? = null
-)
+) : Parcelable

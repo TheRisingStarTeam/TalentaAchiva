@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.assignment
+package com.risingstar.talentaachiva.feature.participant
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,6 +18,7 @@ class DetailAssignmentFragment : Fragment() {
     ): View {
         binding = FragmentFakeDetailAssignmentBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity())[AssignmentVM::class.java]
+
         return binding.root
     }
 

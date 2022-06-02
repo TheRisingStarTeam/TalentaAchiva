@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.assignment
+package com.risingstar.talentaachiva.feature.participant
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

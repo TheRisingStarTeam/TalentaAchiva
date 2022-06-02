@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.management.participant
+package com.risingstar.talentaachiva.feature.management
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

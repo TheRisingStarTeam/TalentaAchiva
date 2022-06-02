@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.management.participant
+package com.risingstar.talentaachiva.feature.management
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.FragmentFakeListassignmentBinding
 
 
-class AssignmentParticipantFragment : Fragment() {
+class AssignmentListFragment : Fragment() {
     private lateinit var binding : FragmentFakeListassignmentBinding
     private lateinit var viewmodel : ManagementVM
 

@@ -1,8 +1,11 @@
 package com.risingstar.talentaachiva.domain.data
 
+import android.os.Parcelable
 import androidx.room.Entity
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
+@Parcelize
 @Entity(tableName = "submission")
 data class Submissions(
     var submissionId : String? = null,
@@ -15,4 +18,4 @@ data class Submissions(
     var description : String? = null,
     var review : String? = null,
     var score: Int? = null,
-)
+) : Parcelable

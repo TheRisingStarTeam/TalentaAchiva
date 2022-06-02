@@ -1,8 +1,9 @@
-package com.risingstar.talentaachiva.feature.management.participant
+package com.risingstar.talentaachiva.feature.management
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -50,7 +51,7 @@ class ManagementVM : ViewModel() {
 
     fun createPost(post: Post){
         if(currentUser!=null)
-            postRef.add(post)
+            eventRef.document()
     }
 
     fun postSubmission(submission: Submissions){
@@ -66,3 +67,15 @@ class ManagementVM : ViewModel() {
             }
     }
 }
+
+class ManagementFactory: ViewModelProvider.Factory
+{
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(ManagementVM::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return ManagementVM() as T
+        }
+        throw IllegalArgumentException()
+    }
+}
+

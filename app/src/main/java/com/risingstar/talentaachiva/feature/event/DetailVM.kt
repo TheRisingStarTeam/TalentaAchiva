@@ -11,7 +11,7 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Event
 
-class DetailVM(data:String) : ViewModel() {
+class DetailVM(eventId:String) : ViewModel() {
     private val mAuth = FirebaseAuth.getInstance()
     private val db = Firebase.firestore
     private val userRef = db.collection("userIdentities")
@@ -30,7 +30,7 @@ class DetailVM(data:String) : ViewModel() {
     }
 
     init{
-        eventListener(data)
+        eventListener(eventId)
     }
 
     fun registerEvent(){

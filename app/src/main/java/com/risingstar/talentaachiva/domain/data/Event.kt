@@ -1,9 +1,10 @@
 package com.risingstar.talentaachiva.domain.data
 
-import androidx.room.Entity
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
-@Entity(tableName = "event")
+@Parcelize
 data class Event(
     var eventId : String? = null,
     var banner : String? = null,
@@ -18,8 +19,6 @@ data class Event(
     var tos : String? = null,
     var date : Date? = null,
     val organization: String? = null,
-    val status: String? = null
-) {
-
-
-}
+    val status: String? = null,
+    val posts: List<Post>? = null
+) : Parcelable
