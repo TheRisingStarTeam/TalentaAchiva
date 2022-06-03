@@ -128,4 +128,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="banner">banner</string>
+    <string name="title_activity_organizer">OrganizerActivity</string>
 </resources>
