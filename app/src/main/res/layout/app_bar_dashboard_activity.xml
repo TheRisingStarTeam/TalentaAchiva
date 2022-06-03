@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
-        app:menu="@menu/dashboard_bottom_menu" />
+        app:menu="@menu/dashboard_bottom_menu"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

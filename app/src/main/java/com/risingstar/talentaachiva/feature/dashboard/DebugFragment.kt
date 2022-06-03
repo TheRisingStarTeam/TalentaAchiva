@@ -33,20 +33,20 @@ class DebugFragment : Fragment() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
 
-        binding.btnAllEv.setOnClickListener{
-            it.findNavController().navigate(R.id.debug_to_dashboard)
-        }
-        binding.btnSearch.setOnClickListener {
-            it.findNavController().navigate(R.id.debug_to_search)
-        }
-
-        binding.btnProfile.setOnClickListener {
-            it.findNavController().navigate(R.id.debug_to_profile)
-        }
-
-        binding.btnCreateEvent.setOnClickListener {
-            it.findNavController().navigate(R.id.debug_to_eventcreate)
-        }
+//        binding.btnAllEv.setOnClickListener{
+//            it.findNavController().navigate(R.id.debug_to_dashboard)
+//        }
+//        binding.btnSearch.setOnClickListener {
+//            it.findNavController().navigate(R.id.debug_to_search)
+//        }
+//
+//        binding.btnProfile.setOnClickListener {
+//            it.findNavController().navigate(R.id.debug_to_profile)
+//        }
+//
+//        binding.btnCreateEvent.setOnClickListener {
+//            it.findNavController().navigate(R.id.debug_to_eventcreate)
+//        }
 
         binding.btnLogout.setOnClickListener {
             viewmodel.logout()

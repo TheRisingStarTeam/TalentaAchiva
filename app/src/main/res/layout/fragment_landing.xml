@@ -12,10 +12,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imageViewLand"
             android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_height="0dp"
             android:layout_marginTop="128dp"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,19 +24,19 @@
 
         <Button
             android:id="@+id/buttonLoginMain"
-            android:layout_width="wrap_content"
+            style="@style/Button"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/Button"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintTop_toBottomOf="@+id/imageViewLand" />
 
         <Button
             android:id="@+id/btnRegisterMain"
             style="@style/Button"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Register"
