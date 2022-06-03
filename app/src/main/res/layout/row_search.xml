@@ -21,7 +21,7 @@
 
         <ImageView
             android:id="@+id/img_photo"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -36,38 +36,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/img_photo"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/img_photo"
-            app:srcCompat="@drawable/ic_computer_24" />
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            app:srcCompat="@drawable/ic_dashboard_black_24dp" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:ellipsize="end"
-            android:maxLines="2"
+            android:layout_marginTop="8dp"
             android:text="title"
-            android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/img_photo"
-            app:layout_constraintTop_toTopOf="@+id/img_photo"
-            app:layout_constraintVertical_bias="0.428" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/view"
-            android:layout_width="0dp"
+            android:layout_width="130dp"
             android:layout_height="2dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:background="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/ivOrg"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_photo" />
+            app:layout_constraintStart_toEndOf="@+id/img_photo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <TextView
             android:id="@+id/tv_search_organization"
@@ -85,9 +80,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/ivDate"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/img_photo"
+            app:layout_constraintTop_toBottomOf="@+id/view"
             app:srcCompat="@drawable/ic_account_24" />
 
         <ImageView
@@ -95,10 +90,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/view2"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/img_photo"
-            app:srcCompat="@drawable/ic_calendar_month_24" />
+            app:layout_constraintTop_toBottomOf="@+id/ivOrg"
+            app:srcCompat="@drawable/ic_calendar_24" />
 
         <TextView
             android:id="@+id/tv_search_date"
@@ -113,28 +108,26 @@
 
         <View
             android:id="@+id/view2"
-            android:layout_width="0dp"
+            android:layout_width="130dp"
             android:layout_height="2dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:background="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/imageView6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.354"
-            app:layout_constraintStart_toEndOf="@+id/img_photo" />
+            app:layout_constraintStart_toEndOf="@+id/img_photo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_search_date" />
 
         <Button
             android:id="@+id/buttonDetail"
 
-            style="@style/Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:paddingHorizontal="64dp"
+            style="@style/Button"
             android:text="Detail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_active" />
+            app:layout_constraintTop_toBottomOf="@+id/img_photo" />
 
         <TextView
             android:id="@+id/tv_active"
