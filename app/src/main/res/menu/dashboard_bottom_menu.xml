@@ -12,7 +12,7 @@
         android:title="Search" />
 
     <item
-        android:id="@+id/navigation_assignment"
+        android:id="@+id/navigation_allassignment"
         android:icon="@drawable/ic_assignment_24"
         android:title="Participant" />
 

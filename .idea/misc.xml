@@ -3,54 +3,77 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_assignment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_dashboard_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_debug_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_main_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_management.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_organizer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/activity_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/app_bar_dashboard_activity.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/app_bar_dashboard_activity_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/assignment_row.xml" value="0.203125" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/content_dashboard_activity.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/content_dashboard_activity_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/event_row.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_debug.xml" value="0.25" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_event_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_create_post.xml" value="0.33" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_current_participant.xml" value="0.1" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_detail_assignment.xml" value="0.25" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_event_detail.xml" value="0.33" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_event_stream.xml" value="0.25" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_event_stream_as_participant.xml" value="0.25" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_list_people.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_listassignment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_listassignment_as_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_post.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_post_as_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_reg_event.xml" value="0.14" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_search.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_fake_submission_post.xml" value="0.25" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_landing.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_list_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_register.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard.xml" value="0.20416666666666666" />
-        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/dashboard.xml" value="0.1" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard_activity.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard_activity_debug.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/post_row.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/dashboard.xml" value="0.22" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/dashboard_bottom_menu.xml" value="0.1" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/dashboard_drawer_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/management_bottom_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/organizer_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/participant_menu.xml" value="0.203125" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/gradient_background.xml" value="0.25" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/ic_menu_camera.xml" value="0.306" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.306" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_assignment.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_assignment_manager.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_main.xml" value="0.18" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_main_debug.xml" value="0.33" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_management.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_search.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/activity_submission_manager.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/app_bar_dashboard.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/app_bar_main.xml" value="0.30012825994014536" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/assignment_row.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/content_dashboard.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/content_navigation_drawer.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/event_row.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_fake_create_event.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_fake_post.xml" value="0.15433946130825138" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_gallery.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_landing.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_notification.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_slideshow.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard_activity.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/post_row.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/row_home.xml" value="0.3009833262077811" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/row_recommendation.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/menu/dashboard.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/menu/navigation_drawer.xml" value="0.3009833262077811" />
       </map>
     </option>
   </component>
