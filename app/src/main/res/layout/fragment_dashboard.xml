@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.dashboard.home.DashboardFragment"
+    tools:context=".feature.dashboard.DashboardFragment"
     android:id="@+id/fragmentDashboard">
 
     <androidx.constraintlayout.widget.ConstraintLayout

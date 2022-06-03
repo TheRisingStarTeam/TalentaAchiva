@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.dashboard.profile
+package com.risingstar.talentaachiva.feature.dashboard
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.FragmentFakeProfileBinding
 import com.risingstar.talentaachiva.domain.data.Identity
-import com.risingstar.talentaachiva.feature.dashboard.DebugVM
 import java.util.*
 
 class ProfileFragment : Fragment() {

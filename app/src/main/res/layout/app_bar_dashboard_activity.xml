@@ -23,6 +23,7 @@
     <include layout="@layout/content_dashboard_activity" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/dashboardBottomNav"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"

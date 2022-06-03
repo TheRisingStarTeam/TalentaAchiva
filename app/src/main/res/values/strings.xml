@@ -22,4 +22,7 @@
     <string name="menu_announcement">Announcement</string>
     <string name="title_activity_navigation_drawer">NavigationDrawer</string>
     <string name="title_activity_dashboard_debug">DashboardActivityDebug</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

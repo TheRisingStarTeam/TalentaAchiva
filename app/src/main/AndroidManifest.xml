@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
+            android:name=".DashboardDebugActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dashboard_debug" />
+        <activity
             android:name="com.risingstar.talentaachiva.feature.management.ManagementActivity"
             android:exported="false" />
         <activity

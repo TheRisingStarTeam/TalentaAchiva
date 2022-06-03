@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.dashboard.ecreate
+package com.risingstar.talentaachiva.feature.dashboard
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.FragmentFakeCreateEventBinding
 import com.risingstar.talentaachiva.domain.data.Event
-import com.risingstar.talentaachiva.feature.dashboard.DebugVM
 import java.util.*
 
 class CreateEventFragment : Fragment() {
