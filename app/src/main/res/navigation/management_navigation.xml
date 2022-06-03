@@ -17,7 +17,7 @@
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
-        android:id="@+id/assignmentsFragment"
+        android:id="@+id/navigation_assignments"
         android:name="com.risingstar.talentaachiva.feature.management.ui.assignment.AssignmentsFragment"
         android:label="fragment_assignments"
         tools:layout="@layout/fragment_assignments" />
