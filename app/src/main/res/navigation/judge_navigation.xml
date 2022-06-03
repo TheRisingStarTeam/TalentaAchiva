@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/judge_navigation"
+    app:startDestination="@id/navigation_criteria">
+
+    <fragment
+        android:id="@+id/navigation_criteria"
+        android:name="com.risingstar.talentaachiva.feature.judge.ui.criteria.CriteriaFragment"
+        android:label="fragment_criteria"
+        tools:layout="@layout/fragment_criteria" />
+    <fragment
+        android:id="@+id/navigation_grading"
+        android:name="com.risingstar.talentaachiva.feature.judge.ui.grading.GradingFragment"
+        android:label="fragment_grading"
+        tools:layout="@layout/fragment_grading" />
+    <fragment
+        android:id="@+id/submissionsFragment"
+        android:name="com.risingstar.talentaachiva.feature.judge.ui.submissions.SubmissionsFragment"
+        android:label="fragment_submissions"
+        tools:layout="@layout/fragment_submissions" />
+</navigation>

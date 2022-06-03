@@ -10,17 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
-            android:name=".DashboardDebugActivity"
+            android:name=".feature.participant.ParticipantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.judge.JudgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.detail.DetailActivity"
             android:exported="false"
-            android:label="@string/title_activity_dashboard_debug" />
+            android:label="@string/title_activity_detail"
+            android:theme="@style/Theme.TalentaAchiva.NoActionBar" />
         <activity
-            android:name="com.risingstar.talentaachiva.feature.management.ManagementActivity"
-            android:exported="false" />
+            android:name=".feature.management.ManagementActivity"
+            android:exported="false"
+            android:label="@string/title_activity_management" />
         <activity
-            android:name="com.risingstar.talentaachiva.feature.event.EventDetailActivity"
-            android:exported="false" />
+            android:name=".feature.dashboard.DashboardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.TalentaAchiva.NoActionBar" />
         <activity
-            android:name="com.risingstar.talentaachiva.feature.landing.MainActivity"
+            android:name=".feature.landing.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

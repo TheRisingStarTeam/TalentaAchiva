@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_people">
+
+    <fragment
+        android:id="@+id/navigation_people"
+        android:name="com.risingstar.talentaachiva.feature.management.ui.people.PeopleFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_people" />
+
+    <fragment
+        android:id="@+id/navigation_stream"
+        android:name="com.risingstar.talentaachiva.feature.management.ui.stream.StreamFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/assignmentsFragment"
+        android:name="com.risingstar.talentaachiva.feature.management.ui.assignment.AssignmentsFragment"
+        android:label="fragment_assignments"
+        tools:layout="@layout/fragment_assignments" />
+
+</navigation>
