@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_people"
+        android:icon="@drawable/ic_account_24"
+        android:title="@string/title_people" />
+
+    <item
+        android:id="@+id/navigation_stream"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_stream" />
+
+    <item
+        android:id="@+id/navigation_assignments"
+        android:icon="@drawable/ic_assignment_24"
+        android:title="@string/title_assignments" />
+
+</menu>
