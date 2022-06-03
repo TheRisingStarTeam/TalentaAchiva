@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
+            android:name=".OrganizerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_organizer"
+            android:theme="@style/Theme.TalentaAchiva.NoActionBar" />
+        <activity
             android:name=".feature.participant.ParticipantActivity"
             android:exported="false" />
         <activity
