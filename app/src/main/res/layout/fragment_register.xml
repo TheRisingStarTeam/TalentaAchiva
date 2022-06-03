@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/gradient_background"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:textColorHint="@color/black">
 
     <ImageView
@@ -29,8 +30,7 @@
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewReg"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/imageViewReg">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameEdit"
@@ -88,7 +88,9 @@
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:text="Register"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

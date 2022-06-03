@@ -9,6 +9,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string name="tab_text_1">Event Detail</string>
+    <string name="tab_text_2">Rules</string>
+    <string name="tab_text_3">Participants</string>
+
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -35,8 +40,6 @@
     <string name="title_stream">Stream</string>
     <string name="title_assignments">Assignments</string>
     <string name="title_activity_assignment">AssignmentActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
