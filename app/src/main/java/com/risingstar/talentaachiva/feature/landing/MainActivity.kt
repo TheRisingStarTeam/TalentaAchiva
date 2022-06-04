@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.risingstar.talentaachiva.databinding.ActivityMainBinding
 import com.risingstar.talentaachiva.feature.dashboard.DashboardActivity
+import com.risingstar.talentaachiva.feature.dashboard.DashboardActivity.Companion.CURRENT_USER_ID
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         viewmodel.currentUser().observe(this) {
             if (it != null) {
                 val intent = Intent(this, DashboardActivity::class.java)
+                intent.putExtra(CURRENT_USER_ID,it.uid)
                 startActivity(intent)
             }
         }

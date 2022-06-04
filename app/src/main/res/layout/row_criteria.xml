@@ -1,62 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:cards="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cards"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginBottom="4dp"
-    cards:cardCornerRadius="4dp">
+    android:layout_margin="16dp"
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
-
-
-        <ImageView
-            android:id="@+id/img_assignment"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="row_assignments"
-            cards:layout_constraintBottom_toBottomOf="parent"
-            cards:layout_constraintStart_toStartOf="parent"
-            cards:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_check_box_24" />
-
-
-        <TextView
-            android:id="@+id/tv_criteria"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            cards:layout_constraintBottom_toBottomOf="@+id/img_assignment"
-            cards:layout_constraintEnd_toStartOf="@+id/editTextNumber"
-            cards:layout_constraintStart_toEndOf="@+id/img_assignment"
-            cards:layout_constraintTop_toTopOf="@+id/img_assignment"
-            tools:text="title" />
+        android:padding="16dp">
 
         <EditText
-            android:id="@+id/editTextNumber"
-            android:layout_width="75dp"
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:autofillHints="30"
+            android:hint="30"
             android:inputType="number"
-            android:minHeight="48dp"
-            cards:layout_constraintBottom_toBottomOf="parent"
-            cards:layout_constraintEnd_toEndOf="parent"
-            cards:layout_constraintTop_toTopOf="parent" />
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView13" />
 
-
+        <EditText
+            android:id="@+id/textView13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="Criteria Name"
+            android:hint="Criteria Name"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.cardview.widget.CardView>
