@@ -11,16 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="400dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
         <SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
@@ -51,10 +41,9 @@
                 android:layout_gravity="center_horizontal"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/row_home"
                 android:padding="16dp"
-                />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_home" />
 
         </LinearLayout>
 
@@ -63,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:text="Recommendation"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp"
@@ -99,12 +88,52 @@
                 android:layout_gravity="center_horizontal"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/row_home"
                 android:padding="16dp"
-                />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_home" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView4"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="@+id/imageView10"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            tools:srcCompat="@tools:sample/avatars" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
