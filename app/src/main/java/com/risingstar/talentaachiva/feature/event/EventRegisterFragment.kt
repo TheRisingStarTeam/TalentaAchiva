@@ -44,4 +44,6 @@ class EventRegisterFragment : Fragment() {
 
         return binding.root
     }
+
+    //Todo: Pindahin btnRegEvent ke Detail Activity
 }
