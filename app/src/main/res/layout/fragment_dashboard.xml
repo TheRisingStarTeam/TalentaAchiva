@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/searchview_shape"
+            android:background="@drawable/shape_searchview"
             android:iconifiedByDefault="false"
             android:queryHint="search"
             app:layout_constraintEnd_toEndOf="parent"
