@@ -22,12 +22,12 @@ class CreatePostFragment : Fragment() {
         viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
         binding = FragmentFakeCreatePostBinding.inflate(layoutInflater,container,false)
 
-        binding.button5.setOnClickListener {
+        binding.buttonSubmitPostMan.setOnClickListener {
             val post = viewmodel.currentUser?.let { user ->
                 Post(
                     null,
-                    binding.textView.text.toString(),
-                    binding.etContent.text.toString(),
+                    binding.tvUsernamePostMan.text.toString(),
+                    binding.editDescriptionPostMan.text.toString(),
                     user.uid
                 )
             }
