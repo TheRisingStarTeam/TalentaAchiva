@@ -20,5 +20,6 @@ data class Event(
     var date : Date? = null,
     val organization: String? = null,
     val status: String? = null,
-    val posts: List<Post>? = null
+    val posts: List<Post>? = null,
+    val assignments: List<Assignment>? = null
 ) : Parcelable

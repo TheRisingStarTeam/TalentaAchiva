@@ -17,8 +17,8 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/row_submissions"/>
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/row_submissions" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>
