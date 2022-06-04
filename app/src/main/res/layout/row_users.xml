@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cards="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cards"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp"
+    cards:cardCornerRadius="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            cards:cardCornerRadius="250dp"
+            cards:layout_constraintBottom_toBottomOf="parent"
+            cards:layout_constraintStart_toStartOf="parent"
+            cards:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="row_user"
+                cards:layout_constraintBottom_toBottomOf="parent"
+                cards:layout_constraintStart_toStartOf="parent"
+                cards:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tv_title_assignment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            cards:layout_constraintEnd_toEndOf="parent"
+            cards:layout_constraintStart_toEndOf="@+id/cardView2"
+            cards:layout_constraintTop_toTopOf="@+id/cardView2"
+            tools:text="username" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
