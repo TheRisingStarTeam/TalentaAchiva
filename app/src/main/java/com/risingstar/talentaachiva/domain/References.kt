@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.domain.data
+package com.risingstar.talentaachiva.domain
 
 /**
  * FOR THE SAKE OF OUR SANITY, PLEASE USE THIS INSTEAD OF LITERAL STRING!!!

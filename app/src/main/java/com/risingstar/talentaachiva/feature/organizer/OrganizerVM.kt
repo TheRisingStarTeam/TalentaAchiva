@@ -8,8 +8,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Event
-import com.risingstar.talentaachiva.domain.data.References.EVENT
-import com.risingstar.talentaachiva.domain.data.References.EVENT_ORGANIZER
+import com.risingstar.talentaachiva.domain.References.EVENT
+import com.risingstar.talentaachiva.domain.References.EVENT_ORGANIZER
 
 class OrganizerVM(val userID: String) : ViewModel(){
     private val db = Firebase.firestore

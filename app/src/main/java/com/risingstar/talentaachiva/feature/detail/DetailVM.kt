@@ -9,10 +9,10 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Event
-import com.risingstar.talentaachiva.domain.data.References.EVENT
-import com.risingstar.talentaachiva.domain.data.References.EVENT_PARTICIPANT
-import com.risingstar.talentaachiva.domain.data.References.USER
-import com.risingstar.talentaachiva.domain.data.References.USER_HISTORY
+import com.risingstar.talentaachiva.domain.References.EVENT
+import com.risingstar.talentaachiva.domain.References.EVENT_PARTICIPANT
+import com.risingstar.talentaachiva.domain.References.USER
+import com.risingstar.talentaachiva.domain.References.USER_HISTORY
 
 class DetailVM(val userId: String, val eventId: String) : ViewModel() {
     private val db = Firebase.firestore
