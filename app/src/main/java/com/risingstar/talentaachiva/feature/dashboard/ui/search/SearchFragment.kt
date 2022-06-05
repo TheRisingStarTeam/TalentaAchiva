@@ -10,6 +10,7 @@ import com.risingstar.talentaachiva.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
     private lateinit var binding : FragmentSearchBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,

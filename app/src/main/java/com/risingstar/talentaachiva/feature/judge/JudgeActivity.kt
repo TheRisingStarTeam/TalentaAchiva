@@ -15,4 +15,10 @@ class JudgeActivity : AppCompatActivity() {
 
         setContentView(binding.root)
     }
+
+    companion object{
+        const val CURRENT_USER_ID = "Fish"
+        const val CURRENT_ASSIGNMENT_ID = "Fwish"
+        const val CURRENT_EVENT_ID = "Fishing"
+    }
 }

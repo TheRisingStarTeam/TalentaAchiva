@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.FragmentFakeCreatePostBinding
-import com.risingstar.talentaachiva.domain.data.Post
 
 class CreatePostFragment : Fragment() {
 
@@ -22,19 +21,19 @@ class CreatePostFragment : Fragment() {
         viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
         binding = FragmentFakeCreatePostBinding.inflate(layoutInflater,container,false)
 
-        binding.buttonSubmitPostMan.setOnClickListener {
-            val post = viewmodel.currentUser?.let { user ->
-                Post(
-                    null,
-                    binding.tvUsernamePostMan.text.toString(),
-                    binding.editDescriptionPostMan.text.toString(),
-                    user.uid
-                )
-            }
-            if (post != null) {
-                viewmodel.createPost(post)
-            }
-        }
+//        binding.buttonSubmitPostMan.setOnClickListener {
+//            val post = viewmodel.currentUser?.let { user ->
+//                Post(
+//                    null,
+//                    binding.tvUsernamePostMan.text.toString(),
+//                    binding.editDescriptionPostMan.text.toString(),
+//                    user.uid
+//                )
+//            }
+//            if (post != null) {
+//                viewmodel.createPost(post)
+//            }
+//        }
 
         return binding.root
     }

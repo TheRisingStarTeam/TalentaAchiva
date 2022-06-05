@@ -2,11 +2,11 @@ package com.risingstar.talentaachiva.feature.organizer
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.material.snackbar.Snackbar
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityOrganizerBinding
 
@@ -14,9 +14,14 @@ class OrganizerActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityOrganizerBinding
+    private lateinit var viewmodel: OrganizerVM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewmodel = ViewModelProvider(
+            this,OrganizerFactory(CURRENT_USER_ID)
+        )[OrganizerVM::class.java]
 
         binding = ActivityOrganizerBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -28,8 +33,7 @@ class OrganizerActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            TODO("Go to create event page")
         }
     }
 
@@ -37,5 +41,9 @@ class OrganizerActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_organizer)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    companion object {
+        const val CURRENT_USER_ID = "Fish"
     }
 }

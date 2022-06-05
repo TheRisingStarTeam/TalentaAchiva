@@ -9,5 +9,4 @@ data class Post(
     val title:String? = null,
     val content: String? = null,
     val author: String? = null
-):
-    Parcelable
+): Parcelable
