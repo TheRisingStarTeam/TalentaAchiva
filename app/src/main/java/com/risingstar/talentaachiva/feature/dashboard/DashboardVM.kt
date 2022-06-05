@@ -16,6 +16,7 @@ class DashboardVM(val userID: String) : ViewModel(){
 
     init{
         getEvents()
+        getAssignments()
     }
 
     private val _allEvents = MutableLiveData<List<Event>?>()
