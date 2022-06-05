@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 
 class JudgeVM(userId: String, eventId: String, assignmentId: String) : ViewModel() {
 
-    
+
 
 }
 
