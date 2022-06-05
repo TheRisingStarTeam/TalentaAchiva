@@ -8,8 +8,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
-import com.risingstar.talentaachiva.domain.data.References.ASSIGNMENT
-import com.risingstar.talentaachiva.domain.data.References.SUBMISSION
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
+import com.risingstar.talentaachiva.domain.References.SUBMISSION
 import com.risingstar.talentaachiva.domain.data.Submissions
 
 class ParticipantVM(private val assignmentId: String) : ViewModel() {

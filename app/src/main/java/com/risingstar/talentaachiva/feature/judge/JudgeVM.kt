@@ -9,10 +9,10 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
-import com.risingstar.talentaachiva.domain.data.References.ASSIGNMENT
-import com.risingstar.talentaachiva.domain.data.References.ASSIGNMENT_ID
-import com.risingstar.talentaachiva.domain.data.References.SUBMISSION
-import com.risingstar.talentaachiva.domain.data.References.SUBMISSION_SCORE
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT_ID
+import com.risingstar.talentaachiva.domain.References.SUBMISSION
+import com.risingstar.talentaachiva.domain.References.SUBMISSION_SCORE
 import com.risingstar.talentaachiva.domain.data.Score
 import com.risingstar.talentaachiva.domain.data.Submissions
 

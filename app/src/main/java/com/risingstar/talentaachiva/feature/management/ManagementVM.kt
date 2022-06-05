@@ -12,12 +12,12 @@ import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Identity
 import com.risingstar.talentaachiva.domain.data.Post
-import com.risingstar.talentaachiva.domain.data.References.ASSIGNMENT
-import com.risingstar.talentaachiva.domain.data.References.EVENT
-import com.risingstar.talentaachiva.domain.data.References.EVENT_ID
-import com.risingstar.talentaachiva.domain.data.References.POST
-import com.risingstar.talentaachiva.domain.data.References.USER
-import com.risingstar.talentaachiva.domain.data.References.USER_ID
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
+import com.risingstar.talentaachiva.domain.References.EVENT
+import com.risingstar.talentaachiva.domain.References.EVENT_ID
+import com.risingstar.talentaachiva.domain.References.POST
+import com.risingstar.talentaachiva.domain.References.USER
+import com.risingstar.talentaachiva.domain.References.USER_ID
 
 class ManagementVM(userId: String, val eventId: String) : ViewModel() {
 
