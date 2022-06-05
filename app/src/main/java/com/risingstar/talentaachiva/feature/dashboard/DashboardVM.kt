@@ -9,10 +9,11 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
+import com.risingstar.talentaachiva.domain.data.References.EVENT
 
 class DashboardVM(val userID: String) : ViewModel(){
     private val db = Firebase.firestore
-    private val eventRef = db.collection("events")
+    private val eventRef = db.collection(EVENT)
 
     init{
         getEvents()
@@ -48,7 +49,7 @@ class DashboardVM(val userID: String) : ViewModel(){
             }
     }
 
-    fun getAssignments(){
+    private fun getAssignments(){
         var events : List<Event>
         val assignments: MutableList<Assignment>? = null
         eventRef.whereArrayContains("participants",userID)

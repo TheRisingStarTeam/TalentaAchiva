@@ -9,13 +9,17 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
+import com.risingstar.talentaachiva.domain.data.References.ASSIGNMENT
+import com.risingstar.talentaachiva.domain.data.References.ASSIGNMENT_ID
+import com.risingstar.talentaachiva.domain.data.References.SUBMISSION
+import com.risingstar.talentaachiva.domain.data.References.SUBMISSION_SCORE
 import com.risingstar.talentaachiva.domain.data.Score
 import com.risingstar.talentaachiva.domain.data.Submissions
 
 class JudgeVM(val userId: String, val eventId: String, val assignmentId: String) : ViewModel() {
     private val db = Firebase.firestore
-    private val assignmentRef = db.collection("assignments")
-    private val submissionRef = db.collection("submissions")
+    private val assignmentRef = db.collection(ASSIGNMENT)
+    private val submissionRef = db.collection(SUBMISSION)
 
     init{
         getAssignment()
@@ -40,7 +44,7 @@ class JudgeVM(val userId: String, val eventId: String, val assignmentId: String)
     }
 
     private fun getSubmission(){
-        submissionRef.whereEqualTo("assignmentId",assignmentId)
+        submissionRef.whereEqualTo(ASSIGNMENT_ID,assignmentId)
             .get().addOnCompleteListener { task ->
                 if(task.isSuccessful){
                     _submissions.value = task.result.map{it.toObject()}
@@ -49,7 +53,7 @@ class JudgeVM(val userId: String, val eventId: String, val assignmentId: String)
     }
 
     private fun gradeSubmission(submissionId : String, score:Score){
-        submissionRef.document(submissionId).update("score",FieldValue.arrayUnion(score))
+        submissionRef.document(submissionId).update(SUBMISSION_SCORE,FieldValue.arrayUnion(score))
     }
 
 
