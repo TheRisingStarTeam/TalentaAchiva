@@ -1,85 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".feature.organizer.CreateEventFragment">
+    android:layout_height="match_parent">
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <EditText
-            android:id="@+id/titleEt"
+
+        <TextView
+            android:id="@+id/tvAchievementTop"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Event Title"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_detail"
+            android:gravity="center"
+            android:padding='8dp'
+            android:text="Achievement"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/descriptionEt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Event Description"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/titleEt"
-            app:layout_constraintStart_toStartOf="@+id/titleEt"
-            app:layout_constraintTop_toBottomOf="@+id/titleEt" />
-
-        <EditText
-            android:id="@+id/CategoryEt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Event Category"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/descriptionEt"
-            app:layout_constraintStart_toStartOf="@+id/descriptionEt"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionEt" />
 
         <TextView
-            android:id="@+id/etDate"
+            android:id="@+id/tvAchievementCount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:hint="Event Start"
-            android:inputType="text"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toStartOf="@+id/datePick"
-            app:layout_constraintStart_toStartOf="@+id/CategoryEt"
-            app:layout_constraintTop_toBottomOf="@+id/CategoryEt" />
+            android:padding='8dp'
+            android:text="0"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvAchievementTop"
+            app:layout_constraintStart_toStartOf="@+id/tvAchievementTop"
+            app:layout_constraintTop_toBottomOf="@+id/tvAchievementTop" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvHistory"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Upload"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/shape_detail"
+            android:gravity="center"
+            android:padding='8dp'
+            android:text="History"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etDate" />
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHistoryCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding='8dp'
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvHistory"
+            app:layout_constraintStart_toStartOf="@+id/tvHistory"
+            app:layout_constraintTop_toBottomOf="@+id/tvHistory" />
+
+
+
+
 
         <ImageView
-            android:id="@+id/datePick"
+            android:id="@+id/dateTako"
             android:layout_width="50dp"
             android:layout_height="0dp"
             android:src="@drawable/placholdertako"
             app:layout_constraintBottom_toBottomOf="@+id/etDate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/etDate" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHistoryCount" />
+
+        <EditText
+            android:id="@+id/editAbout"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Tell Us About You"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+        <EditText
+            android:id="@+id/etInterest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Interest"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAbout" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Update"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDate" />
+
+        <TextView
+            android:id="@+id/etDate"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Date of Birth"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toStartOf="@+id/dateTako"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInterest" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

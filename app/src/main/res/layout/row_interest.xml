@@ -19,15 +19,11 @@
 
         <TextView
             android:id="@+id/tvInterest"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="#interest"
-            android:ellipsize="marquee"
-            android:gravity="center"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
