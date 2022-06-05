@@ -6,18 +6,26 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Identity
 import com.risingstar.talentaachiva.domain.data.Post
+import com.risingstar.talentaachiva.domain.data.References.ASSIGNMENT
+import com.risingstar.talentaachiva.domain.data.References.EVENT
+import com.risingstar.talentaachiva.domain.data.References.EVENT_ID
+import com.risingstar.talentaachiva.domain.data.References.POST
+import com.risingstar.talentaachiva.domain.data.References.USER
+import com.risingstar.talentaachiva.domain.data.References.USER_ID
 
-class ManagementVM(userId: String, eventId: String) : ViewModel() {
+class ManagementVM(userId: String, val eventId: String) : ViewModel() {
 
     private val db = Firebase.firestore
-    private val thisEvent = db.collection("events").document(eventId)
-    private val postsRef = thisEvent.collection("posts")
-    private val userRef = db.collection("identities")
+    private val thisEvent = db.collection(EVENT).document(eventId)
+    private val postsRef = thisEvent.collection(POST)
+    private val userRef = db.collection(USER)
+    private val assignmentsRef = db.collection(ASSIGNMENT)
 
     init{
         getAllPost()
@@ -54,11 +62,9 @@ class ManagementVM(userId: String, eventId: String) : ViewModel() {
 
     private fun getAssignments(){
         var event: Event
-        thisEvent.get().addOnCompleteListener {
+        assignmentsRef.whereEqualTo(EVENT_ID,eventId).get().addOnCompleteListener {
             if(it.isSuccessful) {
-                event = it.result.toObject()!!
-                _event.value = event
-                _assignments.value = event.assignments
+                _assignments.value = it.result.toObjects()
             }
         }
     }
@@ -68,7 +74,7 @@ class ManagementVM(userId: String, eventId: String) : ViewModel() {
         _event.value?.participants?.let { people.addAll(it) }
         _event.value?.organizers?.let { people.addAll(it) }
 
-        userRef.whereIn("userId",people).get().addOnCompleteListener { task ->
+        userRef.whereIn(USER_ID,people).get().addOnCompleteListener { task ->
             if(task.isSuccessful){
                 _people.value = task.result.map { it.toObject() }
             }

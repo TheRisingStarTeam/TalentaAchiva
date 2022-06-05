@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentDashboardBinding
 import com.risingstar.talentaachiva.domain.data.Event
@@ -31,6 +32,7 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity()).get(DashboardVM::class.java)
         rvEvents = binding.rvEvent
+        rvEvents.layoutManager = LinearLayoutManager(this.context)
         rvEvents.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,false)
 
         viewmodel.allEvents().observe(viewLifecycleOwner){

@@ -8,10 +8,12 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.data.Event
+import com.risingstar.talentaachiva.domain.data.References.EVENT
+import com.risingstar.talentaachiva.domain.data.References.EVENT_ORGANIZER
 
 class OrganizerVM(val userID: String) : ViewModel(){
     private val db = Firebase.firestore
-    private val eventRef = db.collection("events")
+    private val eventRef = db.collection(EVENT)
 
     init{
         getOrganizedEvents()
@@ -23,7 +25,7 @@ class OrganizerVM(val userID: String) : ViewModel(){
     }
 
     private fun getOrganizedEvents() {
-        eventRef.whereArrayContains("organizers",userID).get()
+        eventRef.whereArrayContains(EVENT_ORGANIZER,userID).get()
             .addOnSuccessListener { result->
             _organizedEvents.value = result.map { it.toObject() }
         }
