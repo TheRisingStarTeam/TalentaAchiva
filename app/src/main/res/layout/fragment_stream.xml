@@ -31,6 +31,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardShare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -51,7 +52,7 @@
                         app:srcCompat="@drawable/placholdertako" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tvPostTitle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -64,6 +65,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPosts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/row_post" />

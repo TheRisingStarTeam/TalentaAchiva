@@ -1,4 +1,4 @@
-package com.risingstar.talentaachiva.feature.dashboard.ui
+package com.risingstar.talentaachiva.feature.util
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -14,6 +14,10 @@ class DashboardVM(val userID: String) : ViewModel(){
     private val db = Firebase.firestore
     private val eventRef = db.collection("events")
 
+    init{
+        getEvents()
+    }
+
     private val _allEvents = MutableLiveData<List<Event>?>()
     fun allEvents() : LiveData<List<Event>?> {
         return _allEvents

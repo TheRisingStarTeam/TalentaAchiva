@@ -5,11 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentPeopleBinding
+import com.risingstar.talentaachiva.feature.management.ManagementVM
+import com.risingstar.talentaachiva.feature.util.PeopleAdapter
 
 class PeopleFragment : Fragment() {
 
+    private lateinit var viewmodel : ManagementVM
     private var _binding: FragmentPeopleBinding? = null
+    private lateinit var rvParticipant: RecyclerView
+    private lateinit var rvOrganizer : RecyclerView
+    private lateinit var rvParticipantAdapter: PeopleAdapter
+    private lateinit var rvOrganizerAdapter:PeopleAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,11 +29,17 @@ class PeopleFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-
+        viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
         _binding = FragmentPeopleBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        return root
+        rvParticipant = binding.rvParticipant
+        rvOrganizer = binding.rvOrganizer
+        viewmodel.people().observe(viewLifecycleOwner){ people ->
+            TODO("Show People List in an Organized Order")
+        }
+
+
+        return binding.root
     }
 
     override fun onDestroyView() {

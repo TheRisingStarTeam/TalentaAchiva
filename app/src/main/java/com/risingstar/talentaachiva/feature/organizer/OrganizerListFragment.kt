@@ -5,7 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentOrganizerListBinding
+import com.risingstar.talentaachiva.domain.data.Event
+import com.risingstar.talentaachiva.feature.util.SearchAdapter
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -13,6 +17,9 @@ import com.risingstar.talentaachiva.databinding.FragmentOrganizerListBinding
 class OrganizerListFragment : Fragment() {
 
     private var _binding: FragmentOrganizerListBinding? = null
+    private lateinit var viewmodel:OrganizerVM
+    private lateinit var rvEvents: RecyclerView
+    private lateinit var rvAdapter: SearchAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,6 +29,12 @@ class OrganizerListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
+        viewmodel = ViewModelProvider(requireActivity()).get(OrganizerVM::class.java)
+        rvEvents = binding.rvEvents
+        viewmodel.organizedEvents().observe(viewLifecycleOwner){
+            rvAdapter = SearchAdapter(it as ArrayList<Event>)
+            rvEvents.adapter = rvAdapter
+        }
 
         _binding = FragmentOrganizerListBinding.inflate(inflater, container, false)
         return binding.root

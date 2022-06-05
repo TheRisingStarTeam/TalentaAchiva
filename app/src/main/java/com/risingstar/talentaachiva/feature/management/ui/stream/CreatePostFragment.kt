@@ -5,18 +5,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.risingstar.talentaachiva.R
+import androidx.lifecycle.ViewModelProvider
+import com.risingstar.talentaachiva.databinding.FragmentCreatePostBinding
+import com.risingstar.talentaachiva.feature.management.ManagementVM
 
 
 class CreatePostFragment : Fragment() {
 
+    private lateinit var binding : FragmentCreatePostBinding
+    private lateinit var viewmodel : ManagementVM
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_post, container, false)
+    ): View {
+
+        viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
+
+        binding.buttonSubmitPostMan.setOnClickListener{
+            //TODO viewmodel.createPost()
+        }
+
+        binding = FragmentCreatePostBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 
