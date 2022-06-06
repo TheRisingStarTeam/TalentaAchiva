@@ -7,12 +7,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
 import com.risingstar.talentaachiva.domain.References.SUBMISSION
+import com.risingstar.talentaachiva.domain.References.SUBMISSION_ID
+import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Submissions
 
-class ParticipantVM(private val assignmentId: String) : ViewModel() {
+class ParticipantVM(val assignmentId: String, val userId:String) : ViewModel() {
     private val db = Firebase.firestore
     private val assignmentRef = db.collection(ASSIGNMENT)
     private val submissionRef = db.collection(SUBMISSION)
@@ -20,6 +21,10 @@ class ParticipantVM(private val assignmentId: String) : ViewModel() {
     private val _assignment = MutableLiveData<Assignment?>()
     fun assignment() : LiveData<Assignment?> {
         return _assignment
+    }
+
+    init {
+        getAssignment()
     }
 
     private fun getAssignment(){
@@ -30,20 +35,24 @@ class ParticipantVM(private val assignmentId: String) : ViewModel() {
         }
     }
 
-    private fun submitSubmission(submission:Submissions){
-        submissionRef.add(submission)
+    fun submitSubmission(submission:Submissions){
+        submissionRef.add(submission).addOnCompleteListener {
+            if(it.isSuccessful)
+                submissionRef.document(it.result.id).update(SUBMISSION_ID,it.result.id)
+        }
     }
 
 }
 
 class ParticipantFactory(
-    private val assignmentId:String
+    private val assignmentId:String,
+    private val userId: String
 ): ViewModelProvider.Factory
 {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ParticipantVM::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return ParticipantVM(assignmentId) as T
+            return ParticipantVM(assignmentId, userId) as T
         }
         throw IllegalArgumentException()
     }

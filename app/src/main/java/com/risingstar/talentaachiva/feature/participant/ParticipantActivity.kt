@@ -13,12 +13,14 @@ class ParticipantActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val assignment = intent.getStringExtra(CURRENT_ASSIGNMENT_ID)
-        if(assignment!=null)
+        val user = intent.getStringExtra(CURRENT_USER)
+        if(assignment!=null&&user!=null)
             viewmodel = ViewModelProvider(
-                this,ParticipantFactory(assignment)
+                this,ParticipantFactory(assignment,user)
             )[ParticipantVM::class.java]
 
         binding = ActivityParticipantBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
     }
 
