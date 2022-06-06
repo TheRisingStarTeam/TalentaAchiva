@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentSubmissionsBinding
 import com.risingstar.talentaachiva.domain.data.Submissions
@@ -27,6 +28,7 @@ class SubmissionsFragment : Fragment() {
         viewmodel = ViewModelProvider(requireActivity()).get(JudgeVM::class.java)
 
         rvSubmission = binding.rvSubmission
+        rvSubmission.layoutManager = LinearLayoutManager(this.context)
 
         viewmodel.submission().observe(viewLifecycleOwner){
             if(it!=null){

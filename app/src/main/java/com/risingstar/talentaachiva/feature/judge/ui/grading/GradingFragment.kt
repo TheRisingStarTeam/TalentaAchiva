@@ -19,9 +19,8 @@ class GradingFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         viewmodel = ViewModelProvider(requireActivity()).get(JudgeVM::class.java)
-
-
         binding = FragmentGradingBinding.inflate(layoutInflater,container,false)
+
         return binding.root
     }
 

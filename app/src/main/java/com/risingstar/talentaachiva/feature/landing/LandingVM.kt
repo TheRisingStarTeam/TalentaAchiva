@@ -9,13 +9,19 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.risingstar.talentaachiva.domain.References
+import com.risingstar.talentaachiva.domain.data.Identity
 
 class LandingVM : ViewModel() {
 
     private val mAuth = FirebaseAuth.getInstance()
+    private val db = Firebase.firestore
+    private val userRef = db.collection(References.USER)
 
-    private val _currentUser = MutableLiveData<FirebaseUser>()
-    fun currentUser() : LiveData<FirebaseUser> {
+    private val _currentUser = MutableLiveData<FirebaseUser?>()
+    fun currentUser() : LiveData<FirebaseUser?> {
         return _currentUser
     }
 
@@ -26,19 +32,42 @@ class LandingVM : ViewModel() {
     fun register(email:String, password: String){
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
-                _currentUser.value = task.result.user
+                if(task.isSuccessful) {
+                    initUser(task.result.user)
+                }
             }
     }
 
-     fun login(email: String, password: String){
+    private fun initUser(user: FirebaseUser?) {
+        val identity = Identity(
+            userId = user?.uid,
+            name = null,
+            null,
+            null,
+            user?.email,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+        )
+        userRef.document(identity.userId.toString()).set(identity).addOnCompleteListener {
+            _currentUser.value = user
+        }
+
+    }
+
+    fun login(email: String, password: String){
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if(task.result != null)
-                _currentUser.value = task.result.user
+                    _currentUser.value = task.result.user
+
             }
     }
 
-    fun firebaseAuthWithGoogle(idToken: String) {
+    private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener { task ->

@@ -11,12 +11,19 @@ class ParticipantActivity : AppCompatActivity() {
     private lateinit var viewmodel : ParticipantVM
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewmodel = ViewModelProvider(this,ParticipantFactory(CURRENT_ASSIGNMENT_ID)).get(ParticipantVM::class.java)
+
+        val assignment = intent.getStringExtra(CURRENT_ASSIGNMENT_ID)
+        if(assignment!=null)
+            viewmodel = ViewModelProvider(
+                this,ParticipantFactory(assignment)
+            )[ParticipantVM::class.java]
+
         binding = ActivityParticipantBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
     companion object{
         const val CURRENT_ASSIGNMENT_ID = "FISH!"
+        const val CURRENT_USER = "User"
     }
 }

@@ -19,9 +19,11 @@ class OrganizerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewmodel = ViewModelProvider(
-            this,OrganizerFactory(CURRENT_USER_ID)
-        )[OrganizerVM::class.java]
+        val username = intent.getStringExtra(CURRENT_USER_ID)
+        if(username!=null)
+            viewmodel = ViewModelProvider(
+                this,OrganizerFactory(username)
+            )[OrganizerVM::class.java]
 
         binding = ActivityOrganizerBinding.inflate(layoutInflater)
         setContentView(binding.root)
