@@ -19,6 +19,8 @@ class PostFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
+        binding.tvTitlePost.text = viewmodel.currentPost.title
+        binding.tvDescPost.text = viewmodel.currentPost.content
 
         binding = FragmentPostBinding.inflate(inflater, container, false)
         return binding.root

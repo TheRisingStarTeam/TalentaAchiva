@@ -45,4 +45,5 @@ class StreamFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

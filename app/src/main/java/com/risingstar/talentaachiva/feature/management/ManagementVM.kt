@@ -8,24 +8,27 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
-import com.risingstar.talentaachiva.domain.data.Assignment
-import com.risingstar.talentaachiva.domain.data.Event
-import com.risingstar.talentaachiva.domain.data.Identity
-import com.risingstar.talentaachiva.domain.data.Post
 import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
 import com.risingstar.talentaachiva.domain.References.EVENT
 import com.risingstar.talentaachiva.domain.References.EVENT_ID
 import com.risingstar.talentaachiva.domain.References.POST
 import com.risingstar.talentaachiva.domain.References.USER
 import com.risingstar.talentaachiva.domain.References.USER_ID
+import com.risingstar.talentaachiva.domain.data.Assignment
+import com.risingstar.talentaachiva.domain.data.Event
+import com.risingstar.talentaachiva.domain.data.Identity
+import com.risingstar.talentaachiva.domain.data.Post
 
-class ManagementVM(userId: String, val eventId: String) : ViewModel() {
+class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
 
     private val db = Firebase.firestore
     private val thisEvent = db.collection(EVENT).document(eventId)
     private val postsRef = thisEvent.collection(POST)
     private val userRef = db.collection(USER)
     private val assignmentsRef = db.collection(ASSIGNMENT)
+
+    lateinit var currentPost : Post
+    lateinit var currentEvent: Event
 
     init{
         getAllPost()
@@ -71,7 +74,7 @@ class ManagementVM(userId: String, val eventId: String) : ViewModel() {
 
     private fun getParticipants(){
         val people = mutableListOf<String>()
-        _event.value?.participants?.let { people.addAll(it) }
+        //_event.value?.participants?.let { people.addAll(it) }
         _event.value?.organizers?.let { people.addAll(it) }
 
         userRef.whereIn(USER_ID,people).get().addOnCompleteListener { task ->
@@ -82,6 +85,7 @@ class ManagementVM(userId: String, val eventId: String) : ViewModel() {
     }
 
     fun createPost(post:Post){
+        post.author = userId
         postsRef.add(post)
     }
 

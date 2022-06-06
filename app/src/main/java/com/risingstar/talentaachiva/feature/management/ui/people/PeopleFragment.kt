@@ -34,8 +34,11 @@ class PeopleFragment : Fragment() {
 
         rvParticipant = binding.rvParticipant
         rvOrganizer = binding.rvOrganizer
+
+
+
         viewmodel.people().observe(viewLifecycleOwner){ people ->
-            TODO("Show People List in an Organized Order")
+
         }
 
 

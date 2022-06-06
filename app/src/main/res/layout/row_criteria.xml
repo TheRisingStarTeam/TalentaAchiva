@@ -13,19 +13,20 @@
         android:padding="16dp">
 
         <EditText
-            android:id="@+id/textView12"
+            android:id="@+id/tvCritNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autofillHints="30"
             android:hint="30"
             android:inputType="number"
+            android:minWidth="48dp"
             android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCritName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView13" />
+            app:layout_constraintTop_toTopOf="@+id/tvCritName" />
 
         <EditText
-            android:id="@+id/textView13"
+            android:id="@+id/tvCritName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:autofillHints="Criteria Name"
@@ -33,7 +34,7 @@
             android:inputType="textPersonName"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView12"
+            app:layout_constraintEnd_toStartOf="@+id/tvCritNum"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

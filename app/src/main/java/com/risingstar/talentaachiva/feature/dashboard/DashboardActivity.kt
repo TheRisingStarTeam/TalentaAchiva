@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityDashboardBinding
+import com.risingstar.talentaachiva.feature.detail.DetailActivity
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -18,13 +19,17 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val username = intent.getStringExtra(DetailActivity.CURRENT_USER)
 
-        viewmodel = ViewModelProvider(this,DashboardFactory(CURRENT_USER_ID))[DashboardVM::class.java]
+        viewmodel = ViewModelProvider(this,DashboardFactory(username!!))[DashboardVM::class.java]
         binding = ActivityDashboardBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
+
 
         val navView: BottomNavigationView = binding.navView
 
+
+        setContentView(binding.root)
         val navController = findNavController(R.id.nav_host_fragment_activity_dashboard)
 
         val appBarConfiguration = AppBarConfiguration(setOf(
