@@ -61,7 +61,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/appBarLayout"
-        app:layout_constraintTop_toBottomOf="@+id/tvAssigned">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAssigned"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -76,23 +80,14 @@
                 android:layout_marginTop="16dp"
 
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1.5:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="@color/gray"
                 app:strokeWidth="1dp">
-
-                <ImageView
-                    android:id="@+id/ivAssignment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -119,35 +114,15 @@
             <Button
                 android:id="@+id/button_submit"
                 style="@style/Button"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
                 android:text="Submit"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Score"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/editTextNumber2"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
-                android:id="@+id/editTextNumber2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:ems="10"
-                android:inputType="number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
