@@ -84,6 +84,10 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
         }
     }
 
+    fun createAssignment(assignment: Assignment){
+        assignmentsRef.add(assignment)
+    }
+
     fun createPost(post:Post){
         post.author = userId
         postsRef.add(post)

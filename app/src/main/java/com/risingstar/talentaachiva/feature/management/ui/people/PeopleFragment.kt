@@ -38,7 +38,8 @@ class PeopleFragment : Fragment() {
 
 
         viewmodel.people().observe(viewLifecycleOwner){ people ->
-
+            TODO("Show people and categorize them based on their role, " +
+                    "not as easy as it sounds")
         }
 
 

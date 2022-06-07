@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_people">
+    app:startDestination="@id/navigation_stream">
 
     <fragment
         android:id="@+id/navigation_people"
@@ -15,7 +15,7 @@
         android:id="@+id/navigation_stream"
         android:name="com.risingstar.talentaachiva.feature.management.ui.stream.StreamFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_stream" />
     <fragment
         android:id="@+id/navigation_assignments"
         android:name="com.risingstar.talentaachiva.feature.management.ui.assignment.AssignmentsFragment"

@@ -29,13 +29,13 @@ class CriteriaFragment : Fragment() {
         rvCriteria.layoutManager = LinearLayoutManager(this.context)
 
         viewmodel.assignment().observe(viewLifecycleOwner){
-            binding.etAssignName.setText(it?.title?:"No Title")
-            binding.etAssignDetail.setText(it?.description?: "No Description")
-            rvAdapter = CriteriaAdapter(it?.criteria as ArrayList<Criteria>)
-            //TODO: The layout will break when there's criteria. Will need to initialize it to 1
-            rvCriteria.adapter = rvAdapter
+            if (it != null) {
+                binding.etAssignName.text = it.title.toString()
+                binding.etAssignDetail.text = it.description.toString()
+                rvAdapter = CriteriaAdapter(it.criteria as ArrayList<Criteria>)
+                rvCriteria.adapter = rvAdapter
+            }
         }
-
         return binding.root
     }
 

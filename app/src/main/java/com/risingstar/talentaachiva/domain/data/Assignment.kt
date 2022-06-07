@@ -15,8 +15,8 @@ data class Assignment (
 
 @Parcelize
 data class Criteria(
-    var name: String,
-    var desc : String,
-    var weight: Int
+    var name: String? = null,
+    var desc : String? = null,
+    var weight: Int? = 0
 ) : Parcelable
 
