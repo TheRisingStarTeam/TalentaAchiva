@@ -1,6 +1,5 @@
-# Fixed
-Turns out, I only need to change the default branch to master. Why I didn't do that before?
+# Talenta Achiva
 
-Uhh... 
+## Master Branch is for Front End Development, go to Itsallover Branch for the Back End Development
 
-Anyway, this is our capstone project, humu humu!
+(Why such an ominous name? I'm not sure...)
