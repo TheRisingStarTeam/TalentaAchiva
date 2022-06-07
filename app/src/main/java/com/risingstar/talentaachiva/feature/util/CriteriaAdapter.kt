@@ -30,12 +30,20 @@ class CriteriaAdapter(
     override fun onBindViewHolder(holder: CriteriaViewHolder, position: Int) {
         with(holder){
             with(criteriaList[position]){
-                binding.tvCritName.setText(this.name)
+                binding.tvCritName.text = this.name
+                binding.tvCritNum.text = this.weight.toString()
             }
         }
         holder.itemView.setOnClickListener{
             onItemClickCallback.onItemClicked(criteriaList[holder.adapterPosition])
         }
+    }
+
+    fun addCriteria(newCriteria: Criteria){
+        this.criteriaList.add(newCriteria)
+    }
+    fun getCriteria(): ArrayList<Criteria> {
+        return this.criteriaList
     }
 
     override fun getItemCount(): Int {

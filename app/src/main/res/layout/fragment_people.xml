@@ -37,8 +37,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_organizer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:listitem="@layout/row_person" />
+                android:layout_height="wrap_content" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -60,8 +59,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_participant"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:listitem="@layout/row_person" />
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>

@@ -5,20 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.risingstar.talentaachiva.R
-import com.risingstar.talentaachiva.databinding.FragmentCreateProfileBinding
+import com.risingstar.talentaachiva.databinding.FragmentAchievementBinding
 import com.risingstar.talentaachiva.feature.dashboard.DashboardVM
 
-class CreateProfileFragment : Fragment() {
+class AchievementFragment : Fragment() {
 
-    private lateinit var binding: FragmentCreateProfileBinding
-    private lateinit var viewmodel : DashboardVM
+    private lateinit var binding : FragmentAchievementBinding
+    private lateinit var viewmodel: DashboardVM
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-
-        return inflater.inflate(R.layout.fragment_create_profile, container, false)
+    ): View {
+        binding = FragmentAchievementBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
 }

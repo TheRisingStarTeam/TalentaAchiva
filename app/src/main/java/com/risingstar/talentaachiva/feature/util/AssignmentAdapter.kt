@@ -32,9 +32,9 @@ class AssignmentAdapter (
             with(assignmentList[position]){
                 binding.tvTitleAssignment.text = this.title
             }
-        }
-        holder.itemView.setOnClickListener{
-            onItemClickCallback.onItemClicked(assignmentList[holder.adapterPosition])
+            itemView.setOnClickListener{
+                onItemClickCallback.onItemClicked(assignmentList[holder.adapterPosition])
+            }
         }
     }
 

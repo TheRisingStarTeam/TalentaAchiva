@@ -7,9 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.References.EVENT
 import com.risingstar.talentaachiva.domain.References.EVENT_ORGANIZER
+import com.risingstar.talentaachiva.domain.data.Event
 
 class OrganizerVM(val userID: String) : ViewModel(){
     private val db = Firebase.firestore
@@ -32,14 +32,11 @@ class OrganizerVM(val userID: String) : ViewModel(){
     }
 
     fun createEvent(event: Event){
-        val initOrganizer : List<String> = listOf(userID)
-        event.organizers = initOrganizer
+        event.organizers = listOf(userID)
         eventRef.add(event)
     }
 
-    private fun stringToWords(s : String) = s.trim().splitToSequence(' ')
-        .filter { it.isNotEmpty() }
-        .toList()
+
 
 }
 

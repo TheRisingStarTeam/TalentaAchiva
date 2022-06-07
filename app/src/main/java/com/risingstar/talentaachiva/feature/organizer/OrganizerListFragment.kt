@@ -29,11 +29,15 @@ class OrganizerListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        viewmodel = ViewModelProvider(requireActivity()).get(OrganizerVM::class.java)
+        viewmodel = ViewModelProvider(requireActivity())[OrganizerVM::class.java]
         rvEvents = binding.rvEvents
         viewmodel.organizedEvents().observe(viewLifecycleOwner){
             rvAdapter = SearchAdapter(it as ArrayList<Event>)
             rvEvents.adapter = rvAdapter
+        }
+
+        binding.floatingActionButton.setOnClickListener {
+            TODO("GO TO CREATE EVENT FRAGMENT")
         }
 
         _binding = FragmentOrganizerListBinding.inflate(inflater, container, false)
