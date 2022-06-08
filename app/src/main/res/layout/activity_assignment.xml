@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPostTitle"
-        tools:listitem="@layout/row_assignment" />
+        tools:listitem="@layout/row_runevent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

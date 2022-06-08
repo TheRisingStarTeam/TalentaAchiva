@@ -3,7 +3,7 @@ package com.risingstar.talentaachiva.feature.util
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.risingstar.talentaachiva.databinding.RowAssignmentBinding
+import com.risingstar.talentaachiva.databinding.RowAssignmentsBinding
 import com.risingstar.talentaachiva.domain.data.Assignment
 
 class AssignmentAdapter (
@@ -18,7 +18,7 @@ class AssignmentAdapter (
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AssignmentViewHolder {
-        val binding = RowAssignmentBinding.inflate(
+        val binding = RowAssignmentsBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -30,7 +30,7 @@ class AssignmentAdapter (
     override fun onBindViewHolder(holder: AssignmentViewHolder, position: Int) {
         with(holder){
             with(assignmentList[position]){
-                binding.tvTitleAssignment.text = this.title
+                binding.assignmentTitle.text = this.title
             }
             itemView.setOnClickListener{
                 onItemClickCallback.onItemClicked(assignmentList[holder.adapterPosition])
@@ -49,4 +49,4 @@ class AssignmentAdapter (
 
 
 
-class AssignmentViewHolder(val binding: RowAssignmentBinding): RecyclerView.ViewHolder(binding.root)
+class AssignmentViewHolder(val binding: RowAssignmentsBinding): RecyclerView.ViewHolder(binding.root)

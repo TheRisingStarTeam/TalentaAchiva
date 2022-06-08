@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentAssignmentsBinding
 import com.risingstar.talentaachiva.domain.data.Assignment
@@ -31,6 +32,7 @@ class AssignmentsFragment : Fragment() {
         binding = FragmentAssignmentsBinding.inflate(inflater, container, false)
 
         rvAssignments = binding.rvAssignments
+        rvAssignments.layoutManager = LinearLayoutManager(requireActivity())
 
         viewmodel.assignments().observe(viewLifecycleOwner){
             rvAdapter = AssignmentAdapter((it as ArrayList<Assignment>))
@@ -39,6 +41,7 @@ class AssignmentsFragment : Fragment() {
                 override fun onItemClicked(data: Assignment) {
                     showSelected(data)
                 }
+
             })
         }
 

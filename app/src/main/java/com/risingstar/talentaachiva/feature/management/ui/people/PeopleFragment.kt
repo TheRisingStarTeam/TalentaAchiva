@@ -34,6 +34,7 @@ class PeopleFragment : Fragment() {
 
         rvParticipant = binding.rvParticipant
         rvOrganizer = binding.rvOrganizer
+        //TODO("Don't forget to add layout manager")
 
 
 
