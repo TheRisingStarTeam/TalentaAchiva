@@ -20,42 +20,41 @@
 
         <ImageView
             android:id="@+id/img_assignment"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:contentDescription="row_assignments"
             cards:layout_constraintBottom_toBottomOf="parent"
             cards:layout_constraintStart_toStartOf="parent"
             cards:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_assignment_24" />
+            tools:src="@drawable/ic_check_box_24" />
 
 
         <TextView
-            android:id="@+id/tv_assignment_title"
+            android:id="@+id/tv_criteria"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            cards:layout_constraintEnd_toEndOf="parent"
+            cards:layout_constraintBottom_toBottomOf="@+id/img_assignment"
+            cards:layout_constraintEnd_toStartOf="@+id/editTextNumber"
             cards:layout_constraintStart_toEndOf="@+id/img_assignment"
             cards:layout_constraintTop_toTopOf="@+id/img_assignment"
             tools:text="title" />
 
-        <TextView
-            android:id="@+id/tv_date_assignment"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="DateCreated"
-            cards:layout_constraintBottom_toBottomOf="@+id/img_assignment"
-            cards:layout_constraintEnd_toEndOf="@+id/tv_assignment_title"
-            cards:layout_constraintStart_toEndOf="@+id/img_assignment"
-            tools:textSize="12sp"
-            android:maxLines="1"/>
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            cards:layout_constraintBottom_toBottomOf="parent"
+            cards:layout_constraintEnd_toEndOf="parent"
+            cards:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
