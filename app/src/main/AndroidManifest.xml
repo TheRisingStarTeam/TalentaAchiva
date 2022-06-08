@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
-            android:name=".OrganizerActivity"
+            android:name=".feature.organizer.OrganizerActivity"
             android:exported="false"
             android:label="@string/title_activity_organizer"
             android:theme="@style/Theme.TalentaAchiva.NoActionBar" />
@@ -28,7 +28,8 @@
         <activity
             android:name=".feature.management.ManagementActivity"
             android:exported="false"
-            android:label="@string/title_activity_management" />
+            android:label="@string/title_activity_management"
+            android:theme="@style/Theme.TalentaAchiva.NoActionBar"/>
         <activity
             android:name=".feature.dashboard.DashboardActivity"
             android:exported="false"

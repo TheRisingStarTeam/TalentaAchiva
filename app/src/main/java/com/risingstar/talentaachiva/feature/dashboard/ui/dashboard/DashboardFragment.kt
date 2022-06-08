@@ -7,13 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentDashboardBinding
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.feature.dashboard.DashboardVM
 import com.risingstar.talentaachiva.feature.detail.DetailActivity
 import com.risingstar.talentaachiva.feature.management.ManagementActivity
+import com.risingstar.talentaachiva.feature.organizer.OrganizerActivity
 import com.risingstar.talentaachiva.feature.util.EventAdapter
 
 class DashboardFragment : Fragment() {
@@ -35,6 +38,18 @@ class DashboardFragment : Fragment() {
         viewmodel = ViewModelProvider(requireActivity()).get(DashboardVM::class.java)
         rvEvents = binding.rvEvent
         rvEvents.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,false)
+
+        with(binding){
+            searchView.setOnClickListener {
+                findNavController().navigate(R.id.navigation_search)
+            }
+
+            imgOrg.setOnClickListener {
+                val intent = Intent(requireActivity(),OrganizerActivity::class.java)
+                intent.putExtra(OrganizerActivity.CURRENT_USER_ID,viewmodel.userID)
+                startActivity(intent)
+            }
+        }
 
         viewmodel.allEvents().observe(viewLifecycleOwner){
             rvAdapter = EventAdapter(it as ArrayList<Event>)

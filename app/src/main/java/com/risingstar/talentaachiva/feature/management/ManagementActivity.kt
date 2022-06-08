@@ -1,6 +1,8 @@
 package com.risingstar.talentaachiva.feature.management
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -10,8 +12,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityManagementBinding
-import com.risingstar.talentaachiva.domain.data.Event
-import com.risingstar.talentaachiva.domain.data.Identity
 
 class ManagementActivity : AppCompatActivity() {
     private lateinit var viewmodel:ManagementVM
@@ -20,25 +20,27 @@ class ManagementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val username = intent.getParcelableExtra<Identity>(CURRENT_USER)
-        val event = intent.getParcelableExtra<Event>(CURRENT_EVENT)
+        val username = intent.getStringExtra(CURRENT_USER)
+        val event = intent.getStringExtra(CURRENT_EVENT)
 
         binding = ActivityManagementBinding.inflate(layoutInflater)
-
-        if(username?.userId!=null && event?.eventId!=null)
+        Log.i("Manage","$username and $event")
         viewmodel = ViewModelProvider(
-            this,ManagementFactory(username.userId!!, event.eventId!!)
+            this,ManagementFactory(username!!, event!!)
         )[ManagementVM::class.java]
+
+        Toast.makeText(this,"Welcome to $this, $username, $event", Toast.LENGTH_SHORT).show()
         setContentView(binding.root)
-
         val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_management)
+        setSupportActionBar(binding.tbManagement)
+        val navController = findNavController(R.id.nav_host_management)
 
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_people, R.id.navigation_stream, R.id.navigation_assignments))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
     }
 
     companion object {

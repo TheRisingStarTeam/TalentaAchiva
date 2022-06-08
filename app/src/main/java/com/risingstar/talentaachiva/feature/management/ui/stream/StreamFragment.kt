@@ -28,10 +28,11 @@ class StreamFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
-        _binding = FragmentStreamBinding.inflate(inflater, container, false)
+        viewmodel = ViewModelProvider(requireActivity())[ManagementVM::class.java]
+        _binding = FragmentStreamBinding.inflate(layoutInflater, container, false)
         rvPosts = binding.rvPosts
         rvPosts.layoutManager = LinearLayoutManager(requireActivity())
+
         viewmodel.posts().observe(viewLifecycleOwner){ posts ->
             rvAdapter = PostAdapter(posts as ArrayList<Post>)
             rvPosts.adapter = rvAdapter

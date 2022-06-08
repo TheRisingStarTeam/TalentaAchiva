@@ -25,16 +25,20 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     private val thisEvent = db.collection(EVENT).document(eventId)
     private val postsRef = thisEvent.collection(POST)
     private val userRef = db.collection(USER)
+    private val eventRef = db.collection(EVENT)
     private val assignmentsRef = db.collection(ASSIGNMENT)
 
     lateinit var currentPost : Post
     lateinit var currentEvent: Event
 
     init{
+        getEvent()
         getAllPost()
         getAssignments()
-        getParticipants()
+        //getParticipants()
     }
+
+
 
     private val _posts = MutableLiveData<List<Post>?>()
     fun posts() : LiveData<List<Post>?> {
@@ -56,6 +60,13 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
         return _people
     }
 
+    private fun getEvent() {
+        thisEvent.get().addOnCompleteListener {
+            if(it.isSuccessful)
+                _event.value = it.result.toObject()
+        }
+    }
+
     private fun getAllPost(){
         postsRef.get().addOnCompleteListener { result->
             if(result.isSuccessful)
@@ -75,7 +86,7 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     private fun getParticipants(){
         val people = mutableListOf<String>()
         //_event.value?.participants?.let { people.addAll(it) }
-        _event.value?.organizers?.let { people.addAll(it) }
+        //_event.value?.organizers?.let { people.addAll(it) }
 
         userRef.whereIn(USER_ID,people).get().addOnCompleteListener { task ->
             if(task.isSuccessful){
@@ -95,8 +106,10 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
 
 }
 
-class ManagementFactory(private val userId:String, private val eventId:String): ViewModelProvider.Factory
-{
+class ManagementFactory(
+    private val userId:String,
+    private val eventId:String
+    ): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ManagementVM::class.java)) {
             @Suppress("UNCHECKED_CAST")

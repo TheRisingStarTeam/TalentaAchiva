@@ -1,6 +1,7 @@
 package com.risingstar.talentaachiva.feature.detail
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.R
@@ -25,7 +26,7 @@ class DetailActivity : AppCompatActivity() {
 
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        Toast.makeText(this,"Welcome to $this $event $username", Toast.LENGTH_SHORT).show()
         viewmodel.getDetail()
 
         setSupportActionBar(findViewById(R.id.detailToolbar))

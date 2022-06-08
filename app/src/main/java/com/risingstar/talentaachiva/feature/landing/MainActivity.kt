@@ -2,6 +2,7 @@ package com.risingstar.talentaachiva.feature.landing
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         mAuth = FirebaseAuth.getInstance()
 
+        Toast.makeText(this,"Welcome to $this", Toast.LENGTH_SHORT).show()
+
         viewmodel = ViewModelProvider(this)[LandingVM::class.java]
         viewmodel.currentUser().observe(this) {
             if (it != null) {
@@ -31,13 +34,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+
         setContentView(binding.root)
     }
 
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
         if (requestCode == RC_SIGN_IN) {
             viewmodel.googleLogin(data)
         }

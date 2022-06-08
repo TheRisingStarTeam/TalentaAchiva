@@ -6,7 +6,7 @@ package com.risingstar.talentaachiva.domain
 object References {
 
     //EVENT
-    const val EVENT = "events"
+    const val EVENT = "event"
     const val EVENT_ID = "eventId"
     const val EVENT_BANNER = "banner"
     const val EVENT_STATUS = "active"
