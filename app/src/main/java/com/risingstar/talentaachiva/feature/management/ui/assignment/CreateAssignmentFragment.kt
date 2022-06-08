@@ -19,7 +19,7 @@ class CreateAssignmentFragment : Fragment() {
     private lateinit var binding : FragmentCreateAssignmentBinding
     private lateinit var viewmodel : ManagementVM
     private lateinit var rvCriteria: RecyclerView
-    private var rvAdapter = CriteriaAdapter(listOf(Criteria()) as ArrayList<Criteria>)
+    private lateinit var rvAdapter : CriteriaAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -29,7 +29,8 @@ class CreateAssignmentFragment : Fragment() {
 
         rvCriteria = binding.rvCriteria
         rvCriteria.layoutManager = LinearLayoutManager(this.context)
-
+        rvAdapter = CriteriaAdapter(mutableListOf<Criteria>() as ArrayList<Criteria>)
+        rvCriteria.adapter = rvAdapter
         binding.btnAddCriteria.setOnClickListener {
             rvAdapter.addCriteria(
                 Criteria(

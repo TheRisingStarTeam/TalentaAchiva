@@ -45,7 +45,8 @@ class RegisterFragment : Fragment() {
             registerButton.setOnClickListener {
                 viewmodel.register(
                     emailEdit.text.toString(),
-                    passwordEdit.text.toString()
+                    passwordEdit.text.toString(),
+                    nameEdit.text.toString()
                 )
             }
         }

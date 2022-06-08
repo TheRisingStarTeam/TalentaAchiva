@@ -21,5 +21,20 @@
         android:name="com.risingstar.talentaachiva.feature.management.ui.assignment.AssignmentsFragment"
         android:label="fragment_assignments"
         tools:layout="@layout/fragment_assignments" />
+    <fragment
+        android:id="@+id/navigation_create_post"
+        android:name="com.risingstar.talentaachiva.feature.management.ui.stream.CreatePostFragment"
+        android:label="CreatePostFragment"
+        tools:layout="@layout/fragment_create_post"/>
+    <fragment
+        android:id="@+id/navigate_post"
+        android:name="com.risingstar.talentaachiva.feature.management.ui.stream.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/navigate_create_assignment"
+        android:name="com.risingstar.talentaachiva.feature.management.ui.assignment.CreateAssignmentFragment"
+        android:label="CreateAssignmentFragment"
+        tools:layout="@layout/fragment_create_assignment"/>
 
 </navigation>

@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentAssignmentsBinding
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.feature.detail.DetailActivity
@@ -34,7 +37,7 @@ class AssignmentsFragment : Fragment() {
         rvAssignments = binding.rvAssignments
         rvAssignments.layoutManager = LinearLayoutManager(requireActivity())
 
-        viewmodel.assignments().observe(viewLifecycleOwner){
+        viewmodel.assignments().observe(viewLifecycleOwner){ it ->
             rvAdapter = AssignmentAdapter((it as ArrayList<Assignment>))
             rvAssignments.adapter = rvAdapter
             rvAdapter.setOnItemClickCallback(object : AssignmentAdapter.OnItemClickCallback {
@@ -42,6 +45,12 @@ class AssignmentsFragment : Fragment() {
                     showSelected(data)
                 }
             })
+
+            if(viewmodel.currentEvent.organizers?.contains(viewmodel.userId) == true)
+                binding.floatingActionButton2.isVisible = true
+            binding.floatingActionButton2.setOnClickListener { view ->
+                view.findNavController().navigate(R.id.navigate_create_assignment)
+            }
         }
 
 

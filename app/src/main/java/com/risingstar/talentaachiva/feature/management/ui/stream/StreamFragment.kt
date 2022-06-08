@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentStreamBinding
 import com.risingstar.talentaachiva.domain.data.Post
 import com.risingstar.talentaachiva.feature.management.ManagementVM
@@ -29,16 +32,23 @@ class StreamFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         viewmodel = ViewModelProvider(requireActivity())[ManagementVM::class.java]
-        _binding = FragmentStreamBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentStreamBinding.inflate(inflater, container, false)
         rvPosts = binding.rvPosts
         rvPosts.layoutManager = LinearLayoutManager(requireActivity())
 
         viewmodel.posts().observe(viewLifecycleOwner){ posts ->
             rvAdapter = PostAdapter(posts as ArrayList<Post>)
             rvPosts.adapter = rvAdapter
+            rvAdapter.setOnItemClickCallback(object: PostAdapter.OnItemClickCallback{
+                override fun onItemClicked(data: Post) {
+                    viewmodel.currentPost = data
+                    findNavController().navigate(R.id.navigate_post)
+                }
+
+            })
         }
         binding.cardShare.setOnClickListener {
-            TODO("Go To Post Creator Page")
+            it.findNavController().navigate(R.id.navigation_create_post)
         }
 
         return binding.root

@@ -26,14 +26,13 @@ class OrganizerListFragment : Fragment() {
     private lateinit var rvEvents: RecyclerView
     private lateinit var rvAdapter: SearchAdapter
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
+
         _binding = FragmentOrganizerListBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity())[OrganizerVM::class.java]
 
@@ -61,7 +60,7 @@ class OrganizerListFragment : Fragment() {
     }
 
     private fun goToManagement(data:String){
-        val intent = Intent(requireActivity(), ManagementActivity::class.java)
+        val intent = Intent(this.context, ManagementActivity::class.java)
         intent.putExtra(ManagementActivity.CURRENT_EVENT,data)
         intent.putExtra(ManagementActivity.CURRENT_USER,viewmodel.userID)
         startActivity(intent)
