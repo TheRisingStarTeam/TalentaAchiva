@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentStreamBinding
 import com.risingstar.talentaachiva.domain.data.Post
@@ -30,6 +31,7 @@ class StreamFragment : Fragment() {
         viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
         _binding = FragmentStreamBinding.inflate(inflater, container, false)
         rvPosts = binding.rvPosts
+        rvPosts.layoutManager = LinearLayoutManager(requireActivity())
         viewmodel.posts().observe(viewLifecycleOwner){ posts ->
             rvAdapter = PostAdapter(posts as ArrayList<Post>)
             rvPosts.adapter = rvAdapter

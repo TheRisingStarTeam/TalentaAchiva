@@ -7,9 +7,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.risingstar.talentaachiva.domain.References.EVENT
+import com.risingstar.talentaachiva.domain.References.EVENT_PARTICIPANT
+import com.risingstar.talentaachiva.domain.References.EVENT_TAGS
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
-import com.risingstar.talentaachiva.domain.References.EVENT
 
 class DashboardVM(val userID: String) : ViewModel(){
     private val db = Firebase.firestore
@@ -25,9 +27,21 @@ class DashboardVM(val userID: String) : ViewModel(){
         return _allEvents
     }
 
+    private val _runningEvent = MutableLiveData<List<Event>?>()
+    fun runningEvent() : LiveData<List<Event>?> {
+        return _runningEvent
+    }
+
     private val _allAssignments = MutableLiveData<List<Assignment>?>()
     fun allAssignments() : LiveData<List<Assignment>?> {
         return _allAssignments
+    }
+
+    fun getRunningEvent(){
+        eventRef.whereArrayContains(EVENT_PARTICIPANT,userID).get()
+            .addOnCompleteListener {task->
+                _runningEvent.value = task.result.map { it.toObject() }
+            }
     }
 
     fun getEvents() {
@@ -42,7 +56,7 @@ class DashboardVM(val userID: String) : ViewModel(){
     }
 
     fun getEventSearch(query:String) {
-        eventRef.whereArrayContainsAny("hashtags",stringToWords(query))
+        eventRef.whereArrayContainsAny(EVENT_TAGS,stringToWords(query))
             .get().addOnSuccessListener {
                     result ->
                 _searchEvent.value = result.map { it.toObject() }

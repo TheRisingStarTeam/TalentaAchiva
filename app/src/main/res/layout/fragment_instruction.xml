@@ -27,7 +27,7 @@
                 android:id="@+id/tvDetailInstruction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/large_text" />
+                android:text="Detail Stuff Here" />
 
             <TextView
                 android:id="@+id/tvCriteria"

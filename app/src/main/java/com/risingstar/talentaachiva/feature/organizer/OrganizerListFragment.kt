@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentOrganizerListBinding
 import com.risingstar.talentaachiva.domain.data.Event
@@ -31,6 +32,7 @@ class OrganizerListFragment : Fragment() {
     ): View {
         viewmodel = ViewModelProvider(requireActivity())[OrganizerVM::class.java]
         rvEvents = binding.rvEvents
+        rvEvents.layoutManager = LinearLayoutManager(requireActivity())
         viewmodel.organizedEvents().observe(viewLifecycleOwner){
             rvAdapter = SearchAdapter(it as ArrayList<Event>)
             rvEvents.adapter = rvAdapter

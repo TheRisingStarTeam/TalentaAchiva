@@ -41,7 +41,7 @@
 
 
         <TextView
-            android:id="@+id/tv_title_assignment"
+            android:id="@+id/tv_title_event"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

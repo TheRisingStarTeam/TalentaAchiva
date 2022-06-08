@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.databinding.FragmentTodolistBinding
 import com.risingstar.talentaachiva.domain.data.Assignment
@@ -31,6 +32,7 @@ class TodolistFragment : Fragment() {
         _binding = FragmentTodolistBinding.inflate(inflater, container, false)
 
         rvAssignments = binding.rvTodolist
+        rvAssignments.layoutManager = LinearLayoutManager(requireActivity())
         viewmodel.allAssignments().observe(viewLifecycleOwner){
             rvAdapter = AssignmentAdapter(it as ArrayList<Assignment>)
             rvAssignments.adapter = rvAdapter
