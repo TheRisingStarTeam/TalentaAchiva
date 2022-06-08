@@ -43,7 +43,7 @@
             cards:layout_constraintEnd_toEndOf="parent"
             cards:layout_constraintStart_toEndOf="@+id/img_assignment"
             cards:layout_constraintTop_toTopOf="@+id/img_assignment"
-            tools:text="title" />
+            tools:text="Assignment Example" />
 
         <TextView
             android:id="@+id/tv_date_assignment"
