@@ -22,21 +22,24 @@ import com.risingstar.talentaachiva.domain.data.Post
 class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
 
     private val db = Firebase.firestore
-    private val thisEvent = db.collection(EVENT).document(eventId)
+    private val eventRef = db.collection(EVENT)
+    private val thisEvent = eventRef.document(eventId)
     private val postsRef = thisEvent.collection(POST)
     private val userRef = db.collection(USER)
-    private val eventRef = db.collection(EVENT)
     private val assignmentsRef = db.collection(ASSIGNMENT)
 
     lateinit var currentPost : Post
     lateinit var currentEvent: Event
+    lateinit var currentUser : Identity
 
     init{
         getEvent()
         getAllPost()
         getAssignments()
+        getCurrentUser()
         //getParticipants()
     }
+
 
 
 
@@ -60,10 +63,26 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
         return _people
     }
 
+    private val _currentUser = MutableLiveData<Identity?>()
+    fun currentUser() : LiveData<Identity?>{
+        return _currentUser
+    }
+
+    private fun getCurrentUser() {
+        userRef.document(userId).get().addOnCompleteListener {
+            if(it.isSuccessful) {
+                _currentUser.value = it.result.toObject()
+                currentUser = it.result.toObject()!!
+            }
+        }
+    }
+
     private fun getEvent() {
         thisEvent.get().addOnCompleteListener {
-            if(it.isSuccessful)
+            if(it.isSuccessful) {
                 _event.value = it.result.toObject()
+                currentEvent = it.result.toObject()!!
+            }
         }
     }
 

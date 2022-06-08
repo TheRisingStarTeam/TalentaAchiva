@@ -20,19 +20,25 @@ class CreatePostFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-
+        binding = FragmentCreatePostBinding.inflate(inflater, container, false)
         viewmodel = ViewModelProvider(requireActivity()).get(ManagementVM::class.java)
-        val post = Post(
+
+        viewmodel.currentUser().observe(viewLifecycleOwner){
+            if (it != null) {
+                binding.tvUsernamePostMan.text = viewmodel.currentUser.name
+            }
+        }
+
+        binding.buttonSubmitPostMan.setOnClickListener {
+            val post = Post(
                 null,
                 binding.tvUsernamePostMan.text.toString(),
                 binding.editDescriptionPostMan.text.toString(),
                 null
             )
+            viewmodel.createPost(post)
+        }
 
-        viewmodel.createPost(post)
-
-
-        binding = FragmentCreatePostBinding.inflate(inflater, container, false)
         return binding.root
     }
 

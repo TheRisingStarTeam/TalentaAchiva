@@ -29,19 +29,19 @@ class LandingVM : ViewModel() {
         _currentUser.value = mAuth.currentUser
     }
 
-    fun register(email:String, password: String){
+    fun register(email:String, password: String, name: String){
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if(task.isSuccessful) {
-                    initUser(task.result.user)
+                    initUser(task.result.user, name)
                 }
             }
     }
 
-    private fun initUser(user: FirebaseUser?) {
+    private fun initUser(user: FirebaseUser?, name: String) {
         val identity = Identity(
             userId = user?.uid,
-            name = null,
+            name,
             null,
             null,
             user?.email,

@@ -23,14 +23,19 @@ class ManagementActivity : AppCompatActivity() {
         val username = intent.getStringExtra(CURRENT_USER)
         val event = intent.getStringExtra(CURRENT_EVENT)
 
-        binding = ActivityManagementBinding.inflate(layoutInflater)
+
         Log.i("Manage","$username and $event")
+
         viewmodel = ViewModelProvider(
             this,ManagementFactory(username!!, event!!)
         )[ManagementVM::class.java]
+        binding = ActivityManagementBinding.inflate(layoutInflater)
 
         Toast.makeText(this,"Welcome to $this, $username, $event", Toast.LENGTH_SHORT).show()
         setContentView(binding.root)
+
+
+
         val navView: BottomNavigationView = binding.navView
         setSupportActionBar(binding.tbManagement)
         val navController = findNavController(R.id.nav_host_management)
