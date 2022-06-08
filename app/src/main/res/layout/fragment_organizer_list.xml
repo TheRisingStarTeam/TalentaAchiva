@@ -12,7 +12,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -53,18 +53,20 @@
                 android:id="@+id/rvEvents"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/row_search" />
+                tools:listitem="@layout/row_search">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="24dp"
         android:clickable="true"
-        android:contentDescription="addItem"
         app:srcCompat="@android:drawable/ic_input_add" />
+
 </FrameLayout>

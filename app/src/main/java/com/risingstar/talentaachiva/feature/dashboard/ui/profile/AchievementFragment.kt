@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.FragmentAchievementBinding
 import com.risingstar.talentaachiva.feature.dashboard.DashboardVM
 
@@ -18,6 +19,9 @@ class AchievementFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentAchievementBinding.inflate(inflater, container, false)
+        viewmodel = ViewModelProvider(requireActivity()).get(DashboardVM::class.java)
+
+
         return binding.root
     }
 

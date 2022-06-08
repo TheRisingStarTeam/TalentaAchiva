@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/NavigateOrganizer">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/NavigateOrganizer"
         android:name="com.risingstar.talentaachiva.feature.organizer.OrganizerListFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_organizer_list"/>
+        android:label="OrganizerFragment"
+        tools:layout="@layout/fragment_organizer_list">
+        <action
+            android:id="@+id/org_to_cev"
+            app:destination="@id/navigateCEvent" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigateCEvent"
+        android:name="com.risingstar.talentaachiva.feature.organizer.CreateEventFragment"
+        android:label="Create Evemt"
+        tools:layout="@layout/fragment_create_event" />
 </navigation>

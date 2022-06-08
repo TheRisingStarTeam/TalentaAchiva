@@ -41,7 +41,6 @@ class AssignmentsFragment : Fragment() {
                 override fun onItemClicked(data: Assignment) {
                     showSelected(data)
                 }
-
             })
         }
 

@@ -1,6 +1,7 @@
 package com.risingstar.talentaachiva.feature.judge
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.ActivityJudgeBinding
@@ -21,7 +22,7 @@ class JudgeActivity : AppCompatActivity() {
             viewmodel = ViewModelProvider(
                 this,JudgeFactory(username, event, assignment)
             )[JudgeVM::class.java]
-
+        Toast.makeText(this,"Welcome to $this $username, $event, $assignment", Toast.LENGTH_SHORT).show()
 
         setContentView(binding.root)
     }
