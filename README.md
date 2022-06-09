@@ -1,5 +1,5 @@
 # Talenta Achiva
 
-## Master Branch is for Front End Development, go to Itsallover Branch for the Back End Development
+## Welcome! Please, make yourself at home
 
-(Why such an ominous name? I'm not sure...)
+(Documentation WIP)
