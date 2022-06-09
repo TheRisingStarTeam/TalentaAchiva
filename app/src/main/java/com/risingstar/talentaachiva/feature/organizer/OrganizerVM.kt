@@ -8,6 +8,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.References.EVENT
+import com.risingstar.talentaachiva.domain.References.EVENT_ID
 import com.risingstar.talentaachiva.domain.References.EVENT_ORGANIZER
 import com.risingstar.talentaachiva.domain.data.Event
 
@@ -33,7 +34,10 @@ class OrganizerVM(val userID: String) : ViewModel(){
 
     fun createEvent(event: Event){
         event.organizers = listOf(userID)
-        eventRef.add(event)
+        eventRef.add(event).addOnCompleteListener {
+            it.result.update(EVENT_ID,it.result.id)
+
+        }
     }
 
 
