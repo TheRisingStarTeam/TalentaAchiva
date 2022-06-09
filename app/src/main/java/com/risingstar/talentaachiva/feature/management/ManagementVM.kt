@@ -1,5 +1,7 @@
 package com.risingstar.talentaachiva.feature.management
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -39,6 +41,7 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
         getAllPost()
         getAssignments()
         getCurrentUser()
+        addPostListener()
         //getParticipants()
     }
 
@@ -114,6 +117,27 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
             }
         }
     }
+
+
+
+    private fun addPostListener() {
+        postsRef.addSnapshotListener{value,e->
+            if (e != null) {
+                Log.w(TAG, "Listen failed.", e)
+                return@addSnapshotListener
+            }
+            if (value != null) {
+                _posts.value = value.toObjects()
+            }
+//            for (doc in value!!) {
+//                doc.getString("name")?.let {
+//                    cities.add(it)
+//                }
+//            }
+
+        }
+    }
+
 
     fun createAssignment(assignment: Assignment){
         assignmentsRef.add(assignment)
