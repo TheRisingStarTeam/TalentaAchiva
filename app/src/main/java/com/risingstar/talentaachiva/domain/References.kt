@@ -12,7 +12,7 @@ object References {
     const val EVENT_STATUS = "active"
     const val EVENT_NAME = "name"
     const val EVENT_CATEGORY = "categories"
-    const val EVENT_TAGS = "hashtags"
+    const val EVENT_TAGS = "tags"
     const val EVENT_RULES = "rules"
     const val EVENT_DESCRIPTION = "description"
     const val EVENT_PARTICIPANT = "participants"
