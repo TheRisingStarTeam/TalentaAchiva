@@ -36,12 +36,8 @@ class OrganizerVM(val userID: String) : ViewModel(){
         event.organizers = listOf(userID)
         eventRef.add(event).addOnCompleteListener {
             it.result.update(EVENT_ID,it.result.id)
-
         }
     }
-
-
-
 }
 
 class OrganizerFactory(val data:String): ViewModelProvider.Factory
