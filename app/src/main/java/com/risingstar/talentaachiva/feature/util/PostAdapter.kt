@@ -30,7 +30,8 @@ class PostAdapter(
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         with(holder){
             with(postList[position]){
-                binding.tvPostTitle.text = this.title
+                binding.tvUsername.text = this.title
+                //TODO : ubah title ke author
             }
         }
         holder.itemView.setOnClickListener{

@@ -50,6 +50,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             cards:layout_constraintEnd_toEndOf="parent"
+            cards:layout_constraintHorizontal_bias="0.0"
             cards:layout_constraintStart_toEndOf="@+id/cardView2"
             cards:layout_constraintTop_toTopOf="@+id/cardView2"
             tools:text="username" />
