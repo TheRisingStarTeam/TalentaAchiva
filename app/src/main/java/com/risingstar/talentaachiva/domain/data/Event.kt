@@ -12,7 +12,7 @@ data class Event(
     var name : String? = null,
     var categories : List<String>? = null,
     var tags : List<String>? = null,
-    var hashtags : String? = null,
+    //var hashtags : String? = null,
     var rules : String? = null,
     var description: String? = null,
     var participants : List<String>? = null,
