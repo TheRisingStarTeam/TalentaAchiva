@@ -44,7 +44,7 @@ class DashboardVM(val userID: String) : ViewModel(){
             }
     }
 
-    fun getEvents() {
+    private fun getEvents() {
         eventRef.get().addOnSuccessListener {result->
             _allEvents.value = result.map { it.toObject() }
         }
@@ -66,11 +66,11 @@ class DashboardVM(val userID: String) : ViewModel(){
     private fun getAssignments(){
         var events : List<Event>
         val assignments: MutableList<Assignment>? = null
-        eventRef.whereArrayContains("participants",userID)
+        eventRef.whereArrayContains(EVENT_PARTICIPANT,userID)
             .get().addOnCompleteListener { task ->
                 events = task.result.map { it.toObject() }
                 events.forEach { event ->
-                    event.assignment?.forEach { assignment ->
+                    event.assignments?.forEach { assignment ->
                         assignments?.add(assignment)
                         _allAssignments.value = assignments
                     }

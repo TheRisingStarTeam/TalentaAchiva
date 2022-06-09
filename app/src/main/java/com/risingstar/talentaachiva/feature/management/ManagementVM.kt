@@ -11,11 +11,10 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
-import com.risingstar.talentaachiva.domain.References.ASSIGNMENT_EVENT
 import com.risingstar.talentaachiva.domain.References.EVENT
+import com.risingstar.talentaachiva.domain.References.EVENT_ASSIGNMENT
 import com.risingstar.talentaachiva.domain.References.POST
 import com.risingstar.talentaachiva.domain.References.USER
-import com.risingstar.talentaachiva.domain.References.USER_ID
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Identity
@@ -39,9 +38,9 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     init{
         getEvent()
         getAllPost()
-        getAssignments()
         getCurrentUser()
         addPostListener()
+        addEventListener()
         //getParticipants()
     }
 
@@ -59,7 +58,7 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     }
 
     private val _event = MutableLiveData<Event?>()
-    fun events() : LiveData<Event?>{
+    fun event() : LiveData<Event?>{
         return _event
     }
 
@@ -85,8 +84,13 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     private fun getEvent() {
         thisEvent.get().addOnCompleteListener {
             if(it.isSuccessful) {
-                _event.value = it.result.toObject()
-                currentEvent = it.result.toObject()!!
+                val event = it.result.toObject<Event>()
+                _event.value = event
+                if (event != null) {
+                    _assignments.value = event.assignments
+                    currentEvent = event
+                }
+
             }
         }
     }
@@ -98,24 +102,8 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
         }
     }
 
-    private fun getAssignments(){
-        assignmentsRef.whereEqualTo(ASSIGNMENT_EVENT,eventId).get().addOnCompleteListener {
-            if(it.isSuccessful) {
-                _assignments.value = it.result.toObjects()
-            }
-        }
-    }
+    private fun getPeople(){
 
-    private fun getParticipants(){
-        val people = mutableListOf<String>()
-        //_event.value?.participants?.let { people.addAll(it) }
-        //_event.value?.organizers?.let { people.addAll(it) }
-
-        userRef.whereIn(USER_ID,people).get().addOnCompleteListener { task ->
-            if(task.isSuccessful){
-                _people.value = task.result.map { it.toObject() }
-            }
-        }
     }
 
 
@@ -129,18 +117,31 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
             if (value != null) {
                 _posts.value = value.toObjects()
             }
-//            for (doc in value!!) {
-//                doc.getString("name")?.let {
-//                    cities.add(it)
-//                }
-//            }
 
+        }
+    }
+
+    private fun addEventListener() {
+        thisEvent.addSnapshotListener{value,e->
+            if (e != null) {
+                Log.w(TAG, "Listen failed.", e)
+                return@addSnapshotListener
+            }
+            if (value != null) {
+                val event = value.toObject<Event>()
+                if(event!=null){
+                    currentEvent = value.toObject()!!
+                    _event.value = currentEvent
+                    _assignments.value = currentEvent.assignments
+                }
+
+            }
         }
     }
 
 
     fun createAssignment(assignment: Assignment){
-        assignmentsRef.add(assignment)
+        thisEvent.update(EVENT_ASSIGNMENT,listOf(assignment))
     }
 
     fun createPost(post:Post){

@@ -37,14 +37,16 @@ class AssignmentsFragment : Fragment() {
         rvAssignments = binding.rvAssignments
         rvAssignments.layoutManager = LinearLayoutManager(requireActivity())
 
-        viewmodel.assignments().observe(viewLifecycleOwner){ it ->
-            rvAdapter = AssignmentAdapter((it as ArrayList<Assignment>))
-            rvAssignments.adapter = rvAdapter
-            rvAdapter.setOnItemClickCallback(object : AssignmentAdapter.OnItemClickCallback {
-                override fun onItemClicked(data: Assignment) {
-                    showSelected(data)
-                }
-            })
+        viewmodel.assignments().observe(viewLifecycleOwner){
+            if(it!=null) {
+                rvAdapter = AssignmentAdapter((it as ArrayList<Assignment>))
+                rvAssignments.adapter = rvAdapter
+                rvAdapter.setOnItemClickCallback(object : AssignmentAdapter.OnItemClickCallback {
+                    override fun onItemClicked(data: Assignment) {
+                        showSelected(data)
+                    }
+                })
+            }
 
             if(viewmodel.currentEvent.organizers?.contains(viewmodel.userId) == true)
                 binding.floatingActionButton2.isVisible = true
