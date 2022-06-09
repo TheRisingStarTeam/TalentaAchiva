@@ -49,20 +49,44 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView7" />
 
             <TextView
-                android:id="@+id/tv_description_post_man"
+                android:id="@+id/tv_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Description"
+                android:text="post"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
             <EditText
-                android:id="@+id/edit_description_post_man"
+                android:id="@+id/edit_post_man"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_searchview"
+                android:hint="Post Description"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_post" />
+
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Description"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_post_man" />
+
+
+            <EditText
+                android:id="@+id/edit_description_man"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/shape_searchview"
                 android:hint="Submission Description"
                 android:inputType="textMultiLine"
@@ -70,7 +94,7 @@
                 android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_description_post_man" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_description" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
