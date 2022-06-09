@@ -32,8 +32,8 @@ class CreatePostFragment : Fragment() {
         binding.buttonSubmitPostMan.setOnClickListener {
             val post = Post(
                 null,
-                binding.tvUsernamePostMan.text.toString(),
-                binding.editDescriptionPostMan.text.toString(),
+                binding.editPostMan.text.toString(),
+                binding.editDescriptionMan.text.toString(),
                 null
             )
             viewmodel.createPost(post)

@@ -141,9 +141,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/placholdertako"
+            android:src="@drawable/ic_interests_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAbout"
+            app:tint="@color/navy_blue" />
 
 
         <TextView
@@ -181,7 +182,8 @@
             android:layout_marginTop="24dp"
             android:src="@drawable/ic_account_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAchievementCount" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAchievementCount"
+            app:tint="@color/navy_blue"/>
 
         <ImageView
             android:id="@+id/iv_dob"
@@ -190,7 +192,8 @@
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_calendar_month_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_interest" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_interest"
+            app:tint="@color/navy_blue"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton2"
