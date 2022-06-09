@@ -30,7 +30,8 @@ class PostAdapter(
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         with(holder){
             with(postList[position]){
-                binding.tvUsername.text = this.title
+                binding.tvPostStream.text = this.title
+                binding.tvPostContent.text = this.content
                 //TODO : ubah title ke author
             }
         }
