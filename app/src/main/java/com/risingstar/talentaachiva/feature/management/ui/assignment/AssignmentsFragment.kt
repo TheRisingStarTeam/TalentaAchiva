@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentAssignmentsBinding
 import com.risingstar.talentaachiva.domain.data.Assignment
-import com.risingstar.talentaachiva.feature.detail.DetailActivity
 import com.risingstar.talentaachiva.feature.judge.JudgeActivity
 import com.risingstar.talentaachiva.feature.management.ManagementVM
 import com.risingstar.talentaachiva.feature.participant.ParticipantActivity
@@ -43,7 +43,7 @@ class AssignmentsFragment : Fragment() {
                 rvAssignments.adapter = rvAdapter
                 rvAdapter.setOnItemClickCallback(object : AssignmentAdapter.OnItemClickCallback {
                     override fun onItemClicked(data: Assignment) {
-                        showSelected(data)
+                        showSelected(data.assignmentId!!)
                     }
                 })
             }
@@ -59,17 +59,20 @@ class AssignmentsFragment : Fragment() {
         return binding.root
     }
 
-    private fun showSelected(assignment: Assignment) {
+    private fun showSelected(assignment: String) {
         if(viewmodel.currentEvent.participants?.contains(viewmodel.userId) == true){
-            val intent = Intent(this.context, DetailActivity::class.java)
+            val intent = Intent(this.context, ParticipantActivity::class.java)
             intent.putExtra(ParticipantActivity.CURRENT_ASSIGNMENT_ID,assignment)
             intent.putExtra(ParticipantActivity.CURRENT_USER,viewmodel.userId)
+//            intent.putExtra(ParticipantActivity.CURRENT_EVENT_ID,viewmodel.eventId)
             startActivity(intent)
-        }else{
+        }else if(viewmodel.currentEvent.organizers?.contains(viewmodel.userId) == true){
             val intent = Intent(this.context, JudgeActivity::class.java)
-            intent.putExtra(JudgeActivity.CURRENT_ASSIGNMENT_ID,assignment)
+            intent.putExtra(JudgeActivity.CURRENT_ASSIGNMENT,assignment)
             intent.putExtra(JudgeActivity.CURRENT_USER_ID,viewmodel.userId)
+            intent.putExtra(JudgeActivity.CURRENT_EVENT_ID,viewmodel.eventId)
             startActivity(intent)
         }
+        else Toast.makeText(this.context,viewmodel.userId,Toast.LENGTH_SHORT).show()
     }
 }
