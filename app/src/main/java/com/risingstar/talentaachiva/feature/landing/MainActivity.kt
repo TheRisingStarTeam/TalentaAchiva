@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewmodel : LandingVM
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         mAuth = FirebaseAuth.getInstance()

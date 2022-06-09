@@ -14,7 +14,7 @@
 
 
         <TextView
-            android:id="@+id/tvHistoryCount"
+            android:id="@+id/tvEditProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_detail"
@@ -36,20 +36,32 @@
             android:hint="Name"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_user"
+            app:layout_constraintTop_toBottomOf="@+id/tvEditProfile" />
+
+        <TextView
+            android:id="@+id/tv_about_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="About Me"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHistoryCount" />
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
 
         <TextView
             android:id="@+id/tvAbout"
             android:layout_width="0dp"
             android:layout_height="160dp"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="Tell Us About You"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_about_me" />
 
         <TextView
             android:id="@+id/etInterest"
@@ -75,5 +87,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etInterest" />
 
-     </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="floating edit"
+            android:src="@drawable/ic_edit_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_account_24"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="75dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

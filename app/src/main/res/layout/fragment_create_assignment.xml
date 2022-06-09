@@ -22,6 +22,20 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp">
 
+                <TextView
+                    android:id="@+id/tv_assignment_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_detail"
+                    android:padding='8dp'
+                    android:text="Assignment Name"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="214dp" />
+
+
                 <EditText
                     android:id="@+id/etAssignName"
                     android:layout_width="0dp"
@@ -32,13 +46,27 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_assignment_name" />
+
+
+                <TextView
+                    android:id="@+id/tv_assignment_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/shape_detail"
+                    android:padding='8dp'
+                    android:text="Assignment Detail"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/etAssignName"
+                    tools:layout_editor_absoluteX="214dp" />
 
                 <EditText
                     android:id="@+id/etAssignDetail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:ems="10"
                     android:hint="Assignment Detail"
                     android:inputType="textLongMessage|textMultiLine"
@@ -46,40 +74,43 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etAssignName" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_assignment_detail" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCriteria"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:listitem="rowassi">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-                <EditText
-                    android:id="@+id/tvCritNum"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_add_criteria"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:autofillHints="30"
-                    android:hint="30"
-                    android:inputType="number"
-                    android:minWidth="48dp"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvCritName"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/shape_detail"
+                    android:padding='8dp'
+                    android:text="Add Criteria"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvCritName" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etAssignName" />
 
                 <EditText
                     android:id="@+id/tvCritName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:autofillHints="Criteria Name"
                     android:hint="Criteria Name"
@@ -87,7 +118,20 @@
                     android:textSize="20sp"
                     app:layout_constraintEnd_toStartOf="@+id/tvCritNum"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_add_criteria" />
+
+                <EditText
+                    android:id="@+id/tvCritNum"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="30"
+                    android:hint="add points"
+                    android:inputType="number"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCritName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCritName" />
+
 
                 <Button
                     android:id="@+id/btnAddCriteria"

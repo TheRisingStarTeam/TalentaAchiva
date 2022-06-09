@@ -20,8 +20,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             cards:cardCornerRadius="250dp"
             cards:layout_constraintBottom_toBottomOf="parent"
@@ -30,8 +30,8 @@
 
             <ImageView
                 android:id="@+id/img_photo"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="row_user"
                 cards:layout_constraintBottom_toBottomOf="parent"
                 cards:layout_constraintStart_toStartOf="parent"

@@ -38,7 +38,7 @@
             android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/img_photo"
             app:layout_constraintStart_toEndOf="@+id/img_photo"
-            app:srcCompat="@drawable/placholdertako" />
+            app:srcCompat="@drawable/ic_computer_24" />
 
         <TextView
             android:id="@+id/tv_title"

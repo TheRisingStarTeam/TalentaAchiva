@@ -30,7 +30,7 @@ class AssignmentAdapter (
     override fun onBindViewHolder(holder: AssignmentViewHolder, position: Int) {
         with(holder){
             with(assignmentList[position]){
-                binding.assignmentTitle.text = this.title
+                binding.tvAssignmentTitle.text = this.title
             }
             itemView.setOnClickListener{
                 onItemClickCallback.onItemClicked(assignmentList[holder.adapterPosition])

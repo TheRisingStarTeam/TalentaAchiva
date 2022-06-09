@@ -29,6 +29,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Organizer"
+                    android:background="@drawable/shape_detail"
+                    android:padding='8dp'
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -37,7 +40,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_organizer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/row_users"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -51,6 +55,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Participant"
+                    android:background="@drawable/shape_detail"
+                    android:padding='8dp'
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -59,7 +66,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_participant"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/row_users"
+                />
 
 
         </LinearLayout>
