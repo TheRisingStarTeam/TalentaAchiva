@@ -61,6 +61,7 @@ class DashboardVM(val userID: String) : ViewModel(){
                     result ->
                 _searchEvent.value = result.map { it.toObject() }
             }
+
     }
 
     private fun getAssignments(){
