@@ -9,8 +9,8 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT_EVENT
 import com.risingstar.talentaachiva.domain.References.EVENT
-import com.risingstar.talentaachiva.domain.References.EVENT_ID
 import com.risingstar.talentaachiva.domain.References.POST
 import com.risingstar.talentaachiva.domain.References.USER
 import com.risingstar.talentaachiva.domain.References.USER_ID
@@ -21,16 +21,18 @@ import com.risingstar.talentaachiva.domain.data.Post
 
 class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
 
+
+
+    lateinit var currentPost : Post
+    lateinit var currentEvent: Event
+    lateinit var currentUser : Identity
+
     private val db = Firebase.firestore
     private val eventRef = db.collection(EVENT)
     private val thisEvent = eventRef.document(eventId)
     private val postsRef = thisEvent.collection(POST)
     private val userRef = db.collection(USER)
     private val assignmentsRef = db.collection(ASSIGNMENT)
-
-    lateinit var currentPost : Post
-    lateinit var currentEvent: Event
-    lateinit var currentUser : Identity
 
     init{
         getEvent()
@@ -94,8 +96,7 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     }
 
     private fun getAssignments(){
-        var event: Event
-        assignmentsRef.whereEqualTo(EVENT_ID,eventId).get().addOnCompleteListener {
+        assignmentsRef.whereEqualTo(ASSIGNMENT_EVENT,eventId).get().addOnCompleteListener {
             if(it.isSuccessful) {
                 _assignments.value = it.result.toObjects()
             }

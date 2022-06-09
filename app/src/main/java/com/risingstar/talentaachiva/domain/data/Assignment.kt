@@ -10,6 +10,7 @@ data class Assignment (
     var rules : String? = null,
     var description : String? = null,
     var type : String? = null,
+    var eventId : String? = null,
     var criteria: List<Criteria>? = null,
 ) : Parcelable
 

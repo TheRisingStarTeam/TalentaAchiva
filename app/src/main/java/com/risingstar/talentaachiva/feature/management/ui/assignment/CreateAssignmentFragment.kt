@@ -49,7 +49,8 @@ class CreateAssignmentFragment : Fragment() {
                     null,
                     binding.etAssignDetail.text.toString(),
                     null,
-                    rvAdapter.getCriteria()
+                    criteria = rvAdapter.getCriteria(),
+                    eventId = viewmodel.eventId
                 )
             )
         }
