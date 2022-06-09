@@ -55,6 +55,4 @@ class CriteriaAdapter(
     }
 }
 
-
-
 class CriteriaViewHolder(val binding: RowCriteriaBinding): RecyclerView.ViewHolder(binding.root)

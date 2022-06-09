@@ -70,7 +70,7 @@ class DashboardVM(val userID: String) : ViewModel(){
             .get().addOnCompleteListener { task ->
                 events = task.result.map { it.toObject() }
                 events.forEach { event ->
-                    event.assignments?.forEach { assignment ->
+                    event.assignment?.forEach { assignment ->
                         assignments?.add(assignment)
                         _allAssignments.value = assignments
                     }
