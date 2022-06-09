@@ -11,70 +11,19 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-
         <TextView
-            android:id="@+id/tvAchievementTop"
-            android:layout_width="0dp"
+            android:id="@+id/tvEditProfile"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:background="@drawable/shape_detail"
             android:gravity="center"
             android:padding='8dp'
-            android:text="Achievement"
+            android:text="Edit Profile"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guideline4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/tvAchievementCount"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding='8dp'
-            android:text="0"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/tvAchievementTop"
-            app:layout_constraintStart_toStartOf="@+id/tvAchievementTop"
-            app:layout_constraintTop_toBottomOf="@+id/tvAchievementTop" />
-
-        <TextView
-            android:id="@+id/tvHistory"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/shape_detail"
-            android:gravity="center"
-            android:padding='8dp'
-            android:text="History"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvHistoryCount"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding='8dp'
-            android:text="0"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/tvHistory"
-            app:layout_constraintStart_toStartOf="@+id/tvHistory"
-            app:layout_constraintTop_toBottomOf="@+id/tvHistory" />
-
-
-
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="214dp" />
 
 
         <ImageView
@@ -86,60 +35,82 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/etDate" />
 
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEditProfile" />
+
         <EditText
             android:id="@+id/etName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHistoryCount" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="About"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
 
         <EditText
             android:id="@+id/editAbout"
             android:layout_width="0dp"
             android:layout_height="160dp"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="Tell Us About You"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etName" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+
+        <TextView
+            android:id="@+id/tv_interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Interest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAbout" />
 
         <EditText
             android:id="@+id/etInterest"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Interest"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editAbout" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_interest" />
 
-        <Button
-            android:id="@+id/btnAddCriteria"
+        <TextView
+            android:id="@+id/tv_dob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Update"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Date of Birth"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etDate" />
+            app:layout_constraintTop_toBottomOf="@+id/etInterest" />
 
         <TextView
             android:id="@+id/etDate"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Date of Birth"
@@ -147,14 +118,17 @@
             android:minHeight="48dp"
             app:layout_constraintEnd_toStartOf="@+id/dateTako"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etInterest" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_dob" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
+        <Button
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            android:layout_marginTop="16dp"
+            android:text="Update Profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -6,22 +6,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".feature.organizer.CreateEventFragment">
+
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
+        <TextView
+            android:id="@+id/tv_create_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Event"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_detail"
+            android:padding='8dp'
+            android:text="Event Name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_create_event" />
+
         <EditText
             android:id="@+id/titleEt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Event Title"
+            android:hint="Title..."
             android:inputType="textPersonName"
             android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvEventTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvEventTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventTitle" />
+
+        <TextView
+            android:id="@+id/tvEventDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_detail"
+            android:padding='8dp'
+            android:text="Event Description"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/titleEt" />
 
         <EditText
             android:id="@+id/descriptionEt"
@@ -29,12 +74,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Event Description"
+            android:hint="Description..."
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/titleEt"
-            app:layout_constraintStart_toStartOf="@+id/titleEt"
-            app:layout_constraintTop_toBottomOf="@+id/titleEt" />
+            app:layout_constraintEnd_toEndOf="@+id/tvEventDescription"
+            app:layout_constraintStart_toStartOf="@+id/tvEventDescription"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventDescription" />
+
+        <TextView
+            android:id="@+id/tvEventCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_detail"
+            android:padding='8dp'
+            android:text="Event Category"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEt" />
 
         <EditText
             android:id="@+id/CategoryEt"
@@ -42,12 +102,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="Event Category"
+            android:hint="Category..."
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/descriptionEt"
-            app:layout_constraintStart_toStartOf="@+id/descriptionEt"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionEt" />
+            app:layout_constraintEnd_toEndOf="@+id/tvEventCategory"
+            app:layout_constraintStart_toStartOf="@+id/tvEventCategory"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventCategory" />
+
+        <TextView
+            android:id="@+id/tvEventDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_detail"
+            android:padding='8dp'
+            android:text="Event Date"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CategoryEt" />
 
         <TextView
             android:id="@+id/etDate"
@@ -56,15 +131,27 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="Event Start"
+            android:hint="Date"
             android:inputType="text"
             android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toStartOf="@+id/datePick"
-            app:layout_constraintStart_toStartOf="@+id/CategoryEt"
-            app:layout_constraintTop_toBottomOf="@+id/CategoryEt" />
+            app:layout_constraintStart_toStartOf="@+id/tvEventDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventDate" />
+
+        <ImageView
+            android:id="@+id/datePick"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:src="@drawable/placholdertako"
+            app:layout_constraintBottom_toBottomOf="@+id/etDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etDate" />
 
         <Button
-            android:id="@+id/btnUpload"
+            android:id="@+id/button"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -73,13 +160,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
-        <ImageView
-            android:id="@+id/datePick"
-            android:layout_width="50dp"
-            android:layout_height="0dp"
-            android:src="@drawable/ic_calendar_24"
-            app:layout_constraintBottom_toBottomOf="@+id/etDate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/etDate" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

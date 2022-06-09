@@ -6,86 +6,192 @@
     android:layout_height="match_parent"
     tools:context=".feature.dashboard.profile.ProfileFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-
         <TextView
-            android:id="@+id/tvEditProfile"
+            android:id="@+id/tvProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_detail"
+            android:gravity="center"
             android:padding='8dp'
-            android:text="Edit Profile"
+            android:text="Profile"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="214dp" />
 
+        <TextView
+            android:id="@+id/tvAchievementTop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_detail"
+            android:gravity="center"
+            android:padding='8dp'
+            android:text="Achievement"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+
+
+        <TextView
+            android:id="@+id/tvAchievementCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding='8dp'
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvAchievementTop"
+            app:layout_constraintStart_toStartOf="@+id/tvAchievementTop"
+            app:layout_constraintTop_toBottomOf="@+id/tvAchievementTop" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tvHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_detail"
+            android:gravity="center"
+            android:padding='8dp'
+            android:text="History"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+
+        <TextView
+            android:id="@+id/tvHistoryCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding='8dp'
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvHistory"
+            app:layout_constraintStart_toStartOf="@+id/tvHistory"
+            app:layout_constraintTop_toBottomOf="@+id/tvHistory" />
+
 
         <TextView
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Name"
-            android:minHeight="48dp"
+            android:layout_marginStart="16dp"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_user"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/iv_user"
-            app:layout_constraintTop_toBottomOf="@+id/tvEditProfile" />
+            app:layout_constraintTop_toTopOf="@+id/iv_user"
+            app:layout_constraintVertical_bias="0.516" />
 
         <TextView
             android:id="@+id/tv_about_me"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="About Me"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_user" />
 
 
         <TextView
             android:id="@+id/tvAbout"
             android:layout_width="0dp"
             android:layout_height="160dp"
-            android:ems="10"
+            android:layout_marginTop="8dp"
             android:gravity="start|top"
-            android:hint="Tell Us About You"
+            android:text="Tell Us About You"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_about_me" />
+
+        <ImageView
+            android:id="@+id/iv_interest"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_interests_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+
 
         <TextView
             android:id="@+id/etInterest"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Interest"
-            android:minHeight="48dp"
+            android:layout_marginStart="16dp"
+            android:text="Interest"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_interest"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/iv_interest"
+            app:layout_constraintTop_toTopOf="@+id/iv_interest" />
 
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Date of Birth"
-            android:minHeight="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Date of Birth"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_dob"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_dob"
+            app:layout_constraintTop_toTopOf="@+id/iv_dob" />
+
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_account_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etInterest" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAchievementCount" />
+
+        <ImageView
+            android:id="@+id/iv_dob"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_calendar_month_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_interest" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton2"
@@ -97,13 +203,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <ImageView
-            android:id="@+id/iv_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_account_24"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="75dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
