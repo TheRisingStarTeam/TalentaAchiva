@@ -81,7 +81,7 @@
                 android:id="@+id/rvCriteria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="rowassi">
+                tools:listitem="@layout/row_criteria">
 
             </androidx.recyclerview.widget.RecyclerView>
 
