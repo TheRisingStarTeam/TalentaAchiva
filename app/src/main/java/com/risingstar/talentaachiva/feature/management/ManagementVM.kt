@@ -12,6 +12,7 @@ import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
 import com.risingstar.talentaachiva.domain.References.ASSIGNMENT_EVENT
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT_ID
 import com.risingstar.talentaachiva.domain.References.EVENT
 import com.risingstar.talentaachiva.domain.References.POST
 import com.risingstar.talentaachiva.domain.References.USER
@@ -160,7 +161,8 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
 
     fun createAssignment(assignment: Assignment){
         assignment.eventId=eventId
-        assignmentRef.add(assignment)
+        val assignmentId = assignmentRef.add(assignment).result.id
+        assignmentRef.document(assignmentId).update(ASSIGNMENT_ID,assignmentId)
     }
 
     fun createPost(post:Post){
