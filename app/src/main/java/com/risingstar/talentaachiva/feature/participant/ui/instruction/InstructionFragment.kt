@@ -30,7 +30,7 @@ class InstructionFragment : Fragment() {
         rvCriteria = binding.rvCriteria
         rvCriteria.layoutManager = LinearLayoutManager(requireActivity())
         viewmodel.assignment().observe(viewLifecycleOwner){
-            binding.tvInstruction.text = it?.title?:"Instruction"
+            binding.tvTitleSubmission.text = it?.title?:"Instruction"
             binding.tvDetailInstruction.text = it?.description ?: "No Description provided"
             rvAdapter = CriteriaAdapter(it?.criteria as ArrayList<Criteria>)
             rvCriteria.adapter = rvAdapter
