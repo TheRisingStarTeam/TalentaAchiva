@@ -1,5 +1,6 @@
 package com.risingstar.talentaachiva.feature.judge
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -40,6 +41,7 @@ class JudgeVM(val userId: String, val eventId: String, val assignmentId: String)
         assignmentRef.document(assignmentId).get().addOnCompleteListener {
             if(it.isSuccessful){
                 _assignment.value = it.result.toObject()
+                Log.i("JudgeVM", "called getAssignment")
             }
         }
     }

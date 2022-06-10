@@ -131,4 +131,6 @@
     <string name="banner">banner</string>
     <string name="title_activity_organizer">OrganizerActivity</string>
     <string name="title_activity_debug">DebugActivity</string>
+    <string name="tab_criteria">Criteria</string>
+    <string name="tab_submission">Submission</string>
 </resources>
