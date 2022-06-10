@@ -161,8 +161,11 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
 
     fun createAssignment(assignment: Assignment){
         assignment.eventId=eventId
-        val assignmentId = assignmentRef.add(assignment).result.id
-        assignmentRef.document(assignmentId).update(ASSIGNMENT_ID,assignmentId)
+        var assignmentId: String? = null
+            assignmentRef.add(assignment).addOnCompleteListener{
+            assignmentId = it.result.id
+                assignmentRef.document(assignmentId!!).update(ASSIGNMENT_ID,assignmentId)
+        }
     }
 
     fun createPost(post:Post){
