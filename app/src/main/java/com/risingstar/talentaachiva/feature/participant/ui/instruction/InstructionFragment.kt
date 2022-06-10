@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentInstructionBinding
 import com.risingstar.talentaachiva.domain.data.Criteria
 import com.risingstar.talentaachiva.feature.participant.ParticipantVM
@@ -34,6 +36,10 @@ class InstructionFragment : Fragment() {
             binding.tvDetailInstruction.text = it?.description ?: "No Description provided"
             rvAdapter = CriteriaAdapter(it?.criteria as ArrayList<Criteria>)
             rvCriteria.adapter = rvAdapter
+
+        }
+        binding.buttonSubmitInstruction.setOnClickListener {
+            it.findNavController().navigate(R.id.navigate_submit)
         }
 
         return binding.root
