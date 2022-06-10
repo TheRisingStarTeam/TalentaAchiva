@@ -34,7 +34,7 @@ class DashboardActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_dashboard)
 
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_profile, R.id.navigation_stream, R.id.navigation_todolist))
+            R.id.navigation_profile, R.id.navigation_stream, R.id.navigation_todolist, R.id.navigation_settings))
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)

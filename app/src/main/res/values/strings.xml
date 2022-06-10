@@ -133,4 +133,5 @@
     <string name="title_activity_debug">DebugActivity</string>
     <string name="tab_criteria">Criteria</string>
     <string name="tab_submission">Submission</string>
+    <string name="settings">Settings</string>
 </resources>
