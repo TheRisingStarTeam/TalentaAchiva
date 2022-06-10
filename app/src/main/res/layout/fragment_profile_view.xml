@@ -183,7 +183,7 @@
             android:src="@drawable/ic_account_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAchievementCount"
-            app:tint="@color/navy_blue"/>
+            app:tint="@color/navy_blue" />
 
         <ImageView
             android:id="@+id/iv_dob"
@@ -193,7 +193,7 @@
             android:src="@drawable/ic_calendar_month_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_interest"
-            app:tint="@color/navy_blue"/>
+            app:tint="@color/navy_blue" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton2"
