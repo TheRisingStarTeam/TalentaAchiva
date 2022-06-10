@@ -35,11 +35,6 @@
         tools:listitem="@layout/row_assignments" />
 
 
-
-
-
-
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
         android:layout_width="wrap_content"

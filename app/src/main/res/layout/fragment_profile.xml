@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Name"
+            android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEditProfile" />
 
@@ -62,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="About"
+            android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etName" />
 
@@ -83,6 +85,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Interest"
+
+            android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editAbout" />
 
@@ -104,6 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Date of Birth"
+            android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etInterest" />
 

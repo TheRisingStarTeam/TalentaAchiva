@@ -26,7 +26,7 @@
             cards:layout_constraintBottom_toBottomOf="parent"
             cards:layout_constraintStart_toStartOf="parent"
             cards:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_check_box_24" />
+            android:src="@drawable/ic_check_box_24" />
 
 
         <TextView
