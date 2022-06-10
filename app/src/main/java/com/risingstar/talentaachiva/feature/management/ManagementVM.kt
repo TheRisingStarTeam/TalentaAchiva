@@ -10,8 +10,9 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
+import com.risingstar.talentaachiva.domain.References.ASSIGNMENT_EVENT
 import com.risingstar.talentaachiva.domain.References.EVENT
-import com.risingstar.talentaachiva.domain.References.EVENT_ASSIGNMENT
 import com.risingstar.talentaachiva.domain.References.POST
 import com.risingstar.talentaachiva.domain.References.USER
 import com.risingstar.talentaachiva.domain.data.Assignment
@@ -32,13 +33,15 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     private val thisEvent = eventRef.document(eventId)
     private val postsRef = thisEvent.collection(POST)
     private val userRef = db.collection(USER)
+    private val assignmentRef = db.collection(ASSIGNMENT)
 
     init{
         getEvent()
         getAllPost()
         getCurrentUser()
         addPostListener()
-        addEventListener()
+        addAssignmentListener()
+        //addEventListener()
         //getParticipants()
     }
 
@@ -85,9 +88,12 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
                 val event = it.result.toObject<Event>()
                 _event.value = event
                 if (event != null) {
-                    _assignments.value = event.assignments
                     currentEvent = event
                 }
+//                if (event != null) {
+//                    _assignments.value = event.assignments
+//                    currentEvent = event
+//                }
 
             }
         }
@@ -119,27 +125,42 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
         }
     }
 
-    private fun addEventListener() {
-        thisEvent.addSnapshotListener{value,e->
-            if (e != null) {
-                Log.w(TAG, "Listen failed.", e)
-                return@addSnapshotListener
-            }
-            if (value != null) {
-                val event = value.toObject<Event>()
-                if(event!=null){
-                    currentEvent = value.toObject()!!
-                    _event.value = currentEvent
-                    _assignments.value = currentEvent.assignments
+//    private fun addEventListener() {
+//        thisEvent.addSnapshotListener{value,e->
+//            if (e != null) {
+//                Log.w(TAG, "Listen failed.", e)
+//                return@addSnapshotListener
+//            }
+//            if (value != null) {
+//                val event = value.toObject<Event>()
+//                if(event!=null){
+//                    currentEvent = value.toObject()!!
+//                    _event.value = currentEvent
+//                    _assignments.value = currentEvent.assignments
+//                }
+//
+//            }
+//        }
+//    }
+
+        private fun addAssignmentListener() {
+            assignmentRef.whereEqualTo(ASSIGNMENT_EVENT,eventId).addSnapshotListener{ value, e->
+                if (e != null) {
+                    Log.w(TAG, "Listen failed.", e)
+                    return@addSnapshotListener
+                }
+                if (value != null) {
+                    _assignments.value = value.toObjects()
                 }
 
             }
         }
-    }
+
 
 
     fun createAssignment(assignment: Assignment){
-        thisEvent.update(EVENT_ASSIGNMENT,listOf(assignment))
+        assignment.eventId=eventId
+        assignmentRef.add(assignment)
     }
 
     fun createPost(post:Post){

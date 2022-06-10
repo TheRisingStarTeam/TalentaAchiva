@@ -54,6 +54,7 @@ object References {
     const val USER_INTEREST = "interest"
     const val USER_SOSMED = "socialMedia"
     const val USER_HISTORY = "history"
+    const val USER_TODO = "todo"
 
     //POSTS
     const val POST = "posts"

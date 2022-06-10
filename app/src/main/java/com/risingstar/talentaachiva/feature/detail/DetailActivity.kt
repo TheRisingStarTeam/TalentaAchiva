@@ -15,7 +15,6 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val username = intent.getStringExtra(CURRENT_USER)
         val event = intent.getParcelableExtra<Event>(CURRENT_EVENT)
 

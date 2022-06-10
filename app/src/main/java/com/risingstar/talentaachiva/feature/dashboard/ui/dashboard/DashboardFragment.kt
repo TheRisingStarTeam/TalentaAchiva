@@ -68,10 +68,11 @@ class DashboardFragment : Fragment() {
         if(event.participants?.contains(viewmodel.userID) != true){
             val intent = Intent(this.context,DetailActivity::class.java)
             intent.putExtra(DetailActivity.CURRENT_EVENT,event)
+            intent.putExtra(DetailActivity.CURRENT_USER,viewmodel.userID)
             startActivity(intent)
         }else{
             val intent = Intent(this.context,ManagementActivity::class.java)
-            intent.putExtra(ManagementActivity.CURRENT_EVENT,event)
+            intent.putExtra(ManagementActivity.CURRENT_EVENT,event.eventId)
             intent.putExtra(ManagementActivity.CURRENT_USER,viewmodel.userID)
             startActivity(intent)
         }

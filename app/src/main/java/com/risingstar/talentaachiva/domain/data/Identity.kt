@@ -19,5 +19,13 @@ data class Identity (
     var socialMedia: List<String>? = null,
     var organizerId: String? = null,
     var history : List<String>? = null,
-    var recommendations: List<String>? = null
+    var recommendations: List<String>? = null,
+    var todo : List<Todo>? = null
+) : Parcelable
+
+@Parcelize
+data class Todo (
+    var assignmentId: String? = null,
+    var eventId : String? = null,
+    var submission : String? = null
 ) : Parcelable
