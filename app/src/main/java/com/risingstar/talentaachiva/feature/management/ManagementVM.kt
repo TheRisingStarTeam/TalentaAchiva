@@ -170,6 +170,7 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
 
     fun createPost(post:Post){
         post.author = userId
+        post.authorname = currentUser.name
         postsRef.add(post)
     }
 

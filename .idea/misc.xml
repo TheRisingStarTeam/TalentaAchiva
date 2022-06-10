@@ -12,7 +12,9 @@
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_grading.xml" value="0.1675929884566054" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_landing.xml" value="0.20416666666666666" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_list_participant.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/fragment_submissions.xml" value="0.1675929884566054" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/nav_header_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/layout/row_post.xml" value="0.67" />
         <entry key="..\:/Project/Android/TalentaAchiva/app/src/main/res/menu/dashboard.xml" value="0.1" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/detail_shape.xml" value="0.3015" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/drawable/gradient_background.xml" value="0.25" />
@@ -52,7 +54,7 @@
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/detail_scrolling.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/event_row.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_achievement.xml" value="0.30012825994014536" />
-        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_assignments.xml" value="0.25" />
+        <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_assignments.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_create_assignment.xml" value="0.33" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_create_event.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/danie/AndroidStudioProjects/TalentaAchiva/app/src/main/res/layout/fragment_create_post.xml" value="0.3009833262077811" />

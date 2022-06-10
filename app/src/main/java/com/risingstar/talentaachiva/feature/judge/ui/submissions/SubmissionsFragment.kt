@@ -34,6 +34,7 @@ class SubmissionsFragment : Fragment() {
             if(it!=null){
                 rvAdapter = SubmissionAdapter(it as ArrayList<Submissions>)
                 rvSubmission.adapter = rvAdapter
+
             }
         }
 
