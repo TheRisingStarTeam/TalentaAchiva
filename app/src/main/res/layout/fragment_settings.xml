@@ -7,6 +7,7 @@
     tools:context=".feature.dashboard.ui.settings.SettingsFragment">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
@@ -62,9 +63,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="Switch to Organization"
-        app:layout_constraintBottom_toTopOf="@+id/button_logout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <Button
         android:id="@+id/button_logout"
@@ -74,8 +75,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-/>
+        app:layout_constraintTop_toBottomOf="@+id/button_switch_org" />
 </androidx.constraintlayout.widget.ConstraintLayout>
