@@ -1,15 +1,19 @@
 package com.risingstar.talentaachiva.feature.landing.ui.interest
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentInterestBinding
 import com.risingstar.talentaachiva.domain.data.Interest
+import com.risingstar.talentaachiva.feature.dashboard.DashboardActivity
 import com.risingstar.talentaachiva.feature.landing.LandingVM
 import com.risingstar.talentaachiva.feature.util.InterestAdapter
 
@@ -36,6 +40,19 @@ class InterestFragment : Fragment() {
     ): View {
         binding = FragmentInterestBinding.inflate(layoutInflater,container,false)
         viewmodel = ViewModelProvider(requireActivity())[LandingVM::class.java]
+
+        viewmodel.user().observe(viewLifecycleOwner){
+            if (it != null) {
+                if(it.interest==null){
+                    findNavController().navigate(R.id.navigate_interest)
+                }
+                else{
+                    val intent = Intent(requireActivity(), DashboardActivity::class.java)
+                    intent.putExtra(DashboardActivity.CURRENT_USER_ID,it.userId)
+                    startActivity(intent)
+                }
+            }
+        }
 
         rvInterest = binding.rvInterest
         rvInterest.layoutManager = GridLayoutManager(this.context,3,RecyclerView.VERTICAL,false)
