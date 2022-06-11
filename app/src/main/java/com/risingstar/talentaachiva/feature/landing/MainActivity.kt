@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityMainBinding
 import com.risingstar.talentaachiva.feature.dashboard.DashboardActivity
 import com.risingstar.talentaachiva.feature.dashboard.DashboardActivity.Companion.CURRENT_USER_ID
@@ -23,21 +25,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         mAuth = FirebaseAuth.getInstance()
+        setContentView(binding.root)
 
         Toast.makeText(this,"Welcome to $this", Toast.LENGTH_SHORT).show()
 
         viewmodel = ViewModelProvider(this)[LandingVM::class.java]
-        viewmodel.currentUser().observe(this) {
-            if (it != null) {
-                val intent = Intent(this, DashboardActivity::class.java)
-                intent.putExtra(CURRENT_USER_ID,it.uid)
-                startActivity(intent)
-            }
-        }
 
 
-
-        setContentView(binding.root)
     }
 
     @Deprecated("Deprecated in Java")
