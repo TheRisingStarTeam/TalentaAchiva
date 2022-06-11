@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.risingstar.talentaachiva.databinding.FragmentCreatePostBinding
 import com.risingstar.talentaachiva.domain.data.Post
 import com.risingstar.talentaachiva.feature.management.ManagementVM
@@ -26,6 +27,7 @@ class CreatePostFragment : Fragment() {
         viewmodel.currentUser().observe(viewLifecycleOwner){
             if (it != null) {
                 binding.tvUsernamePostMan.text = viewmodel.currentUser.name
+                Glide.with(binding.ivUserCreatePost).load(it.profilePic).into(binding.ivUserCreatePost)
             }
         }
 
