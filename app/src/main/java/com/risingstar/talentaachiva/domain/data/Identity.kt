@@ -10,6 +10,7 @@ import java.util.*
 @Entity(tableName = "identity")
 data class Identity (
     var userId : String? = null,
+    var profilePic:String? = null,
     var name : String? = null,
     var dateOfBirth : Date? = null,
     var phoneNumber : String? = null,

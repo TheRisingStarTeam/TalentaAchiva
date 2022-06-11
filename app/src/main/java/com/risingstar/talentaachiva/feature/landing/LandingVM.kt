@@ -13,7 +13,9 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.References
+import com.risingstar.talentaachiva.domain.References.USER_INTEREST
 import com.risingstar.talentaachiva.domain.data.Identity
+import com.risingstar.talentaachiva.domain.data.Interest
 
 class LandingVM : ViewModel() {
 
@@ -105,7 +107,11 @@ class LandingVM : ViewModel() {
         }
     }
 
-//    fun checkIfInterestExists(){
-
-//    }
+    fun updateInterest(interest: List<Interest>){
+        userRef.document(mAuth.currentUser?.uid.toString()).update(USER_INTEREST,interest)
+            .addOnCompleteListener {
+                if (it.isSuccessful)
+                    checkUser()
+            }
+    }
 }

@@ -42,6 +42,10 @@ class InterestFragment : Fragment() {
         rvAdapter = InterestAdapter(interests as ArrayList<Interest>)
         rvInterest.adapter = rvAdapter
 
+        binding.buttonSubmitInterest.setOnClickListener {
+            viewmodel.updateInterest(interests)
+        }
+
         return binding.root
     }
 }
