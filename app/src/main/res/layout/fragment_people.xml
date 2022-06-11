@@ -29,11 +29,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Organizer"
-                    android:background="@drawable/shape_detail"
                     android:padding='8dp'
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    style="@style/RedBackgroundWithWhiteText" />
 
             </androidx.cardview.widget.CardView>
 
@@ -55,11 +52,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Participant"
-                    android:background="@drawable/shape_detail"
                     android:padding='8dp'
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    style="@style/RedBackgroundWithWhiteText" />
 
             </androidx.cardview.widget.CardView>
 

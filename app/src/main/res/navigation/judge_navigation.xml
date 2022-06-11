@@ -11,13 +11,9 @@
         android:label="fragment_criteria"
         tools:layout="@layout/fragment_criteria" />
     <fragment
-        android:id="@+id/navigation_grading"
-        android:name="com.risingstar.talentaachiva.feature.judge.ui.grading.GradingFragment"
-        android:label="fragment_grading"
-        tools:layout="@layout/fragment_grading" />
-    <fragment
-        android:id="@+id/submissionsFragment"
+        android:id="@+id/navigation_submission"
         android:name="com.risingstar.talentaachiva.feature.judge.ui.submissions.SubmissionsFragment"
         android:label="fragment_submissions"
-        tools:layout="@layout/fragment_submissions" />
+        tools:layout="@layout/fragment_submissions" >
+    </fragment>
 </navigation>

@@ -14,15 +14,12 @@
             android:id="@+id/tvProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_detail"
             android:gravity="center"
             android:padding='8dp'
             android:text="Profile"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="214dp" />
+            tools:layout_editor_absoluteX="214dp"
+            style="@style/RedBackgroundWithWhiteText" />
 
         <TextView
             android:id="@+id/tvAchievementTop"
@@ -30,16 +27,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/shape_detail"
             android:gravity="center"
             android:padding='8dp'
             android:text="Achievement"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+            app:layout_constraintTop_toBottomOf="@+id/tvProfile"
+            style="@style/RedBackgroundWithWhiteText" />
 
 
         <TextView
@@ -69,16 +63,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/shape_detail"
             android:gravity="center"
             android:padding='8dp'
             android:text="History"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+            app:layout_constraintTop_toBottomOf="@+id/tvProfile"
+            style="@style/RedBackgroundWithWhiteText" />
 
         <TextView
             android:id="@+id/tvHistoryCount"

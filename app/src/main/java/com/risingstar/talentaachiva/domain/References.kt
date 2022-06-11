@@ -33,7 +33,7 @@ object References {
     const val SUBMISSION_CONTENT = "content"
     const val SUBMISSION_DESCRIPTION = "description"
     const val SUBMISSION_AUTHOR = "author"
-    const val SUBMISSION_SCORE = "score"
+    const val SUBMISSION_JUDGEMENT = "judgement"
 
     //ASSIGNMENT
     const val ASSIGNMENT = "assignments"

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TalentaAchiva">
         <activity
+            android:name=".GradingActivity"
+            android:exported="false" />
+        <activity
             android:name=".feature.organizer.OrganizerActivity"
             android:exported="false"
             android:label="@string/title_activity_organizer"
@@ -29,7 +32,12 @@
             android:name=".feature.management.ManagementActivity"
             android:exported="false"
             android:label="@string/title_activity_management"
-            android:theme="@style/Theme.TalentaAchiva.NoActionBar"/>
+            android:theme="@style/Theme.TalentaAchiva.NoActionBar" />
+        <activity
+            android:name=".feature.grading.GradingActivity"
+            android:exported="false"
+            android:label="GradingActivity"
+            android:theme="@style/Theme.TalentaAchiva.NoActionBar" />
         <activity
             android:name=".feature.dashboard.DashboardActivity"
             android:exported="false"

@@ -15,15 +15,12 @@
             android:id="@+id/tvEditProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_detail"
             android:gravity="center"
             android:padding='8dp'
             android:text="Edit Profile"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="214dp" />
+            tools:layout_editor_absoluteX="214dp"
+            style="@style/RedBackgroundWithWhiteText" />
 
 
         <ImageView

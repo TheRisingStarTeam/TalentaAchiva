@@ -27,5 +27,5 @@ data class Judgement(
 @Parcelize
 data class Score(
     var criteria: Criteria? = null,
-    var amount : Double? = null
+    var amount: Int? = null
 ) : Parcelable

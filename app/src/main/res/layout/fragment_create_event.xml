@@ -30,15 +30,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/shape_detail"
             android:padding='8dp'
             android:text="Event Name"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_create_event" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_create_event"
+            style="@style/RedBackgroundWithWhiteText" />
 
         <EditText
             android:id="@+id/titleEt"
@@ -58,15 +55,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/shape_detail"
             android:padding='8dp'
             android:text="Event Description"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleEt" />
+            app:layout_constraintTop_toBottomOf="@+id/titleEt"
+            style="@style/RedBackgroundWithWhiteText" />
 
         <EditText
             android:id="@+id/descriptionEt"
@@ -86,15 +80,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/shape_detail"
             android:padding='8dp'
             android:text="Event Category"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionEt" />
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEt"
+            style="@style/RedBackgroundWithWhiteText" />
 
         <EditText
             android:id="@+id/CategoryEt"
@@ -114,15 +105,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/shape_detail"
             android:padding='8dp'
             android:text="Event Date"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CategoryEt" />
+            app:layout_constraintTop_toBottomOf="@+id/CategoryEt"
+            style="@style/RedBackgroundWithWhiteText" />
 
         <TextView
             android:id="@+id/etDate"

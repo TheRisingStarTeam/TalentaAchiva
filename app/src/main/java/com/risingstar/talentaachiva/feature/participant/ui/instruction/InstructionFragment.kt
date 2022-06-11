@@ -27,17 +27,18 @@ class InstructionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        viewmodel = ViewModelProvider(requireActivity()).get(ParticipantVM::class.java)
+        viewmodel = ViewModelProvider(requireActivity())[ParticipantVM::class.java]
         binding = FragmentInstructionBinding.inflate(layoutInflater,container,false)
         rvCriteria = binding.rvCriteria
         rvCriteria.layoutManager = LinearLayoutManager(requireActivity())
+
         viewmodel.assignment().observe(viewLifecycleOwner){
             binding.tvTitleSubmission.text = it?.title?:"Instruction"
             binding.tvDetailInstruction.text = it?.description ?: "No Description provided"
             rvAdapter = CriteriaAdapter(it?.criteria as ArrayList<Criteria>)
             rvCriteria.adapter = rvAdapter
-
         }
+
         binding.buttonSubmitInstruction.setOnClickListener {
             it.findNavController().navigate(R.id.navigate_submit)
         }
