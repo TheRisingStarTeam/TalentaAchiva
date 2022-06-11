@@ -9,8 +9,6 @@ import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityMainBinding
-import com.risingstar.talentaachiva.feature.dashboard.DashboardActivity
-import com.risingstar.talentaachiva.feature.dashboard.DashboardActivity.Companion.CURRENT_USER_ID
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,11 +23,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         mAuth = FirebaseAuth.getInstance()
-        setContentView(binding.root)
+        val view = binding.root
+        setContentView(view)
 
         Toast.makeText(this,"Welcome to $this", Toast.LENGTH_SHORT).show()
 
         viewmodel = ViewModelProvider(this)[LandingVM::class.java]
+
+        viewmodel.user().observe(this){
+            if (it != null) {
+                if(it.interest!=null){
+                    Navigation.findNavController(this, R.id.nav_host_fragment_content_main_activity)
+                }
+            }
+        }
 
 
     }
