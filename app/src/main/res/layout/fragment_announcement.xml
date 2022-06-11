@@ -20,45 +20,95 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageView3"
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_rank_1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/placholdertako"
+                    app:cardCornerRadius="250dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imageView4"
+
+                    <ImageView
+                        android:id="@+id/iv_rank_1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="rank1"
+                        android:src="@drawable/placholdertako"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_rank_2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/placholdertako"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="64dp"
+                    app:cardCornerRadius="250dp"
+                    app:layout_constraintEnd_toStartOf="@+id/cv_rank_1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                    app:layout_constraintTop_toTopOf="@+id/cv_rank_1">
 
-                <ImageView
-                    android:id="@+id/imageView9"
+
+                    <ImageView
+                        android:id="@+id/iv_rank_2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="rank2"
+                        android:src="@drawable/placholdertako"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_rank_3"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/placholdertako"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="96dp"
+                    app:cardCornerRadius="250dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                    app:layout_constraintStart_toEndOf="@+id/cv_rank_1"
+                    app:layout_constraintTop_toTopOf="@+id/cv_rank_1">
+
+
+                    <ImageView
+                        android:id="@+id/iv_rank_3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="rank2"
+                        android:src="@drawable/placholdertako"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_annoucement_rank"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/row_announcement">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button_announce_winner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
