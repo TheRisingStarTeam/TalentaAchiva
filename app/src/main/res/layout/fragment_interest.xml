@@ -8,6 +8,7 @@
     android:padding="16dp">
 
 
+
     <TextView
         android:id="@+id/tv_choose_interest"
         android:layout_width="wrap_content"
