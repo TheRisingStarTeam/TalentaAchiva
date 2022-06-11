@@ -38,7 +38,7 @@ class InterestFragment : Fragment() {
         viewmodel = ViewModelProvider(requireActivity())[LandingVM::class.java]
 
         rvInterest = binding.rvInterest
-        rvInterest.layoutManager = GridLayoutManager(this.context,2,RecyclerView.VERTICAL,false)
+        rvInterest.layoutManager = GridLayoutManager(this.context,3,RecyclerView.VERTICAL,false)
         rvAdapter = InterestAdapter(interests as ArrayList<Interest>)
         rvInterest.adapter = rvAdapter
 
