@@ -51,7 +51,7 @@ class GradingActivity : AppCompatActivity() {
             val scores = rvAdapter.getScore()
             val judgement = Judgement(
                 judge = userId,
-                review = "null dulu soalnya daniel belum benerin halaman grading buat nambahin review :p",
+                review = binding.etComment.text.toString(),
                 score = scores
             )
             grade(judgement)

@@ -25,6 +25,7 @@ class AnnouncementFragment : Fragment() {
 
 
 
+
         return binding.root
     }
 }

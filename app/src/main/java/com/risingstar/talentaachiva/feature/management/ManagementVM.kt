@@ -16,6 +16,7 @@ import com.risingstar.talentaachiva.domain.References.ASSIGNMENT_ID
 import com.risingstar.talentaachiva.domain.References.EVENT
 import com.risingstar.talentaachiva.domain.References.POST
 import com.risingstar.talentaachiva.domain.References.USER
+import com.risingstar.talentaachiva.domain.References.USER_ID
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Event
 import com.risingstar.talentaachiva.domain.data.Identity
@@ -91,10 +92,6 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
                 if (event != null) {
                     currentEvent = event
                 }
-//                if (event != null) {
-//                    _assignments.value = event.assignments
-//                    currentEvent = event
-//                }
 
             }
         }
@@ -108,7 +105,12 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
     }
 
     private fun getPeople(){
-
+        if(currentEvent.participants!=null)
+        userRef.whereIn(USER_ID, currentEvent.participants!!)
+            .get().addOnCompleteListener {
+                if (it.isSuccessful)
+                    _people.value = it.result.toObjects()
+        }
     }
 
 
@@ -126,36 +128,18 @@ class ManagementVM(val userId: String, val eventId: String) : ViewModel() {
         }
     }
 
-//    private fun addEventListener() {
-//        thisEvent.addSnapshotListener{value,e->
-//            if (e != null) {
-//                Log.w(TAG, "Listen failed.", e)
-//                return@addSnapshotListener
-//            }
-//            if (value != null) {
-//                val event = value.toObject<Event>()
-//                if(event!=null){
-//                    currentEvent = value.toObject()!!
-//                    _event.value = currentEvent
-//                    _assignments.value = currentEvent.assignments
-//                }
-//
-//            }
-//        }
-//    }
-
-        private fun addAssignmentListener() {
-            assignmentRef.whereEqualTo(ASSIGNMENT_EVENT,eventId).addSnapshotListener{ value, e->
-                if (e != null) {
-                    Log.w(TAG, "Listen failed.", e)
-                    return@addSnapshotListener
-                }
-                if (value != null) {
-                    _assignments.value = value.toObjects()
-                }
-
+    private fun addAssignmentListener() {
+        assignmentRef.whereEqualTo(ASSIGNMENT_EVENT,eventId).addSnapshotListener{ value, e->
+            if (e != null) {
+                Log.w(TAG, "Listen failed.", e)
+                return@addSnapshotListener
             }
+            if (value != null) {
+                _assignments.value = value.toObjects()
+            }
+
         }
+    }
 
 
 
