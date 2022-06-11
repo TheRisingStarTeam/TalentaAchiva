@@ -21,6 +21,18 @@
                 android:layout_height="wrap_content">
 
 
+                <TextView
+                    android:id="@+id/tv_winner_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Winner 1"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_rank_1"
+                    app:layout_constraintStart_toStartOf="@+id/cv_rank_1"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_rank_1" />
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_rank_1"
                     android:layout_width="100dp"
@@ -69,6 +81,19 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <TextView
+                    android:id="@+id/tv_winner_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Winner 2"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_rank_2"
+                    app:layout_constraintStart_toStartOf="@+id/cv_rank_2"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_rank_2" />
+
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_rank_3"
                     android:layout_width="100dp"
@@ -90,10 +115,21 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+
                 </androidx.cardview.widget.CardView>
 
-
-
+                <TextView
+                    android:id="@+id/tv_winner_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Winner 3"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/cv_rank_3"
+                    app:layout_constraintStart_toStartOf="@+id/cv_rank_3"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_rank_3" />
 
 
 
