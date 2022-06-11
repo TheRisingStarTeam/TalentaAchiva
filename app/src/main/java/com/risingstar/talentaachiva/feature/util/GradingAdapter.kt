@@ -34,12 +34,12 @@ class GradingAdapter(
         return GradingViewHolder(binding)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+//    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: GradingViewHolder, position: Int) {
         with(holder){
             with(scoreList[position]){
                 binding.tvCriteria.text = this.criteria?.name.toString()
-                binding.tvNumber.setAutofillHints(this.amount.toString())
+//                binding.tvNumber.setAutofillHints(this.amount.toString())
                 binding.tvNumber.addTextChangedListener(object : TextWatcher{
                     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
                     override fun afterTextChanged(textbox: Editable?) {}
