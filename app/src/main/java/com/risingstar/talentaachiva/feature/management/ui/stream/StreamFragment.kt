@@ -10,7 +10,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentStreamBinding
 import com.risingstar.talentaachiva.domain.data.Post
@@ -48,11 +47,11 @@ class StreamFragment : Fragment() {
             })
         }
 
-        viewmodel.currentUser().observe(viewLifecycleOwner){
-            if (it != null) {
-                Glide.with(binding.ivUserCreatePost).load(it.profilePic).into(binding.ivUserCreatePost)
-            }
-        }
+//        viewmodel.currentUser().observe(viewLifecycleOwner){
+//            if (it != null) {
+//                Glide.with(binding.ivUserCreatePost).load(it.profilePic).into(binding.ivUserCreatePost)
+//            }
+//        }
 
 
 

@@ -34,7 +34,7 @@ class GradingActivity : AppCompatActivity() {
         ).get(GradingVM::class.java)
 
         rvCriteria = binding.rvCriteria
-        Toast.makeText(this,submission.assignmentId.toString(),Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,submission.assignmentId.toString(),Toast.LENGTH_SHORT).show()
         rvCriteria.layoutManager = LinearLayoutManager(this)
 
 

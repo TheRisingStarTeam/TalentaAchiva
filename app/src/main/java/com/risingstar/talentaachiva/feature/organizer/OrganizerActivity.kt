@@ -1,7 +1,6 @@
 package com.risingstar.talentaachiva.feature.organizer
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -28,8 +27,6 @@ class OrganizerActivity : AppCompatActivity() {
 
         binding = ActivityOrganizerBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        Toast.makeText(this,"Welcome to $this, $username", Toast.LENGTH_SHORT).show()
 
         setSupportActionBar(binding.toolbar)
 

@@ -1,7 +1,6 @@
 package com.risingstar.talentaachiva.feature.participant
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.risingstar.talentaachiva.databinding.ActivityParticipantBinding
@@ -21,7 +20,7 @@ class ParticipantActivity : AppCompatActivity() {
             )[ParticipantVM::class.java]
 
         binding = ActivityParticipantBinding.inflate(layoutInflater)
-        Toast.makeText(this,"Welcome to $this, $user, $assignment", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,"Welcome to $this, $user, $assignment", Toast.LENGTH_SHORT).show()
         setContentView(binding.root)
     }
 

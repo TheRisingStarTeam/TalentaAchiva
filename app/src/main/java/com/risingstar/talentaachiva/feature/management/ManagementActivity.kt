@@ -2,7 +2,6 @@ package com.risingstar.talentaachiva.feature.management
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -31,7 +30,7 @@ class ManagementActivity : AppCompatActivity() {
         )[ManagementVM::class.java]
         binding = ActivityManagementBinding.inflate(layoutInflater)
 
-        Toast.makeText(this,"Welcome to $this, $username, $event", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,"Welcome to $this, $username, $event", Toast.LENGTH_SHORT).show()
         setContentView(binding.root)
 
 

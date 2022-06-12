@@ -1,7 +1,6 @@
 package com.risingstar.talentaachiva.feature.detail
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -38,7 +37,7 @@ class DetailActivity : AppCompatActivity() {
             viewmodel.registerEvent()
         }
 
-        Toast.makeText(this,"Welcome to $this $event $username", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,"Welcome to $this $event $username", Toast.LENGTH_SHORT).show()
         viewmodel.getDetail()
 
         setSupportActionBar(findViewById(R.id.detailToolbar))

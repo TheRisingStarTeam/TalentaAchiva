@@ -1,7 +1,6 @@
 package com.risingstar.talentaachiva.feature.dashboard
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -23,7 +22,7 @@ class DashboardActivity : AppCompatActivity() {
 
         viewmodel = ViewModelProvider(this,DashboardFactory(username!!))[DashboardVM::class.java]
         binding = ActivityDashboardBinding.inflate(layoutInflater)
-        Toast.makeText(this,"Welcome to $this $username", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,"Welcome to $this $username", Toast.LENGTH_SHORT).show()
 
 
         val navView: BottomNavigationView = binding.navView
