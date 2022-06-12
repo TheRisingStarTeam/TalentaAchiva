@@ -26,9 +26,7 @@ class EventDetailFragment : Fragment() {
             binding.tvDetailEvent.text = it?.description ?: "No Description Provided"
         }
 
-        binding.btnRegisterEvent.setOnClickListener {
-            viewmodel.registerEvent()
-        }
+
 
         return binding.root
     }

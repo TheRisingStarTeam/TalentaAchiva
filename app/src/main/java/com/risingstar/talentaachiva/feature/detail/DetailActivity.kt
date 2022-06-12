@@ -34,6 +34,10 @@ class DetailActivity : AppCompatActivity() {
             }
         }
 
+        binding.buttonRegisterDetail.setOnClickListener {
+            viewmodel.registerEvent()
+        }
+
         Toast.makeText(this,"Welcome to $this $event $username", Toast.LENGTH_SHORT).show()
         viewmodel.getDetail()
 

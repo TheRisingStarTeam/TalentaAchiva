@@ -48,4 +48,15 @@
 
     <include layout="@layout/detail_scrolling" />
 
+    <Button
+        android:id="@+id/button_register_detail"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Register" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
