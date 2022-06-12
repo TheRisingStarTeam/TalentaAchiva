@@ -12,6 +12,7 @@ import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.References.ASSIGNMENT
 import com.risingstar.talentaachiva.domain.References.SUBMISSION
 import com.risingstar.talentaachiva.domain.References.SUBMISSION_JUDGEMENT
+import com.risingstar.talentaachiva.domain.References.USER
 import com.risingstar.talentaachiva.domain.data.Assignment
 import com.risingstar.talentaachiva.domain.data.Judgement
 import com.risingstar.talentaachiva.domain.data.Submissions
@@ -24,6 +25,8 @@ class GradingVM(
     private val db = Firebase.firestore
     private val submissionRef = db.collection(SUBMISSION)
     private val assignmentRef = db.collection(ASSIGNMENT)
+    private val userRef = db.collection(USER)
+    private lateinit var currentSubmission : Submissions
 
     init {
         getAssignment()
@@ -44,8 +47,10 @@ class GradingVM(
 
     private fun getSubmission() {
         submissionRef.document(submissionId).get().addOnCompleteListener {
-            if(it.isSuccessful)
+            if(it.isSuccessful) {
                 _submissions.value = it.result.toObject()
+                currentSubmission = _submissions.value!!
+            }
         }
     }
 

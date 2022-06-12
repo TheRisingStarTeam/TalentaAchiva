@@ -37,6 +37,9 @@ class GradingActivity : AppCompatActivity() {
         Toast.makeText(this,submission.assignmentId.toString(),Toast.LENGTH_SHORT).show()
         rvCriteria.layoutManager = LinearLayoutManager(this)
 
+
+        binding.tvTitleGrading.text = submission.title
+        binding.tvGradingContent.text = submission.content
         viewmodel.assignment().observe(this){ assignment ->
             val scores = mutableListOf<Score>()
             assignment?.criteria?.forEach {criteria ->
