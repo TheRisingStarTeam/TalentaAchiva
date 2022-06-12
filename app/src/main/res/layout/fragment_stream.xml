@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_menu_gallery" />
+                app:srcCompat="@drawable/background_stream" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView

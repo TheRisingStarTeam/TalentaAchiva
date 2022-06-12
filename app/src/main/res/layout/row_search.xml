@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="organization"
+            android:text="TalentaAchiva"
             app:layout_constraintBottom_toBottomOf="@+id/ivOrg"
             app:layout_constraintStart_toEndOf="@+id/ivOrg"
             app:layout_constraintTop_toTopOf="@+id/ivOrg" />
@@ -105,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Date"
+            android:text="10 August 2022 - 23:59"
             app:layout_constraintBottom_toBottomOf="@+id/ivDate"
             app:layout_constraintStart_toEndOf="@+id/ivDate"
             app:layout_constraintTop_toTopOf="@+id/ivDate" />

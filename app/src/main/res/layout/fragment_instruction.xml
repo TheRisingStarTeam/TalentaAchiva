@@ -72,6 +72,8 @@
         android:layout_height="wrap_content"
         android:text="Detail Stuff Here"
         android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_detail_instruction_sub" />
 

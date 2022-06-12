@@ -3,6 +3,7 @@ package com.risingstar.talentaachiva.feature.util
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.risingstar.talentaachiva.databinding.RowSearchBinding
 import com.risingstar.talentaachiva.domain.data.Event
 
@@ -31,6 +32,7 @@ class SearchAdapter(
         with(holder){
             with(eventList[position]){
                 binding.tvTitle.text = this.name
+                Glide.with(binding.imgPhoto).load(this.banner).into(binding.imgPhoto)
             }
         }
         holder.itemView.setOnClickListener{
