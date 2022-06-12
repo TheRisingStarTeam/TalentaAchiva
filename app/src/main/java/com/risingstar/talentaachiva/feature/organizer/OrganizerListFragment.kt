@@ -51,6 +51,7 @@ class OrganizerListFragment : Fragment() {
             })
         }
 
+
         binding.floatingActionButton.setOnClickListener {
             it.findNavController().navigate(R.id.org_to_cev)
         }
