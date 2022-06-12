@@ -1,5 +1,6 @@
 package com.risingstar.talentaachiva.feature.detail
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -7,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityDetailBinding
 import com.risingstar.talentaachiva.domain.data.Event
+import com.risingstar.talentaachiva.feature.management.ManagementActivity
 
 class DetailActivity : AppCompatActivity() {
 
@@ -35,6 +37,12 @@ class DetailActivity : AppCompatActivity() {
 
         binding.buttonRegisterDetail.setOnClickListener {
             viewmodel.registerEvent()
+            val intent = Intent(this, ManagementActivity::class.java)
+            if (event != null) {
+                intent.putExtra(ManagementActivity.CURRENT_EVENT,event.eventId)
+            }
+            intent.putExtra(ManagementActivity.CURRENT_USER,username)
+            startActivity(intent)
         }
 
         //Toast.makeText(this,"Welcome to $this $event $username", Toast.LENGTH_SHORT).show()
