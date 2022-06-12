@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/management_navigation"
+    android:label="Stream"
     app:startDestination="@id/navigation_stream">
 
     <fragment
         android:id="@+id/navigation_people"
         android:name="com.risingstar.talentaachiva.feature.management.ui.people.PeopleFragment"
-        android:label="@string/title_home"
+        android:label="People"
         tools:layout="@layout/fragment_people" />
 
     <fragment
@@ -19,22 +20,22 @@
     <fragment
         android:id="@+id/navigation_assignments"
         android:name="com.risingstar.talentaachiva.feature.management.ui.assignment.AssignmentsFragment"
-        android:label="fragment_assignments"
+        android:label="Assignments"
         tools:layout="@layout/fragment_assignments" />
     <fragment
         android:id="@+id/navigation_create_post"
         android:name="com.risingstar.talentaachiva.feature.management.ui.stream.CreatePostFragment"
-        android:label="CreatePostFragment"
-        tools:layout="@layout/fragment_create_post"/>
+        android:label="Create"
+        tools:layout="@layout/fragment_create_post" />
     <fragment
         android:id="@+id/navigate_post"
         android:name="com.risingstar.talentaachiva.feature.management.ui.stream.PostFragment"
-        android:label="fragment_post"
+        android:label="Post"
         tools:layout="@layout/fragment_post" />
     <fragment
         android:id="@+id/navigate_create_assignment"
         android:name="com.risingstar.talentaachiva.feature.management.ui.assignment.CreateAssignmentFragment"
-        android:label="CreateAssignmentFragment"
-        tools:layout="@layout/fragment_create_assignment"/>
+        android:label="Create Assignment"
+        tools:layout="@layout/fragment_create_assignment" />
 
 </navigation>

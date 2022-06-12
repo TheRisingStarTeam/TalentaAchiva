@@ -8,12 +8,11 @@
     <fragment
         android:id="@+id/navigation_criteria"
         android:name="com.risingstar.talentaachiva.feature.judge.ui.criteria.CriteriaFragment"
-        android:label="fragment_criteria"
+        android:label="Assignment Criteria"
         tools:layout="@layout/fragment_criteria" />
     <fragment
         android:id="@+id/navigation_submission"
         android:name="com.risingstar.talentaachiva.feature.judge.ui.submissions.SubmissionsFragment"
-        android:label="fragment_submissions"
-        tools:layout="@layout/fragment_submissions" >
-    </fragment>
+        android:label="Submissions"
+        tools:layout="@layout/fragment_submissions"></fragment>
 </navigation>
