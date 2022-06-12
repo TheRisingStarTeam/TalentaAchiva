@@ -132,7 +132,7 @@
             android:id="@+id/datePick"
             android:layout_width="50dp"
             android:layout_height="0dp"
-            android:src="@drawable/placholdertako"
+            android:src="@drawable/ic_calendar_month_24"
             app:layout_constraintBottom_toBottomOf="@+id/etDate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/etDate" />
