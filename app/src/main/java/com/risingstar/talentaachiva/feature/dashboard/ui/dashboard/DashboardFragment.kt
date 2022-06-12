@@ -18,6 +18,7 @@ import com.risingstar.talentaachiva.feature.detail.DetailActivity
 import com.risingstar.talentaachiva.feature.management.ManagementActivity
 import com.risingstar.talentaachiva.feature.organizer.OrganizerActivity
 import com.risingstar.talentaachiva.feature.util.EventAdapter
+import com.risingstar.talentaachiva.feature.util.ImageAdapter
 
 class DashboardFragment : Fragment() {
 
@@ -26,6 +27,12 @@ class DashboardFragment : Fragment() {
     private lateinit var rvRecommend : RecyclerView
     private lateinit var rvAdapter: EventAdapter
     private lateinit var viewmodel: DashboardVM
+
+    val images = mutableListOf(
+        "https://cdn.discordapp.com/attachments/985110137750585415/985438540206837760/unknown.png",
+        "https://cdn.discordapp.com/attachments/985110137750585415/985438607227629568/unknown.png",
+        "https://cdn.discordapp.com/attachments/985110137750585415/985438627343519784/unknown.png"
+    )
 
     private val binding get() = _binding!!
 
@@ -64,7 +71,7 @@ class DashboardFragment : Fragment() {
                 }
             })
 
-            //rvRecommend.adapter = ImageAdapter(images)
+            rvRecommend.adapter = ImageAdapter(images as ArrayList<String>)
         }
 
         return binding.root
