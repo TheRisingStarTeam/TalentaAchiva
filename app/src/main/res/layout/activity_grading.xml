@@ -5,40 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView23"
+
+    <ImageView
+        android:id="@+id/img_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="250dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="photo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/img_photo"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:contentDescription="photo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/achiva2" />
 
     <TextView
         android:id="@+id/tv_username_assignment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="username"
+        android:layout_marginStart="8dp"
+        android:text="RisingStar"
         android:textColor="@color/black"
-        android:textStyle="bold"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/cardView23"
-        app:layout_constraintTop_toTopOf="@+id/cardView23" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_photo"
+        app:layout_constraintTop_toTopOf="@+id/img_photo" />
 
     <TextView
         android:id="@+id/tvAssigned"
@@ -46,14 +35,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:padding='8dp'
         android:text="Assigned Content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView23" />
+        app:layout_constraintTop_toBottomOf="@+id/img_photo" />
 
     <ScrollView
         android:layout_width="match_parent"

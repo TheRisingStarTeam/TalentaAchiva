@@ -58,12 +58,6 @@ class DashboardFragment : Fragment() {
             searchView.setOnClickListener {
                 findNavController().navigate(R.id.navigation_search)
             }
-
-            imgOrg.setOnClickListener {
-                val intent = Intent(requireActivity(),OrganizerActivity::class.java)
-                intent.putExtra(OrganizerActivity.CURRENT_USER_ID,viewmodel.userID)
-                startActivity(intent)
-            }
         }
 
         viewmodel.allEvents().observe(viewLifecycleOwner){
