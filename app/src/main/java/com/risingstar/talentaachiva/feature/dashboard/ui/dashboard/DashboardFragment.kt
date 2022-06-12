@@ -25,6 +25,7 @@ class DashboardFragment : Fragment() {
     private var _binding: FragmentDashboardBinding? = null
     private lateinit var rvEvents: RecyclerView
     private lateinit var rvRecommend : RecyclerView
+    private lateinit var rvRec : RecyclerView
     private lateinit var rvAdapter: EventAdapter
     private lateinit var viewmodel: DashboardVM
 
@@ -50,6 +51,9 @@ class DashboardFragment : Fragment() {
         rvRecommend = binding.rvBanner
         rvRecommend.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,false)
 
+        rvRec = binding.rvBanner
+        rvRec.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,true)
+
         with(binding){
             searchView.setOnClickListener {
                 findNavController().navigate(R.id.navigation_search)
@@ -70,6 +74,7 @@ class DashboardFragment : Fragment() {
                     showSelected(data)
                 }
             })
+            rvRec.adapter = rvAdapter
 
             rvRecommend.adapter = ImageAdapter(images as ArrayList<String>)
         }
