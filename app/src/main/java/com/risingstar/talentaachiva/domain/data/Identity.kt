@@ -25,6 +25,12 @@ data class Identity (
 ) : Parcelable
 
 @Parcelize
+data class Interest(
+    var name : String? =null,
+    var picture : String? = null
+) : Parcelable
+
+@Parcelize
 data class Todo (
     var assignmentId: String? = null,
     var eventId : String? = null,
