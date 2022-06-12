@@ -39,7 +39,7 @@ class GradingActivity : AppCompatActivity() {
 
 
         binding.tvTitleGrading.text = submission.title
-        binding.tvGradingContent.text = submission.content
+        binding.tvGradingContent.text = submission.description
         viewmodel.assignment().observe(this){ assignment ->
             val scores = mutableListOf<Score>()
             assignment?.criteria?.forEach {criteria ->
