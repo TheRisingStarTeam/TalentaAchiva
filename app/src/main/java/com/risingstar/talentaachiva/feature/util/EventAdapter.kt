@@ -24,7 +24,6 @@ class EventAdapter(
             parent,
             false
         )
-
         return EventViewHolder(binding)
     }
 
