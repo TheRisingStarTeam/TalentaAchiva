@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.ActivityDetailBinding
 import com.risingstar.talentaachiva.domain.data.Event
@@ -25,6 +26,14 @@ class DetailActivity : AppCompatActivity() {
 
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        viewmodel.events().observe(this){ data ->
+            if (data != null) {
+                Glide.with(binding.ivBannerDetail).load(data.banner).into(binding.ivBannerDetail)
+            }
+        }
+
         Toast.makeText(this,"Welcome to $this $event $username", Toast.LENGTH_SHORT).show()
         viewmodel.getDetail()
 

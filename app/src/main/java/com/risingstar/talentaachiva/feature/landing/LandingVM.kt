@@ -10,9 +10,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.risingstar.talentaachiva.domain.References
+import com.risingstar.talentaachiva.domain.References.USER_INTEREST
 import com.risingstar.talentaachiva.domain.data.Identity
+import com.risingstar.talentaachiva.domain.data.Interest
 
 class LandingVM : ViewModel() {
 
@@ -25,8 +28,14 @@ class LandingVM : ViewModel() {
         return _currentUser
     }
 
+    private val _user = MutableLiveData<Identity?>()
+    fun user() : LiveData<Identity?>{
+        return _user
+    }
+
     init{
         _currentUser.value = mAuth.currentUser
+        checkUser()
     }
 
     fun register(email:String, password: String, name: String){
@@ -36,6 +45,13 @@ class LandingVM : ViewModel() {
                     initUser(task.result.user, name)
                 }
             }
+    }
+
+    fun checkUser(){
+        userRef.document(mAuth.uid.toString()).get().addOnCompleteListener {
+            if(it.isSuccessful)
+                _user.value = it.result.toObject()
+        }
     }
 
     private fun initUser(user: FirebaseUser?, name: String) {
@@ -54,6 +70,9 @@ class LandingVM : ViewModel() {
         )
         userRef.document(identity.userId.toString()).set(identity).addOnCompleteListener {
             _currentUser.value = user
+            userRef.document(identity.userId.toString()).get().addOnCompleteListener {
+                _user.value = it.result.toObject()
+            }
         }
 
     }
@@ -86,5 +105,13 @@ class LandingVM : ViewModel() {
             firebaseAuthWithGoogle(account.idToken!!)
         } catch (e: ApiException) {
         }
+    }
+
+    fun updateInterest(interest: List<Interest>){
+        userRef.document(mAuth.currentUser?.uid.toString()).update(USER_INTEREST,interest)
+            .addOnCompleteListener {
+                if (it.isSuccessful)
+                    checkUser()
+            }
     }
 }

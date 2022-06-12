@@ -6,7 +6,7 @@ package com.risingstar.talentaachiva.domain
 object References {
 
     //EVENT
-    const val EVENT = "event"
+    const val EVENT = "demoevent"
     const val EVENT_ID = "eventId"
     const val EVENT_BANNER = "banner"
     const val EVENT_STATUS = "active"
@@ -24,7 +24,7 @@ object References {
     const val EVENT_END = "endDate"
 
     //SUBMISSION
-    const val SUBMISSION = "submissions"
+    const val SUBMISSION = "demosubmissions"
     const val SUBMISSION_ID = "submissionId"
     const val SUBMISSION_ASSIGNMENT = "assignmentId"
     const val SUBMISSION_TITLE = "title"
@@ -36,7 +36,7 @@ object References {
     const val SUBMISSION_JUDGEMENT = "judgement"
 
     //ASSIGNMENT
-    const val ASSIGNMENT = "assignments"
+    const val ASSIGNMENT = "demoassignments"
     const val ASSIGNMENT_ID = "assignmentId"
     const val ASSIGNMENT_TITLE = "title"
     const val ASSIGNMENT_RULE = "rules"
@@ -45,7 +45,7 @@ object References {
     const val ASSIGNMENT_CRITERIA = "criteria"
 
     //IDENTITY
-    const val USER = "userIdentities"
+    const val USER = "demouserIdentities"
     const val USER_ID = "userId"
     const val USER_NAME = "name"
     const val USER_BIRTHDAY = "dateOfBirth"
@@ -57,7 +57,7 @@ object References {
     const val USER_TODO = "todo"
 
     //POSTS
-    const val POST = "posts"
+    const val POST = "demoposts"
     const val POST_ID = "postId"
     const val POST_EVENT = "eventId"
     const val POST_TITLE = "title"

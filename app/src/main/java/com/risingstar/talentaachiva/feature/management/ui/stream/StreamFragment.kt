@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.risingstar.talentaachiva.R
 import com.risingstar.talentaachiva.databinding.FragmentStreamBinding
 import com.risingstar.talentaachiva.domain.data.Post
@@ -39,6 +40,7 @@ class StreamFragment : Fragment() {
         viewmodel.posts().observe(viewLifecycleOwner){ posts ->
             rvAdapter = PostAdapter(posts as ArrayList<Post>)
             rvPosts.adapter = rvAdapter
+
             rvAdapter.setOnItemClickCallback(object: PostAdapter.OnItemClickCallback{
                 override fun onItemClicked(data: Post) {
                     viewmodel.currentPost = data
@@ -47,6 +49,15 @@ class StreamFragment : Fragment() {
 
             })
         }
+
+        viewmodel.currentUser().observe(viewLifecycleOwner){
+            if (it != null) {
+                Glide.with(binding.ivUserCreatePost).load(it.profilePic).into(binding.ivUserCreatePost)
+            }
+        }
+
+
+
         binding.cardShare.setOnClickListener {
             it.findNavController().navigate(R.id.navigation_create_post)
         }
