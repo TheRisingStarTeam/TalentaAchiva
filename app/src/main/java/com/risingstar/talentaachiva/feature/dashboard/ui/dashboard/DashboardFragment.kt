@@ -51,7 +51,7 @@ class DashboardFragment : Fragment() {
         rvRecommend = binding.rvBanner
         rvRecommend.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,false)
 
-        rvRec = binding.rvBanner
+        rvRec = binding.rvRecommendation
         rvRec.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,true)
 
         with(binding){
