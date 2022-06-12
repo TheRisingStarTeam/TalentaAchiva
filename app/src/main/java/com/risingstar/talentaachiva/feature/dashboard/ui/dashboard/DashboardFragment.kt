@@ -23,6 +23,7 @@ class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
     private lateinit var rvEvents: RecyclerView
+    private lateinit var rvRecommend : RecyclerView
     private lateinit var rvAdapter: EventAdapter
     private lateinit var viewmodel: DashboardVM
 
@@ -38,6 +39,9 @@ class DashboardFragment : Fragment() {
         viewmodel = ViewModelProvider(requireActivity()).get(DashboardVM::class.java)
         rvEvents = binding.rvEvent
         rvEvents.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,false)
+
+        rvRecommend = binding.rvBanner
+        rvRecommend.layoutManager = GridLayoutManager(this.context,1,RecyclerView.HORIZONTAL,false)
 
         with(binding){
             searchView.setOnClickListener {
@@ -59,6 +63,8 @@ class DashboardFragment : Fragment() {
                     showSelected(data)
                 }
             })
+
+            //rvRecommend.adapter = ImageAdapter(images)
         }
 
         return binding.root

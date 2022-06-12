@@ -21,10 +21,10 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/background_stream" />
+                app:srcCompat="@drawable/ic_menu_gallery" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
