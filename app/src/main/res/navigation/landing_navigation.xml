@@ -35,9 +35,4 @@
             android:id="@+id/register_to_login"
             app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/navigate_interest"
-        android:name="com.risingstar.talentaachiva.feature.landing.ui.interest.InterestFragment"
-        android:label="InterestFragment"
-        tools:layout="@layout/fragment_interest"/>
 </navigation>

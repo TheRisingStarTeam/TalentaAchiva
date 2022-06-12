@@ -98,7 +98,14 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
     implementation "androidx.paging:paging-runtime:3.1.1"
     implementation 'androidx.room:room-paging:2.5.0-alpha01'
-    implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
+
+    //Say Cheese!!
+    implementation("androidx.camera:camera-core:1.2.0-alpha01")
+    implementation("androidx.camera:camera-camera2:1.2.0-alpha01")
+    implementation("androidx.camera:camera-lifecycle:1.2.0-alpha01")
+    implementation("androidx.camera:camera-video:1.2.0-alpha01")
+    implementation("androidx.camera:camera-view:1.2.0-alpha01")
+    implementation("androidx.camera:camera-extensions:1.2.0-alpha01")
 
     //Eye of Sauron
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
