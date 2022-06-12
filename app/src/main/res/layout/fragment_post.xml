@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:text="username"
+                android:text="Daniel"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -45,8 +45,9 @@
                 android:id="@+id/imageView15"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/placholdertako"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/achiva2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_post_detail" />
 

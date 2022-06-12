@@ -45,17 +45,6 @@
             cards:layout_constraintTop_toTopOf="@+id/img_assignment"
             tools:text="Assignment Example" />
 
-        <TextView
-            android:id="@+id/tv_date_assignment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="DateCreated"
-            cards:layout_constraintBottom_toBottomOf="@+id/img_assignment"
-            cards:layout_constraintEnd_toEndOf="@+id/tv_assignment_title"
-            cards:layout_constraintStart_toEndOf="@+id/img_assignment"
-            tools:textSize="12sp"
-            android:maxLines="1"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
