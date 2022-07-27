@@ -9,12 +9,12 @@
 
 |       Class         | Name           | ID Number    |  University |
 |       ---           |        ---     |    ---       |    ---      |
-| Machine Learning    | Nova Pratiwi Damayanti     | M2227F2095   |   Universitas Jember       |
-| Machine Learning    | Alif Adwitiya Pratama       | M7012J1252   |   Universitas Telkom      |
 | Mobile Development  | Pandu Dhaulagiri     | A7297F2545   |  UPN “Veteran” Yogyakarta      |
 | Mobile Development  | Daniel Wijaya      | A2005F0432   |  Universitas Bina Nusantara      |
+| Machine Learning    | Nova Pratiwi Damayanti     | M2227F2095   |   Universitas Jember       |
+| Machine Learning    | Alif Adwitiya Pratama       | M7012J1252   |   Universitas Telkom      |
 | Cloud Computing     | Salsabila Laily Rahma     | C7008F0892   |  Universitas Gadjah Mada     |
-| Cloud Computing     | Juan       | C2271F2360   |   Universitas Multimedia Nusantara Jakarta       |
+| Cloud Computing     | Juan       | C2271F2360   |   Universitas Multimedia Nusantara Jakarta  |
 
 
 
