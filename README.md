@@ -4,7 +4,7 @@
 
 
 ![TalentaAchiva](https://github.com/TheRisingStarTeam/TalentaAchiva/blob/master/The%20Rising%20Stars.png)
-![Top53](https://i.ibb.co/0Bs6wR8/top-53.png)
+![Top53](https://i.ibb.co/PTDPSv3/top-53.png)
 
 # Team ID	: C22-PS168 (The Rising Star)
 
